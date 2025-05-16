@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* your custom base layer */
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+
+/* button */
+button {
+    background: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.btn {
+    display: block;
+    position: relative;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    line-height: 1.2;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 9999px;
+}
+@media screen and (min-width: 1024px) {
+    .btn {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+.btn-arrow {
+    padding-right: 3rem;
+}
+@media screen and (min-width: 1024px) {
+    .btn-arrow {
+        padding-right: 3rem;
+    }
+}
+.btn-arrow svg {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1024px) {
+    .btn-arrow svg {
+        right: 1.5rem;
+    }
+}
+.btn-arrow:hover svg {
+    right: 1.25rem;
+}
+.btn-white {
+    background: white;
+    color: black;
+}
+.btn-black {
+    background: black;
+    color: white;
+}
+.dark .btn-white {
+    background: black;
+    color: white;
+}
+.dark .btn-black {
+    background: white;
+    color: black;
+}
+.btn:hover {
+    opacity: 0.8;
+}
