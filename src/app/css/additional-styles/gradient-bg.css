@@ -60,16 +60,17 @@
 }
 
 .dark .gradient-bg {
-    --color-bg1: rgb(230, 230, 255);
-    --color-bg2: rgb(245, 245, 255);
-    --color1: 200, 200, 255;
-    --color2: 220, 180, 255;
-    --color3: 180, 220, 255;
-    --color4: 255, 180, 180;
-    --color5: 255, 255, 180;
-    --color-interactive: 180, 160, 255;
-    --circle-size: 80%;
-    --blending: hard-light;
+    --color-bg1: rgb(220, 220, 255);
+    --color-bg2: rgb(240, 240, 255);
+    --color1: 180, 180, 255;
+    --color2: 200, 180, 255;
+    --color3: 170, 210, 255;
+    --color4: 255, 150, 150;
+    --color5: 255, 255, 150;
+    --color-interactive: 220, 190, 255;
+
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    filter: brightness(1.05) saturate(1.1);
 }
 
 .gradient-bg svg {

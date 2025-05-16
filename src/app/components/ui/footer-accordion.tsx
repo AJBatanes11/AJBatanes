@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface FooterAccordionProps {
   title: string;
-  items: string[];
+  items: { label: string; href: string }[];
 }
 
 export default function FooterAccordion({ title, items }: FooterAccordionProps) {
@@ -19,7 +19,6 @@ export default function FooterAccordion({ title, items }: FooterAccordionProps) 
         last:border-b-[1px]
       `}
     >
-
       <button
         className="flex flex-row justify-between items-center lg:cursor-default"
         onClick={() => setIsOpen(!isOpen)}
@@ -36,10 +35,10 @@ export default function FooterAccordion({ title, items }: FooterAccordionProps) 
         `}
       >
         <ul className="flex flex-col gap-4 mb-2">
-          {items.map((item, i) => (
-            <li key={i}>
-              <Link href="/" className="text-sm lg:text-base hover:text-gray-300">
-                {item}
+          {items.map((item, index) => (
+            <li key={index}>
+              <Link href={item.href} className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700">
+                {item.label}
               </Link>
             </li>
           ))}
