@@ -10,7 +10,6 @@ export default function Footer() {
     const services = [
         { label: "Development", href: "/services#development" },
         { label: "UI/UX Design", href: "/services#ui-ux" },
-        { label: "Shopify Plus", href: "/services#shopify-plus" },
         { label: "Performance Optimization", href: "/services#performance" },
         { label: "Consultation", href: "/services#consultation" },
     ];
@@ -39,7 +38,7 @@ export default function Footer() {
                             <h2 className="text-5xl lg:text-6xl mb-5">Let&apos;s talk ecommerce.</h2>
                             <Link href="/contact">
                             <Button className="btn-white btn-arrow mb-5" ariaLabel="Contact support">
-                                Get In Touch
+                                Book a Free Consult
                                 <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5" stroke="currentColor"></path>
                                 </svg>
@@ -62,16 +61,6 @@ export default function Footer() {
                             </p>
                         </div>
                         <ul className="flex items-center justify-center gap-1 lg:gap-6">
-                            <li>
-                                <Link href="/" className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700 after:content-['|'] after:ml-1 after:lg:ml-6">
-                                    Shopify Developer
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/" className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700 after:content-['|'] after:ml-1 after:lg:ml-6">
-                                    All Rights Reserved
-                                </Link>
-                            </li>
                             <li>
                                 <Link href="/" className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700 after:content-['|'] after:ml-1 after:lg:ml-6">
                                     Privacy Policy
