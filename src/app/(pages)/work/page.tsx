@@ -9,7 +9,7 @@ export default function Work() {
         <Container>
             <h1 className="text-4xl">My Work Page*</h1>
         </Container>
-        <Container dark>
+        <Container>
             <div className="grid grid-cols-4 gap-10 px-10">
                 {projects.map((project, index) => (
                     <ProjectCard project={project} key={index} />

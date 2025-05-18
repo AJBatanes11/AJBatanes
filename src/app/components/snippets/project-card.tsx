@@ -3,6 +3,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment, useState } from "react";
+import { useCursorStore } from "../../store/cursorTooltipStore";
 
 interface ProjectCardProps {
     project: {
@@ -26,11 +27,17 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project } : ProjectCardProps) {
     
+    const { setCursor, resetCursor } = useCursorStore()
     const [isOpen, setIsOpen] = useState(false);
     
     return (
         <>
-            <div className="text-white dark:text-black bg-black dark:bg-white p-5 rounded-md" onClick={() => setIsOpen(true)}>
+            <div 
+            className="text-white dark:text-black bg-black dark:bg-white p-5 rounded-md" 
+            onClick={() => setIsOpen(true)}
+            onMouseEnter={() => setCursor('label', 'View Project')}
+            onMouseLeave={resetCursor}
+            >
                 <div className="text-lg">
                     {project.cardTitle}
                 </div>

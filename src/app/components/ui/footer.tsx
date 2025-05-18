@@ -1,41 +1,31 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./logo";
 import Button from "../snippets/custom-button";
 import Socials from "../snippets/socials";
 import FooterAccordion from "./footer-accordion";
 import GradientBackground from "./gradient-bg";
+import { useCursorStore } from "../../store/cursorTooltipStore";
+import footerNavigations from "../../data/footer-navigations";
 
 export default function Footer() {
 
-    const services = [
-        { label: "Development", href: "/services#development" },
-        { label: "UI/UX Design", href: "/services#ui-ux" },
-        { label: "Performance Optimization", href: "/services#performance" },
-        { label: "Consultation", href: "/services#consultation" },
-    ];
-
-    const resources = [
-        { label: "My Work", href: "/work" },
-        { label: "Blog", href: "/blog" },
-        { label: "Free Resources", href: "/resources" },
-        { label: "FAQs", href: "/faqs" },
-    ];
-
-    const contact = [
-        { label: "anthonybatanes@gmail.com", href: "mailto:anthonybatanes@gmail.com" },
-        { label: "(+63)919-999-0373", href: "tel:+639199990373" },
-        { label: "Manila, Philippines", href: "https://www.google.com/maps/place/Manila,+Metro+Manila,+Philippines" },
-    ];
+    const { setCursor, resetCursor } = useCursorStore();
 
     return (
-        <footer className="relative lg:fixed overflow-hidden bottom-0 w-full bg-black dark:bg-white text-white dark:text-black lg:-z-10">
+        <footer 
+        className="relative lg:fixed overflow-hidden bottom-0 w-full bg-black dark:bg-white text-white dark:text-black lg:-z-10"
+        onMouseEnter={() => setCursor('invisible')}
+        onMouseLeave={resetCursor}
+        >
             <GradientBackground />
             <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[600px] relative pt-16 pb-10 lg:pt-40 lg:pb-10">
                 <div className="w-full flex flex-col justify-between my-0 mx-auto px-6 md:px-8 lg:px-10">
                     {/* footer main */}
                     <div className="relative grid grid-cols-1 lg:grid-cols-7 gap-0 mb-14 lg:mb-0">
                         <div className="flex flex-col col-span-3 mb-10 lg:mb-0 lg:pr-20">
-                            <h2 className="text-5xl lg:text-6xl mb-5">Let&apos;s talk ecommerce.</h2>
+                            <h2 className="text-5xl lg:text-6xl mb-5">Let&apos;s talk <br/>e-commerce.</h2>
                             <Link href="/contact">
                             <Button className="btn-white btn-arrow mb-5" ariaLabel="Contact support">
                                 Book a Free Consult
@@ -47,9 +37,13 @@ export default function Footer() {
                             <Socials invertColor />
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 lg:col-span-4 gap-0 lg:gap-5">
-                            <FooterAccordion title="What I Do" items={services} />
-                            <FooterAccordion title="Resources" items={resources} />
-                            <FooterAccordion title="Get In Touch" items={contact} />
+                            {footerNavigations.map(navigation => (
+                                <FooterAccordion 
+                                    key={navigation.category}
+                                    title={navigation.category} 
+                                    items={navigation.links} 
+                                />
+                            ))}
                         </div>
                     </div>
                     {/* footer bottom */}

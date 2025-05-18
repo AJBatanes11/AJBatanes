@@ -5,6 +5,7 @@ import AOSInit from "./components/aosinit";
 import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
 import Wrapper from "./components/ui/wrapper";
+import CursorTooltip from "./components/ui/cursor-tooltip";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${inter.variable} font-inter tracking-tight antialiased lg:mb-[600px]`}
       >
         <AOSInit />
+        <CursorTooltip />
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
           <Header />
           <Wrapper>
