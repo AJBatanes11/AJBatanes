@@ -1,12 +1,15 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import Image from "next/image";
+import { StaticImageData } from "next/image";
 import { Fragment, useState } from "react";
 import { useCursorStore } from "../../store/cursorTooltipStore";
+import ProjectDialogContent from "./project-dialog-content";
 
 interface ProjectCardProps {
+    className?: string;
     project: {
+        cardBanner?: string | StaticImageData;
         cardTitle?: string;
         cardDescription?: string;
         overview?: string;
@@ -14,115 +17,77 @@ interface ProjectCardProps {
         service?: string;
         technology?: string;
         website?: string;
-        imageDesktop1?: string;
-        imageMobile1?: string;
+        imageDesktop1?: string | StaticImageData;
+        imageMobile1?: string | StaticImageData;
         heading1?: string;
         description1?: string;
-        imageDesktop2?: string;
-        imageMobile2?: string;
+        imageDesktop2?: string | StaticImageData;
+        imageMobile2?: string | StaticImageData;
         heading2?: string;
         description2?: string;
     };
 }
 
-export default function ProjectCard({ project } : ProjectCardProps) {
+export default function ProjectCard({ project, className = "" } : ProjectCardProps) {
     
-    const { setCursor, resetCursor } = useCursorStore()
+    const { setCursor, resetCursor } = useCursorStore();
     const [isOpen, setIsOpen] = useState(false);
     
     return (
         <>
-            <div 
-            className="text-white dark:text-black bg-black dark:bg-white p-5 rounded-md" 
+            <div
+            style={{
+                backgroundImage: `url(${(project.cardBanner as StaticImageData).src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat"
+            }}
+            className={`
+            text-black dark:text-white
+            relative rounded-[20px] overflow-hidden bg-neutral-500
+            w-[45%] sm:w-[47%] xl:w-[30%]
+            h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
+            float-left mt-6 sm:mt-8 xl:mt-10 mx-[1.5%]
+            shadow-[0_0_25px_10px_rgba(0,0,0,0.3)]
+            transition-transform duration-500 ease-in-out
+            ${className}
+            `}
             onClick={() => setIsOpen(true)}
-            onMouseEnter={() => setCursor('label', 'View Project')}
+            onMouseEnter={() => setCursor("label", "View Project")}
             onMouseLeave={resetCursor}
             >
-                <div className="text-lg">
-                    {project.cardTitle}
+                <div className="absolute inset-0 z-0 bg-gradient-to-t from-white/60 to-transparent dark:from-black/60 dark:to-transparent"></div>
+                {/* {project.cardBanner && (
+                <Image 
+                    src={project.cardBanner} 
+                    alt={project.cardTitle ?? "Project banner"} 
+                    width={750} 
+                    height={500}
+                    layout="responsive"
+                    className="rounded-xl"
+                />
+                )} */}
+                <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10">
+                    {project.cardTitle && (
+                        <div className="text-base xl:text-4xl">
+                            {project.cardTitle}
+                        </div>
+                    )}
+                    {project.cardDescription && (
+                        <span className="text-xs">
+                            {project.cardDescription}
+                        </span>
+                    )}
                 </div>
-                <span className="text-sm">
-                    {project.cardDescription}
-                </span>
             </div>
 
             <Transition appear show={isOpen} as={Fragment}>
-                <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
+                <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40" aria-hidden="true" />
                 <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
-                    <div className="fixed inset-0 bg-white overflow-y-auto rounded-lg m-6 p-6">
-                        {/* close button */}
-                        <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0 flex justify-center items-center">
-                            &times;
-                        </button>
-                        {/* placeholders */}
-                        <p className="mb-2"><strong>Overview:</strong> {project.overview}</p>
-                        <p className="mb-2"><strong>Industry:</strong> {project.industry}</p>
-                        <p className="mb-2"><strong>Service:</strong> {project.service}</p>
-                        <p className="mb-2"><strong>Technology:</strong> {project.technology}</p>
-                        <p className="mb-2">
-                            <strong>Website:</strong>{" "}
-                            <a href={project.website} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-                                {project.website}
-                            </a>
-                        </p>
-
-                        <hr className="my-4" />
-
-                        {/* Section 1 */}
-                        <h3 className="font-semibold mb-1">{project.heading1}</h3>
-                        <p className="mb-2">{project.description1}</p>
-                        {project.imageDesktop1 && (
-                        <div className="mb-4">
-                            <Image
-                            src={project.imageDesktop1}
-                            alt="Desktop View 1"
-                            width={800}
-                            height={500}
-                            className="rounded"
-                            />
-                        </div>
-                        )}
-                        {project.imageMobile1 && (
-                        <div className="mb-4">
-                            <Image
-                            src={project.imageMobile1}
-                            alt="Mobile View 1"
-                            width={400}
-                            height={800}
-                            className="rounded"
-                            />
-                        </div>
-                        )}
-
-                        {/* Section 2 */}
-                        <h3 className="font-semibold mb-1">{project.heading2}</h3>
-                        <p className="mb-2">{project.description2}</p>
-                        {project.imageDesktop2 && (
-                        <div className="mb-4">
-                            <Image
-                            src={project.imageDesktop2}
-                            alt="Desktop View 2"
-                            width={800}
-                            height={500}
-                            className="rounded"
-                            />
-                        </div>
-                        )}
-                        {project.imageMobile2 && (
-                        <div className="mb-4">
-                        <Image
-                            src={project.imageMobile2}
-                            alt="Mobile View 2"
-                            width={400}
-                            height={800}
-                            className="rounded"
-                            />
-                        </div>
-                        )}
-
-                    </div>
+                    <ProjectDialogContent project={project} onClose={() => setIsOpen(false)} />
                 </Dialog>
             </Transition>
+
         </>
     );
 }

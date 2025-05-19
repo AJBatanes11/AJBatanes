@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentcolor" width="auto" height="auto" viewBox="0 0 100 100">
+    <polygon points="25,5 75,5 95,25 95,75 75,95 25,95 5,75 5,25" fill="none" stroke="currentColor" stroke-width="3" />
+    <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">AJ</text>
+    <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">CB</text>
+</svg>

@@ -15,7 +15,7 @@ export default function Footer() {
 
     return (
         <footer 
-        className="relative lg:fixed overflow-hidden bottom-0 w-full bg-black dark:bg-white text-white dark:text-black lg:-z-10"
+        className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-black dark:bg-white text-white dark:text-black lg:-z-10"
         onMouseEnter={() => setCursor('invisible')}
         onMouseLeave={resetCursor}
         >

@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <AOSInit />
         <CursorTooltip />
-        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip rounded-b-3xl bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
           <Header />
           <Wrapper>
             {children}

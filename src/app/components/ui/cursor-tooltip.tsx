@@ -28,7 +28,7 @@ export default function CursorTooltip() {
 
   const variantStyles = {
     default: 'w-2 h-2 text-white dark:text-black bg-black dark:bg-white',
-    label: 'w-24 h-24 bg-white text-black dark:bg-black dark:text-white',
+    label: 'w-24 h-24 text-white dark:text-black bg-black dark:bg-white',
     invisible: 'w-8 h-8 bg-transparent',
     zoom: 'w-20 h-20 bg-yellow-400 text-black',
   };
@@ -36,7 +36,7 @@ export default function CursorTooltip() {
   return (
     <div
       ref={cursorRef}
-      className={`fixed pointer-events-none select-none z-[9999] rounded-full flex items-center justify-center text-[10px] font-semibold transition-all duration-150 ease-out ${
+      className={`fixed pointer-events-none select-none z-[9999] rounded-full hidden lg:flex items-center justify-center text-sm font-semibold transition-all duration-150 ease-out ${
         variantStyles[variant]
       }`}
       style={{

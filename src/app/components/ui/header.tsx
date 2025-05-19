@@ -48,7 +48,7 @@ export default function Header() {
             onMouseEnter={() => setCursor('invisible')}
             onMouseLeave={resetCursor}
         >
-            <header className="text-black dark:text-white bg-[rgba(170,170,170,0.8)] dark:bg-[rgba(85,85,85,0.8)] block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+            <header className="text-black dark:text-white bg-[rgba(170,170,170,0.8)] dark:bg-[rgba(85,85,85,0.8)] backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
                 <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
                     <div className="flex item-center justify-start">
                         <Logo />
