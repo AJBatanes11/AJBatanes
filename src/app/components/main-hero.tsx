@@ -91,13 +91,13 @@ export default function MainHero() {
         )}
 
         {/* Overlay Text */}
-        <div className="relative z-20 flex items-center justify-center h-full pointer-events-none">
+        <div className="relative z-20 flex flex-col gap-5 items-center justify-center h-full pointer-events-none">
           <h1 className="text-white text-5xl font-bold text-center px-4">
             AJ Batanes.
           </h1>
-          <h1 className="text-white text-5xl font-bold text-center px-4">
+          <h2 className="text-white text-3xl font-bold text-center px-4">
             Your trusted e-commerce and web developer.
-          </h1>
+          </h2>
         </div>
       </div>
     </section>
