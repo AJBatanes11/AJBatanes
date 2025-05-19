@@ -8,10 +8,16 @@ import FooterAccordion from "./footer-accordion";
 import GradientBackground from "./gradient-bg";
 import { useCursorStore } from "../../store/cursorTooltipStore";
 import footerNavigations from "../../data/footer-navigations";
+import { useState } from "react";
 
 export default function Footer() {
 
     const { setCursor, resetCursor } = useCursorStore();
+    const [openAccordionIndex, setOpenAccordionIndex] = useState<number | null>(null);
+
+    const handleToggle = (index: number) => {
+        setOpenAccordionIndex(prev => (prev === index ? null : index));
+    };
 
     return (
         <footer 
@@ -20,7 +26,7 @@ export default function Footer() {
         onMouseLeave={resetCursor}
         >
             <GradientBackground />
-            <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[600px] relative pt-16 pb-10 lg:pt-40 lg:pb-10">
+            <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[700px] relative pt-16 pb-10 lg:pt-60">
                 <div className="w-full flex flex-col justify-between my-0 mx-auto px-6 md:px-8 lg:px-10">
                     {/* footer main */}
                     <div className="relative grid grid-cols-1 lg:grid-cols-7 gap-0 mb-14 lg:mb-0">
@@ -37,17 +43,19 @@ export default function Footer() {
                             <Socials invertColor />
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 lg:col-span-4 gap-0 lg:gap-5">
-                            {footerNavigations.map(navigation => (
-                                <FooterAccordion 
+                            {footerNavigations.map((navigation, index) => (
+                                <FooterAccordion
                                     key={navigation.category}
-                                    title={navigation.category} 
-                                    items={navigation.links} 
+                                    title={navigation.category}
+                                    items={navigation.links}
+                                    isOpen={openAccordionIndex === index}
+                                    onToggle={() => handleToggle(index)}
                                 />
                             ))}
                         </div>
                     </div>
                     {/* footer bottom */}
-                    <div className="flex flex-col justify-between gap-10 lg:gap-0 lg:flex-row">
+                    <div className="flex flex-col justify-between gap-10 lg:gap-0 sm:flex-row">
                         <div className="flex items-center justify-between gap-2 lg:gap-5">
                             <Logo />
                             <p className="text-sm lg:text-base text-center">

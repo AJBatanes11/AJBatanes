@@ -1,16 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 interface FooterAccordionProps {
   title: string;
   items: { label: string; href: string }[];
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export default function FooterAccordion({ title, items }: FooterAccordionProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function FooterAccordion({ title, items, isOpen, onToggle, }: FooterAccordionProps) {
   return (
     <div
       className={`
@@ -21,7 +20,7 @@ export default function FooterAccordion({ title, items }: FooterAccordionProps) 
     >
       <button
         className="flex flex-row justify-between items-center lg:cursor-default"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
       >
         <h4 className="text-xl lg:font-bold">{title}</h4>
         <span className="lg:hidden">{isOpen ? '-' : '+'}</span>
@@ -37,7 +36,10 @@ export default function FooterAccordion({ title, items }: FooterAccordionProps) 
         <ul className="flex flex-col gap-4 mb-2">
           {items.map((item, index) => (
             <li key={index}>
-              <Link href={item.href} className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700">
+              <Link
+                href={item.href}
+                className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700"
+              >
                 {item.label}
               </Link>
             </li>

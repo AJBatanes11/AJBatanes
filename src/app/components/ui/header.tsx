@@ -42,7 +42,7 @@ export default function Header() {
 
     return (
         <div
-            className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-10 px-4 py-3 transition-transform duration-300 ${
+            className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-transform duration-300 ${
             showHeader ? "translate-y-0" : "-translate-y-full"
             }`}
             onMouseEnter={() => setCursor('invisible')}

@@ -48,7 +48,8 @@ export default function ProjectCard({ project, className = "" } : ProjectCardPro
             w-[45%] sm:w-[47%] xl:w-[30%]
             h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
             float-left mt-6 sm:mt-8 xl:mt-10 mx-[1.5%]
-            shadow-[0_0_25px_10px_rgba(0,0,0,0.3)]
+            shadow-[0_0_25px_5px_rgba(0,0,0,0.2)]
+            dark:shadow-[0_0_25px_5px_rgba(255,255,255,0.2)]
             transition-transform duration-500 ease-in-out
             ${className}
             `}
