@@ -93,7 +93,10 @@ export default function MainHero() {
         {/* Overlay Text */}
         <div className="relative z-20 flex items-center justify-center h-full pointer-events-none">
           <h1 className="text-white text-5xl font-bold text-center px-4">
-            Trusted e-commerce and web developer.
+            AJ Batanes.
+          </h1>
+          <h1 className="text-white text-5xl font-bold text-center px-4">
+            Your trusted e-commerce and web developer.
           </h1>
         </div>
       </div>
