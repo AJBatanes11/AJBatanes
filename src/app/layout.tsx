@@ -6,6 +6,7 @@ import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
 import Wrapper from "./components/ui/wrapper";
 import CursorTooltip from "./components/ui/cursor-tooltip";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Header />
           <Wrapper>
             {children}
+            <SpeedInsights />
           </Wrapper>
           <Footer />
         </div>

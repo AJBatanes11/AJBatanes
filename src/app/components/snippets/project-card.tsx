@@ -1,7 +1,6 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { StaticImageData } from "next/image";
 import { Fragment, useState } from "react";
 import { useCursorStore } from "../../store/cursorTooltipStore";
 import ProjectDialogContent from "./project-dialog-content";
@@ -9,7 +8,7 @@ import ProjectDialogContent from "./project-dialog-content";
 interface ProjectCardProps {
     className?: string;
     project: {
-        cardBanner?: string | StaticImageData;
+        cardBanner?: string;
         cardTitle?: string;
         cardDescription?: string;
         overview?: string;
@@ -17,12 +16,12 @@ interface ProjectCardProps {
         service?: string;
         technology?: string;
         website?: string;
-        imageDesktop1?: string | StaticImageData;
-        imageMobile1?: string | StaticImageData;
+        imageDesktop1?: string;
+        imageMobile1?: string;
         heading1?: string;
         description1?: string;
-        imageDesktop2?: string | StaticImageData;
-        imageMobile2?: string | StaticImageData;
+        imageDesktop2?: string;
+        imageMobile2?: string;
         heading2?: string;
         description2?: string;
     };
@@ -37,7 +36,7 @@ export default function ProjectCard({ project, className = "" } : ProjectCardPro
         <>
             <div
             style={{
-                backgroundImage: `url(${(project.cardBanner as StaticImageData).src})`,
+                backgroundImage: `url(${project.cardBanner})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat"
@@ -58,16 +57,6 @@ export default function ProjectCard({ project, className = "" } : ProjectCardPro
             onMouseLeave={resetCursor}
             >
                 <div className="absolute inset-0 z-0 bg-gradient-to-t from-white/60 to-transparent dark:from-black/60 dark:to-transparent"></div>
-                {/* {project.cardBanner && (
-                <Image 
-                    src={project.cardBanner} 
-                    alt={project.cardTitle ?? "Project banner"} 
-                    width={750} 
-                    height={500}
-                    layout="responsive"
-                    className="rounded-xl"
-                />
-                )} */}
                 <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10">
                     {project.cardTitle && (
                         <div className="text-base xl:text-4xl">
