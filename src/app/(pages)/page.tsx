@@ -17,7 +17,7 @@ export default function Home() {
         </Head>
 
         <Container main dark>
-            {/* <MainHero /> */}
+            <MainHero />
         </Container>
         <Container small>
             <div className="container mx-auto py-40 px-4">
