@@ -6,12 +6,19 @@ import "aos/dist/aos.css";
 
 export default function AOSInit() {
   useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: "phone",
-      duration: 700,
-      easing: "ease-out-cubic",
-    });
+    const handleFirstScroll = () => {
+      AOS.init({
+        once: true,
+        disable: "phone",
+        duration: 700,
+        easing: "ease-out-cubic",
+      });
+      window.removeEventListener("scroll", handleFirstScroll);
+    };
+
+    window.addEventListener("scroll", handleFirstScroll);
+
+    return () => window.removeEventListener("scroll", handleFirstScroll);
   }, []);
 
   return null;

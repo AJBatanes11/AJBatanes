@@ -10,15 +10,15 @@ export default function MainHero() {
   const [buffered, setBuffered] = useState(0);
   const [playbackProgress, setPlaybackProgress] = useState(0);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const lastProgressUpdate = useRef(0);
   const lastTimeUpdate = useRef(0);
 
   const { setCursor, resetCursor } = useCursorStore();
 
-  // Play or pause video depending on click and ready state
+  // Play or pause video depending on click and readiness
   useEffect(() => {
     if (!videoRef.current) return;
 
@@ -34,19 +34,21 @@ export default function MainHero() {
     }
   }, [isClicked, isReady]);
 
-  // Intersection Observer to detect if section is in view (threshold 50%)
+  // Intersection Observer: detect if section is at least 50% visible
   useEffect(() => {
+    if (!sectionRef.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
       { threshold: 0.5 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
   }, []);
 
-  // Update cursor state based on inView, isClicked, and isReady
+  // Update cursor depending on inView, click, and video readiness
   useEffect(() => {
     if (!inView) {
       resetCursor();
@@ -60,12 +62,14 @@ export default function MainHero() {
     }
   }, [inView, isClicked, isReady, resetCursor, setCursor]);
 
+  // Handle clicking the video banner (toggle play)
   const handleClick = useCallback(() => {
     const willPlay = !isClicked;
     setIsClicked(willPlay);
     setCursor(willPlay ? "invisible" : "label", "Watch reel");
   }, [isClicked, setCursor]);
 
+  // Throttled video buffering progress update
   const handleProgress = useCallback(() => {
     if (!videoRef.current) return;
 
@@ -81,6 +85,7 @@ export default function MainHero() {
     lastProgressUpdate.current = now;
   }, []);
 
+  // Throttled playback progress update
   const handleTimeUpdate = useCallback(() => {
     if (!videoRef.current) return;
 
@@ -96,6 +101,7 @@ export default function MainHero() {
   return (
     <section
       ref={sectionRef}
+      aria-label="Video banner showcasing AJ Batanes"
       className="relative w-full h-auto cursor-pointer"
       onClick={handleClick}
       onMouseEnter={() => {
@@ -109,22 +115,23 @@ export default function MainHero() {
         {/* Background muted autoplay video */}
         {!isClicked && (
           <video
-            preload="auto"
             autoPlay
             muted
             loop
             playsInline
-            poster="/fallback-poster.jpg"
+            poster="/videos/poster.jpg"
             className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            src="/videos/AutoplayPlaceholder.mp4"
-          />
+          >
+            <source src="/videos/AutoplayPlaceholder.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
 
         {/* Foreground video with sound */}
         {isClicked && (
           <video
-            preload="auto"
-            poster="/fallback-poster.jpg"
+            preload="none"
+            poster="/videos/poster.jpg"
             ref={videoRef}
             onCanPlayThrough={() => setIsReady(true)}
             onProgress={handleProgress}
@@ -133,14 +140,11 @@ export default function MainHero() {
             controls={false}
             playsInline
           >
-            <source
-              src="/videos/VideoPlaceholder.mp4"
-              type="video/mp4"
-            />
+            <source src="/videos/VideoPlaceholder.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Optimize video rendering: only mount one <video> at a time */}
-        {/* Loading overlay */}
+
+        {/* Loading overlay while video loads */}
         {isClicked && !isReady && (
           <div className="absolute inset-0 bg-black flex flex-col items-center justify-center z-20">
             <p className="text-white text-lg animate-pulse">Loading video...</p>
@@ -158,8 +162,8 @@ export default function MainHero() {
           <div className="absolute bottom-0 left-0 w-full z-30">
             <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden">
               <div
-            className="bg-white h-full transition-all duration-200 ease-linear"
-            style={{ width: `${playbackProgress}%` }}
+                className="bg-white h-full transition-all duration-200 ease-linear"
+                style={{ width: `${playbackProgress}%` }}
               />
             </div>
           </div>

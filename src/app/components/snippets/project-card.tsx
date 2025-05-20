@@ -1,9 +1,8 @@
 "use client";
 
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import Image from "next/image";
+import React from "react";
 import { useCursorStore } from "../../store/cursorTooltipStore";
-import ProjectDialogContent from "./project-dialog-content";
 
 interface ProjectCardProps {
     className?: string;
@@ -25,59 +24,55 @@ interface ProjectCardProps {
         heading2?: string;
         description2?: string;
     };
+    onClick?: () => void;
 }
 
-export default function ProjectCard({ project, className = "" } : ProjectCardProps) {
-    
+const ProjectCard = React.memo(({ project, className = "", onClick }: ProjectCardProps) => {
     const { setCursor, resetCursor } = useCursorStore();
-    const [isOpen, setIsOpen] = useState(false);
-    
+
     return (
-        <>
-            <div
-            style={{
-                backgroundImage: `url(${project.cardBanner})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat"
+        <div
+            role="button"
+            tabIndex={0}
+            aria-label={`View details for ${project.cardTitle}`}
+            onClick={onClick}
+            onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onClick?.();
+                }
             }}
-            className={`
-            text-black dark:text-white
-            relative rounded-[20px] overflow-hidden bg-neutral-500
-            w-[45%] sm:w-[47%] xl:w-[30%]
-            h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
-            float-left mt-6 sm:mt-8 xl:mt-10 mx-[1.5%]
-            shadow-[0_0_25px_5px_rgba(0,0,0,0.2)]
-            dark:shadow-[0_0_25px_5px_rgba(255,255,255,0.2)]
-            transition-transform duration-500 ease-in-out
-            ${className}
-            `}
-            onClick={() => setIsOpen(true)}
             onMouseEnter={() => setCursor("label", "View Project")}
             onMouseLeave={resetCursor}
-            >
-                <div className="absolute inset-0 z-0 bg-gradient-to-t from-white/60 to-transparent dark:from-black/60 dark:to-transparent"></div>
-                <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10">
-                    {project.cardTitle && (
-                        <div className="text-base xl:text-4xl">
-                            {project.cardTitle}
-                        </div>
-                    )}
-                    {project.cardDescription && (
-                        <span className="text-xs">
-                            {project.cardDescription}
-                        </span>
-                    )}
-                </div>
+            className={`cursor-pointer relative rounded-[20px] overflow-hidden bg-neutral-500
+        w-[45%] sm:w-[47%] xl:w-[30%]
+        h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
+        float-left mt-6 sm:mt-8 xl:mt-10 mx-[1.5%]
+        shadow-[0_0_25px_5px_rgba(0,0,0,0.2)]
+        dark:shadow-[0_0_25px_5px_rgba(255,255,255,0.2)]
+        transition-transform duration-500 ease-in-out
+        ${className}`}
+        >
+            {project.cardBanner && (
+                <Image
+                    src={project.cardBanner}
+                    alt={project.cardTitle || "Project Banner"}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 30vw"
+                    style={{ objectFit: "cover", borderRadius: "20px" }}
+                    quality={75}
+                />
+            )}
+
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-white/60 to-transparent dark:from-black/60 dark:to-transparent" />
+
+            <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10 text-black dark:text-white">
+                {project.cardTitle && <div className="text-base xl:text-4xl">{project.cardTitle}</div>}
+                {project.cardDescription && <span className="text-xs">{project.cardDescription}</span>}
             </div>
-
-            <Transition appear show={isOpen} as={Fragment}>
-                <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40" aria-hidden="true" />
-                <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
-                    <ProjectDialogContent project={project} onClose={() => setIsOpen(false)} />
-                </Dialog>
-            </Transition>
-
-        </>
+        </div>
     );
-}
+});
+ProjectCard.displayName = "ProjectCard";
+
+export default ProjectCard;

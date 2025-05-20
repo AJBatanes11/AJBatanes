@@ -1,21 +1,20 @@
-// CursorTooltip.tsx
 'use client'
 
 import { useCursorStore } from '../../store/cursorTooltipStore'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function CursorTooltip() {
   const { variant, label } = useCursorStore()
   const cursorRef = useRef<HTMLDivElement>(null)
-  const [pos, setPos] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     let requestId: number
 
     const move = (e: MouseEvent) => {
+      if (!cursorRef.current) return
       cancelAnimationFrame(requestId)
       requestId = requestAnimationFrame(() => {
-        setPos({ x: e.clientX, y: e.clientY })
+        cursorRef.current!.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`
       })
     }
 
@@ -39,9 +38,7 @@ export default function CursorTooltip() {
       className={`fixed pointer-events-none select-none z-[9999] rounded-full hidden lg:flex items-center justify-center text-sm font-semibold transition-all duration-150 ease-out ${
         variantStyles[variant]
       }`}
-      style={{
-        transform: `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%)`,
-      }}
+      style={{ willChange: 'transform' }}
     >
       {label}
     </div>

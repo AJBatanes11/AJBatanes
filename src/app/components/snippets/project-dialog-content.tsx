@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "./custom-button";
 import Link from "next/link";
 import { useCursorStore } from "../../store/cursorTooltipStore";
+import { useEffect, useState } from "react";
 
 interface Project {
   overview?: string;
@@ -41,8 +42,17 @@ const CloseIcon = () => (
 );
 
 export default function ProjectDialogContent({ project, onClose }: ProjectDialogContentProps) {
+  const { setCursor, resetCursor } = useCursorStore();
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
-    const { setCursor, resetCursor } = useCursorStore();
+  useEffect(() => {
+    function checkMobile() {
+      setIsMobile(window.innerWidth < 640); // Tailwind's "sm" breakpoint is 640px
+    }
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div
@@ -51,17 +61,21 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
       className="fixed inset-0 bg-white backdrop-blur z-50 overflow-hidden rounded-lg m-5 sm:m-20"
     >
       <div className="relative w-full h-full">
-        <div className="absolute inset-0 overflow-y-auto"
-            onMouseEnter={() => setCursor("invisible")}
-            onMouseLeave={resetCursor}
+        <div
+          className="absolute inset-0 overflow-y-auto"
+          onMouseEnter={() => setCursor("invisible")}
+          onMouseLeave={resetCursor}
         >
           {/* Close Button */}
           <button
-            onClick={() => { resetCursor(); onClose(); }}
+            onClick={() => {
+              resetCursor();
+              onClose();
+            }}
             onMouseEnter={() => setCursor("label", "Close")}
             onMouseLeave={() => setCursor("invisible")}
             aria-label="Close project details"
-            className="fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
+            className="fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center w-6 h-6"
           >
             <CloseIcon />
           </button>
@@ -92,49 +106,63 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               )}
             </aside>
           </section>
+
           {/* Visuals + Content Sections */}
-          {project.imageDesktop1 && (
-            <Image
-              src={project.imageDesktop1}
-              alt="Project desktop screenshot"
-              className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
-              loading="lazy"
-              width={3582}
-              sizes="100vw"
-            />
-          )}
-          {project.imageMobile1 && (
-            <Image
-              src={project.imageMobile1}
-              alt="Project mobile screenshot"
-              className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
-              loading="lazy"
-              width={1853}
-              sizes="100vw"
-            />
+
+          {/* Image 1 */}
+          {isMobile !== null && (
+            <>
+              {isMobile && project.imageMobile1 ? (
+                <Image
+                  src={project.imageMobile1}
+                  alt="Project mobile screenshot"
+                  className="w-full rounded-3xl mb-10 sm:mb-20"
+                  loading="lazy"
+                  width={1853}
+                  height={1853}
+                  sizes="100vw"
+                />
+              ) : !isMobile && project.imageDesktop1 ? (
+                <Image
+                  src={project.imageDesktop1}
+                  alt="Project desktop screenshot"
+                  className="w-full rounded-3xl mb-10 sm:mb-20"
+                  loading="lazy"
+                  width={3582}
+                  height={1853}
+                  sizes="100vw"
+                />
+              ) : null}
+            </>
           )}
 
           <ContentBlock heading={project.heading1} description={project.description1} />
 
-          {project.imageDesktop2 && (
-            <Image
-              src={project.imageDesktop2}
-              alt="Additional desktop screenshot"
-              className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
-              loading="lazy"
-              width={3582}
-              sizes="100vw"
-            />
-          )}
-          {project.imageMobile2 && (
-            <Image
-              src={project.imageMobile2}
-              alt="Additional mobile screenshot"
-              className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
-              loading="lazy"
-              width={1853}
-              sizes="100vw"
-            />
+          {/* Image 2 */}
+          {isMobile !== null && (
+            <>
+              {isMobile && project.imageMobile2 ? (
+                <Image
+                  src={project.imageMobile2}
+                  alt="Additional mobile screenshot"
+                  className="w-full rounded-3xl mb-10 sm:mb-20"
+                  loading="lazy"
+                  width={1853}
+                  height={1853}
+                  sizes="100vw"
+                />
+              ) : !isMobile && project.imageDesktop2 ? (
+                <Image
+                  src={project.imageDesktop2}
+                  alt="Additional desktop screenshot"
+                  className="w-full rounded-3xl mb-10 sm:mb-20"
+                  loading="lazy"
+                  width={3582}
+                  height={1853}
+                  sizes="100vw"
+                />
+              ) : null}
+            </>
           )}
 
           <ContentBlock heading={project.heading2} description={project.description2} />
