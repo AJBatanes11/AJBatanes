@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Button from "./custom-button";
 import Link from "next/link";
 import { useCursorStore } from "../../store/cursorTooltipStore";
@@ -11,12 +11,12 @@ interface Project {
   service?: string;
   technology?: string;
   website?: string;
-  imageDesktop1?: string;
-  imageMobile1?: string;
+  imageDesktop1?: string | StaticImageData;
+  imageMobile1?: string | StaticImageData;
   heading1?: string;
   description1?: string;
-  imageDesktop2?: string;
-  imageMobile2?: string;
+  imageDesktop2?: string | StaticImageData;
+  imageMobile2?: string | StaticImageData;
   heading2?: string;
   description2?: string;
 }
@@ -55,6 +55,7 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
             onMouseEnter={() => setCursor("invisible")}
             onMouseLeave={resetCursor}
         >
+
           {/* Close Button */}
           <button
             onClick={() => { resetCursor(); onClose(); }}
@@ -65,6 +66,7 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
           >
             <CloseIcon />
           </button>
+
           {/* Intro Section */}
           <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
             <div className="col-span-2 flex flex-col items-start justify-center p-10">
@@ -92,6 +94,7 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               )}
             </aside>
           </section>
+
           {/* Visuals + Content Sections */}
           {project.imageDesktop1 && (
             <Image
@@ -99,7 +102,6 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               alt="Project desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
               loading="lazy"
-              width={3582}
               sizes="100vw"
             />
           )}
@@ -109,7 +111,6 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               alt="Project mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
               loading="lazy"
-              width={1853}
               sizes="100vw"
             />
           )}
@@ -122,7 +123,6 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               alt="Additional desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
               loading="lazy"
-              width={3582}
               sizes="100vw"
             />
           )}
@@ -132,7 +132,6 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               alt="Additional mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
               loading="lazy"
-              width={1853}
               sizes="100vw"
             />
           )}
