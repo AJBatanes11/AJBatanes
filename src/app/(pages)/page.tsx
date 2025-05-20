@@ -2,22 +2,12 @@ import Link from "next/link";
 import MainHero from "../components/main-hero";
 import Button from "../components/snippets/custom-button";
 import Container from "../components/ui/container";
-import Head from "next/head";
 
 export default function Home() {
     return (
         <>
-        <Head>
-        <link
-            rel="preload"
-            href="/videos/poster.jpg"
-            as="image"
-            type="image/jpeg"
-        />
-        </Head>
-
         <Container main dark>
-            {/* <MainHero /> */}
+            <MainHero />
         </Container>
         <Container small>
             <div className="container mx-auto py-40 px-4">
