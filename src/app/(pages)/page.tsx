@@ -34,9 +34,9 @@ export default function Home() {
           <div className="grid grid-cols-1 xl:grid-cols-5 gap-y-9 md:gap-20 items-end">
             <div className="md:col-span-3">
               <h2 className="text-4xl sm:text-6xl leading-tight mb-5">
-                I help brands build fast, scalable, and conversion-focused{" "}
+                I help brands build fast, scalable, and conversion-focused
                 <br />
-                e-commerce stores that stand out and sell more.
+                eCommerce stores that stand out and sell.
               </h2>
               <div className="flex flex-col md:flex-row justify-start items-start gap-3">
                 <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
@@ -46,7 +46,7 @@ export default function Home() {
                   2+ Years of e-commerce experience
                 </div>
                 <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
-                  15+ Shopify sites launched
+                  Worked with global brands and startups
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function Home() {
               <p className="text-lg md:text-2xl">
                 As a developer and e-commerce specialist, I work with growing
                 businesses to design, develop, and optimize online stores that
-                not only look great—but also drive results.
+                not only look great—but also deliver real results.
               </p>
               <Link href="/contact">
                 <Button
