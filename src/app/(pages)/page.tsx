@@ -3,6 +3,7 @@ import MainHero from "../components/mainHero";
 import Button from "../components/snippets/customButton";
 import Container from "../components/ui/container";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -29,27 +30,28 @@ export default function Home() {
         {/* <h1>Main hero</h1> */}
       </Container>
       <Container small>
-        <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-20 items-end">
+        <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-y-9 md:gap-20 items-end">
             <div className="md:col-span-3">
-              <h2 className="text-3xl md:text-6xl leading-tight mb-5">
-                I help brands build fast, scalable, and conversion-focused
+              <h2 className="text-4xl sm:text-6xl leading-tight mb-5">
+                I help brands build fast, scalable, and conversion-focused{" "}
+                <br />
                 e-commerce stores that stand out and sell more.
               </h2>
-              <div className="flex justify-start items-center gap-3">
-                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+              <div className="flex flex-col md:flex-row justify-start items-start gap-3">
+                <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   15+ Shopify sites launched
                 </div>
-                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   2+ Years of e-commerce experience
                 </div>
-                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   15+ Shopify sites launched
                 </div>
               </div>
             </div>
             <div className="md:col-span-2">
-              <p className="text-base md:text-xl">
+              <p className="text-lg md:text-2xl">
                 As a developer and e-commerce specialist, I work with growing
                 businesses to design, develop, and optimize online stores that
                 not only look great—but also drive results.
@@ -78,37 +80,170 @@ export default function Home() {
         </div>
       </Container>
       <Container dark small>
-        <div className="container mx-auto py-10 sm:py-40 px-4">
-          <h2 className="text-center mb-20 text-3xl md:text-5xl font-semibold leading-tight">
+        <div className="container relative max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12">
+          <div className="clients__bg-one"></div>
+          <div className="clients__bg-two"></div>
+          <h2 className="text-3xl sm:text-4xl text-center leading-tight mb-10 lg:mb-14">
             Trusted by world-class e-commerce businesses.
           </h2>
-          <div className="grid grid-cols-4 justify-center items-center gap-10">
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
-            <div className="text-center">*Brand Logo</div>
+          <div className="grid grid-cols-3 lg:grid-cols-4 justify-center items-center gap-y-8 gap-x-12 lg:gap-x-24">
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex justify-center items-center p-2 text-center">
+              <Image
+                src="/brand-logos/penshoppe.png"
+                alt="Penshoppe logo"
+                width={150}
+                height={150}
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </Container>
-      {/* <Container small>
+      <Container small>
         <div className="container mx-auto py-10 sm:py-40 px-4">
           <h2 className="text-center mb-20 text-3xl md:text-5xl font-semibold leading-tight">
             My Services
           </h2>
+          <p className="text-center mb-40 text-lg md:text-2xl font-semibold leading-tight">
+            Stay tuned...
+          </p>
         </div>
-      </Container> */}
+      </Container>
     </>
   );
 }

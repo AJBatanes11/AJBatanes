@@ -56,30 +56,29 @@ export default function ProjectDialogContent({
       aria-modal="true"
       aria-labelledby="project-dialog-title"
       aria-describedby="project-dialog-description"
-      className="fixed inset-0 bg-white-custom text-black-custom z-50 overflow-hidden rounded-lg m-5 sm:m-20"
+      className="fixed inset-0 bg-white-custom text-black-custom z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
     >
       <div className="relative w-full h-full">
         <div
           className="absolute inset-0 overflow-y-auto"
-          onMouseEnter={() => setCursor("invisible")}
+          onMouseEnter={() => setCursor("invert")}
           onMouseLeave={resetCursor}
         >
-          {/* Close Button */}
-          <button
-            onClick={() => {
-              resetCursor();
-              onClose();
-            }}
-            onMouseEnter={() => setCursor("label", "Close")}
-            onMouseLeave={() => setCursor("invisible")}
-            aria-label="Close project details"
-            className="fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
-          >
-            <CloseIcon />
-          </button>
-
           {/* Intro Section */}
           <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                resetCursor();
+                onClose();
+              }}
+              onMouseEnter={() => setCursor("label", "Close")}
+              onMouseLeave={() => setCursor("invisible")}
+              aria-label="Close project details"
+              className="text-black-custom dark:text-white-custom fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
+            >
+              <CloseIcon />
+            </button>
             <div className="col-span-2 flex flex-col items-start justify-center p-10">
               <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">
                 The Brief
@@ -98,7 +97,7 @@ export default function ProjectDialogContent({
                     className="text-blue-900 underline break-all mb-4 sm:mb-8"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onMouseEnter={() => setCursor("label", "Go to Link")}
+                    onMouseEnter={() => setCursor("labelInvert", "Go to Link")}
                     onMouseLeave={() => setCursor("invisible")}
                   >
                     {project.website}

@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-auto`}
+        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
       >
         <div className="noise_bg"></div>
         <CursorTooltip />

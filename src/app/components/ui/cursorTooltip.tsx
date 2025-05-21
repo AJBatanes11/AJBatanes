@@ -26,11 +26,13 @@ export default function CursorTooltip() {
   }, []);
 
   const variantStyles: Record<string, string> = {
-    default: "w-2 h-2 bg-black-custom dark:bg-white-custom rounded-full",
+    default: "w-2 h-2 bg-black-custom dark:bg-white-custom",
+    invert: "w-2 h-2 bg-white-custom dark:bg-black-custom",
     label:
-      "w-24 h-24 bg-black-custom dark:bg-white-custom rounded-full flex items-center justify-center text-sm font-semibold text-white-custom dark:text-black-custom",
+      "w-24 h-24 bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom flex items-center justify-center",
+    labelInvert:
+      "w-24 h-24 bg-white-custom dark:bg-black-custom text-black-custom dark:text-white-custom flex items-center justify-center",
     invisible: "w-8 h-8 bg-transparent",
-    zoom: "w-20 h-20 bg-yellow-400 text-white-custom rounded-full flex items-center justify-center text-sm font-semibold",
   };
 
   return (
@@ -43,7 +45,7 @@ export default function CursorTooltip() {
         transform: `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%)`,
       }}
     >
-      {variant === "label" || variant === "zoom" ? label : null}
+      {variant === "label" || variant === "labelInvert" ? label : null}
     </div>
   );
 }

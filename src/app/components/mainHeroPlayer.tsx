@@ -20,9 +20,9 @@ export default function MainHeroPlayer() {
       videoRef.current
         .play()
         .catch((err) => console.warn("Autoplay failed:", err));
-    } else if (!isClicked && videoRef.current) {
+    } else if (videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      videoRef.current.muted = true;
     }
   }, [isClicked, isReady]);
 
@@ -47,6 +47,18 @@ export default function MainHeroPlayer() {
     }
   }, [inView, isClicked, isReady, resetCursor, setCursor]);
 
+  // Close player on ESC
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isClicked) {
+        setIsClicked(false);
+        resetCursor();
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isClicked, resetCursor]);
+
   const handleClick = () => {
     const willPlay = !isClicked;
     setIsClicked(willPlay);
@@ -65,40 +77,41 @@ export default function MainHeroPlayer() {
         if (!isClicked) resetCursor();
       }}
     >
-      {/* Foreground Video with Sound */}
-      {isClicked && (
-        <video
-          ref={videoRef}
-          onCanPlayThrough={() => setIsReady(true)}
-          onProgress={() => {
-            if (videoRef.current) {
-              const bufferedEnd = videoRef.current.buffered.length
-                ? videoRef.current.buffered.end(0)
-                : 0;
-              const duration = videoRef.current.duration || 1;
-              const percent = Math.min((bufferedEnd / duration) * 100, 100);
-              setBuffered(percent);
-            }
-          }}
-          onTimeUpdate={() => {
-            if (videoRef.current) {
-              const percent =
-                (videoRef.current.currentTime / videoRef.current.duration) *
-                100;
-              setPlaybackProgress(percent);
-            }
-          }}
-          className="w-full h-full object-cover"
-          controls={false}
-          playsInline
-          preload="metadata"
-        >
-          <source
-            src="https://cdn.sanity.io/files/8nn8fua5/production/4c749533161fc77c899a376ec6cd6da38973772f.mp4"
-            type="video/mp4"
-          />
-        </video>
-      )}
+      {/* Foreground Video with Sound - always mounted */}
+      <video
+        ref={videoRef}
+        onCanPlayThrough={() => setIsReady(true)}
+        onProgress={() => {
+          if (videoRef.current) {
+            const bufferedEnd = videoRef.current.buffered.length
+              ? videoRef.current.buffered.end(0)
+              : 0;
+            const duration = videoRef.current.duration || 1;
+            const percent = Math.min((bufferedEnd / duration) * 100, 100);
+            setBuffered(percent);
+          }
+        }}
+        onTimeUpdate={() => {
+          if (videoRef.current) {
+            const percent =
+              (videoRef.current.currentTime / videoRef.current.duration) * 100;
+            setPlaybackProgress(percent);
+          }
+        }}
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
+          isClicked ? "opacity-100" : "opacity-0"
+        }`}
+        controls={false}
+        playsInline
+        preload="metadata"
+        muted={!isClicked}
+        autoPlay={isClicked}
+      >
+        <source
+          src="https://cdn.sanity.io/files/8nn8fua5/production/4c749533161fc77c899a376ec6cd6da38973772f.mp4"
+          type="video/mp4"
+        />
+      </video>
 
       {/* Loading Overlay */}
       {isClicked && !isReady && (
@@ -120,7 +133,7 @@ export default function MainHeroPlayer() {
         <div className="absolute bottom-0 left-0 w-full z-30">
           <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden">
             <div
-              className="bg-white h-full transition-all duration-200 ease-linear"
+              className="bg-white h-full transition-all duration-100 ease-linear"
               style={{ width: `${playbackProgress}%` }}
             />
           </div>

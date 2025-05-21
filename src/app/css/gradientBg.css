@@ -207,3 +207,50 @@
 
   opacity: 0.7;
 }
+
+/* static */
+.clients__bg-one {
+  position: absolute;
+  top: 80px;
+  left: 180px;
+  width: 949px;
+  height: 949px;
+  transform: rotate(152.044deg);
+  border-radius: 949px;
+  background: linear-gradient(
+    rgba(0, 233, 228, 0.1) 0%,
+    rgba(160, 79, 244, 0.15) 100%
+  );
+  filter: blur(100px);
+}
+
+.clients__bg-two {
+  position: absolute;
+  right: -420px;
+  bottom: -270px;
+  width: 949px;
+  height: 949px;
+  transform: rotate(152.044deg);
+  border-radius: 949px;
+  opacity: 0.6;
+  background: linear-gradient(
+    rgba(0, 233, 228, 0.1) 0%,
+    rgba(160, 79, 244, 0.2) 100%
+  );
+  filter: blur(100px);
+}
+
+@media (max-width: 1023px) {
+  .clients__bg-one {
+    top: 100px;
+    left: -200px;
+    width: 400px;
+    height: 500px;
+  }
+  .clients__bg-two {
+    right: -200px;
+    bottom: 200px;
+    width: 400px;
+    height: 400px;
+  }
+}
