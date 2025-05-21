@@ -29,7 +29,7 @@ export default function Home() {
         {/* <h1>Main hero</h1> */}
       </Container>
       <Container small>
-        <div className="container max-w-screen-2xl mx-auto py-40 px-4">
+        <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-20 items-end">
             <div className="md:col-span-3">
               <h2 className="text-3xl md:text-6xl leading-tight mb-5">
@@ -37,13 +37,13 @@ export default function Home() {
                 e-commerce stores that stand out and sell more.
               </h2>
               <div className="flex justify-start items-center gap-3">
-                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   15+ Shopify sites launched
                 </div>
-                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   2+ Years of e-commerce experience
                 </div>
-                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                <div className="rounded-md py-1 px-2 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                   15+ Shopify sites launched
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </Container>
       <Container dark small>
-        <div className="container mx-auto py-40 px-4">
+        <div className="container mx-auto py-10 sm:py-40 px-4">
           <h2 className="text-center mb-20 text-3xl md:text-5xl font-semibold leading-tight">
             Trusted by world-class e-commerce businesses.
           </h2>
@@ -102,13 +102,13 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Container small>
-        <div className="container mx-auto py-40 px-4">
+      {/* <Container small>
+        <div className="container mx-auto py-10 sm:py-40 px-4">
           <h2 className="text-center mb-20 text-3xl md:text-5xl font-semibold leading-tight">
             My Services
           </h2>
         </div>
-      </Container>
+      </Container> */}
     </>
   );
 }

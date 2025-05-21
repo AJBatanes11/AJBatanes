@@ -52,7 +52,7 @@ export default function Footer() {
               </div>
             </div>
             {/* footer bottom */}
-            <div className="flex flex-col justify-between gap-10 lg:gap-0 sm:flex-row">
+            <div className="flex flex-col justify-between gap-5 lg:gap-0 sm:flex-row">
               <div className="flex items-center justify-between gap-2 lg:gap-5">
                 <Logo />
                 <p className="text-sm lg:text-base text-center">

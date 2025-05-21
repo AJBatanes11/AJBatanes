@@ -124,6 +124,7 @@ export default function Header() {
               <li key={href}>
                 <Link
                   href={href}
+                  onClick={toggleMobileNav}
                   className="text-3xl transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
                 >
                   {label}
