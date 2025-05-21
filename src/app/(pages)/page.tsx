@@ -36,7 +36,7 @@ export default function Home() {
               <h2 className="text-4xl sm:text-6xl leading-tight mb-5">
                 I help brands build fast, scalable, and conversion-focused
                 <br />
-                eCommerce stores that stand out and sell.
+                e-commerce stores that stand out and sell.
               </h2>
               <div className="flex flex-col md:flex-row justify-start items-start gap-3">
                 <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">

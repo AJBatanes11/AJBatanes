@@ -127,7 +127,7 @@ const projects = [
   {
     cardBanner: chakoLabCard,
     cardTitle: "Chako Lab",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Build",
     overview: "Refreshed Chako Lab’s storefront to feel more aligned with their playful brand and natural product positioning.",
     industry: "Pet Health & Wellness",
     service: "Website Redesign, Custom Sections, Theming",
@@ -145,7 +145,7 @@ const projects = [
   {
     cardBanner: theCutBuddyCard,
     cardTitle: "The Cut Buddy",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Modernized layout and improved page performance for a grooming brand featured on Shark Tank.",
     industry: "Grooming Tools",
     service: "Redesign, Custom Dev, Speed Optimization",
@@ -163,7 +163,7 @@ const projects = [
   {
     cardBanner: theHoopGangCard,
     cardTitle: "The Hoop Gang",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Redesigned The Hoop Gang’s Shopify store with a strong emphasis on identity and exclusive drops.",
     industry: "Streetwear & Lifestyle",
     service: "Visual Design, Shopify Dev, Custom Sections",
@@ -181,7 +181,7 @@ const projects = [
   {
     cardBanner: hillsideGardenCard,
     cardTitle: "Hillside Garden",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Overhauled Hillside Garden’s website with nature-inspired aesthetics and structured collection browsing.",
     industry: "Gardening & Landscaping",
     service: "Website Redesign, Dev, UX Enhancement",
@@ -199,7 +199,7 @@ const projects = [
   {
     cardBanner: henkanCollagenCard,
     cardTitle: "Henkan Collagen",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Refreshed Henkan’s website to build trust and clarity around the product benefits and science.",
     industry: "Beauty & Wellness",
     service: "Redesign, Custom Dev, Brand Strategy",
@@ -217,7 +217,7 @@ const projects = [
   {
     cardBanner: soulAesthetixCard,
     cardTitle: "Soul Aesthetix",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Build",
     overview: "Translated Soul Aesthetix's vibrant branding into an interactive and seamless Shopify experience.",
     industry: "Skincare & Beauty",
     service: "Shopify Dev, Brand Integration",
@@ -235,7 +235,7 @@ const projects = [
   {
     cardBanner: arianaSpicesCard,
     cardTitle: "Ariana Spices",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Rebuilt Ariana Spices with a robust Shopify foundation and flavorful product presentation.",
     industry: "Spices & Food Retail",
     service: "Redesign, Dev, UX Improvements",
@@ -253,7 +253,7 @@ const projects = [
   {
     cardBanner: launchToProfitCard,
     cardTitle: "Launch to Profit Media",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Development",
     overview: "Developed the marketing agency’s main site with clear service flows and brand consistency.",
     industry: "Digital Marketing & Media",
     service: "Design, Dev, Structure Optimization",
@@ -271,7 +271,7 @@ const projects = [
   {
     cardBanner: modAndNobleCard,
     cardTitle: "Mod & Noble",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Build",
     overview: "Handled end-to-end site creation with efficient code and process refinement.",
     industry: "Lifestyle & Design",
     service: "Full Website Dev, Process Consulting",
@@ -289,7 +289,7 @@ const projects = [
   {
     cardBanner: tiwflixCard,
     cardTitle: "Tiwflix",
-    cardDescription: "Store Building & Development",
+    cardDescription: "Design & Build",
     overview: "Built a mini Netflix-style platform using React, external API, and responsive layout.",
     industry: "Personal Project / Entertainment",
     service: "Design, Dev, API Integration",
