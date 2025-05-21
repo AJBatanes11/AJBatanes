@@ -26,11 +26,11 @@ export default function CursorTooltip() {
   }, []);
 
   const variantStyles: Record<string, string> = {
-    default: "w-2 h-2 bg-black dark:bg-white rounded-full",
+    default: "w-2 h-2 bg-black-custom dark:bg-white-custom rounded-full",
     label:
-      "w-24 h-24 bg-black dark:bg-white rounded-full flex items-center justify-center text-sm font-semibold text-white dark:text-black",
+      "w-24 h-24 bg-black-custom dark:bg-white-custom rounded-full flex items-center justify-center text-sm font-semibold text-white-custom dark:text-black-custom",
     invisible: "w-8 h-8 bg-transparent",
-    zoom: "w-20 h-20 bg-yellow-400 text-black rounded-full flex items-center justify-center text-sm font-semibold",
+    zoom: "w-20 h-20 bg-yellow-400 text-white-custom rounded-full flex items-center justify-center text-sm font-semibold",
   };
 
   return (

@@ -56,7 +56,7 @@ export default function ProjectDialogContent({
       aria-modal="true"
       aria-labelledby="project-dialog-title"
       aria-describedby="project-dialog-description"
-      className="fixed inset-0 bg-white backdrop-blur z-50 overflow-hidden rounded-lg m-5 sm:m-20"
+      className="fixed inset-0 bg-white-custom text-black-custom z-50 overflow-hidden rounded-lg m-5 sm:m-20"
     >
       <div className="relative w-full h-full">
         <div
@@ -114,6 +114,8 @@ export default function ProjectDialogContent({
               src={project.imageDesktop1}
               alt="Project desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
+              width={3582}
+              height={1853}
               sizes="100vw"
             />
           )}
@@ -122,6 +124,8 @@ export default function ProjectDialogContent({
               src={project.imageMobile1}
               alt="Project mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
+              width={1853}
+              height={1853}
               sizes="100vw"
             />
           )}
@@ -136,6 +140,8 @@ export default function ProjectDialogContent({
               src={project.imageDesktop2}
               alt="Additional desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
+              width={3582}
+              height={1853}
               sizes="100vw"
             />
           )}
@@ -144,6 +150,8 @@ export default function ProjectDialogContent({
               src={project.imageMobile2}
               alt="Additional mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
+              width={1853}
+              height={1853}
               sizes="100vw"
             />
           )}

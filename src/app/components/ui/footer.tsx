@@ -9,7 +9,7 @@ import CursorClientWrapper from "./cursorTooltipClientWrapper";
 
 export default function Footer() {
   return (
-    <footer className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-black dark:bg-white text-white dark:text-black lg:-z-10">
+    <footer className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom lg:-z-10">
       <GradientBackground />
       <CursorClientWrapper cursorVariant="invisible">
         <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[700px] relative pt-16 pb-10 lg:pt-60">

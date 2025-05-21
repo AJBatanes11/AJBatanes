@@ -102,11 +102,13 @@ export default function MainHeroPlayer() {
 
       {/* Loading Overlay */}
       {isClicked && !isReady && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center z-20">
-          <p className="text-white text-lg animate-pulse">Loading video...</p>
-          <div className="mt-4 w-1/2 bg-white/20 h-1 rounded-full overflow-hidden">
+        <div className="absolute top-0 left-0 bg-white-custom dark:bg-black-custom w-full h-full flex flex-col items-center justify-center z-20">
+          <p className="text-black-custom dark:text-white-custom text-lg animate-pulse">
+            Loading video...
+          </p>
+          <div className="mt-4 w-1/2 bg-light-glass h-1 rounded-full overflow-hidden">
             <div
-              className="bg-white h-full transition-all duration-300 ease-in-out"
+              className="bg-white-custom h-full transition-all duration-300 ease-in-out"
               style={{ width: `${buffered}%` }}
             />
           </div>

@@ -25,14 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px]`}
+        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-auto`}
       >
+        <div className="noise_bg"></div>
         <CursorTooltip />
-        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-white-custom dark:bg-black-custom text-black-custom dark:text-white-custom transition-colors duration-300">
           <Header />
-            <Wrapper>
-              {children}
-            </Wrapper>
+          <Wrapper>{children}</Wrapper>
           <Footer />
         </div>
       </body>

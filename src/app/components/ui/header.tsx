@@ -48,7 +48,7 @@ export default function Header() {
       onMouseEnter={() => setCursor("invisible")}
       onMouseLeave={resetCursor}
     >
-      <header className="text-black dark:text-white bg-[rgba(170,170,170,0.8)] dark:bg-[rgba(85,85,85,0.8)] backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+      <header className="text-black-custom dark:text-white-custom bg-light-glass dark:bg-dark-glass backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
           <div className="flex item-center justify-start">
             <Logo />
@@ -59,7 +59,7 @@ export default function Header() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-base text-black dark:text-white transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-300"
+                    className="text-base text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
                   >
                     {label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Header() {
           <div className="items-center justify-end flex lg:hidden">
             <button
               onClick={toggleMobileNav}
-              className="text-black dark:text-white transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-300"
+              className="text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ export default function Header() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-3xl transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-300"
+                  className="text-3xl transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
                 >
                   {label}
                 </Link>
@@ -133,7 +133,7 @@ export default function Header() {
           </ul>
 
           <div className="px-4 p-5 pb-10 h-auto flex items-start justify-center flex-col gap-2">
-            <p className="text-lg text-black dark:text-white transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-300">
+            <p className="text-lg text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass">
               I would love to hear from you!
             </p>
             <Link href="/contact">

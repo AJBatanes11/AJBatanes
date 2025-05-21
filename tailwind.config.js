@@ -18,7 +18,13 @@ module.exports = {
         '5xl': ['3rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
         '6xl': ['4rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
         '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
-      }
+      },
+      colors: {
+        'black-custom': '#252422ff',
+        'white-custom': '#f4f4f4ff',
+        'light-glass': 'rgba(170,170,170,0.8)',
+        'dark-glass': 'rgba(85,85,85,0.8)',
+      },
     },
   },
   plugins: [

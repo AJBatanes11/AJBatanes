@@ -23,25 +23,33 @@ export default function Home() {
           crossOrigin="anonymous"
         />
       </Head>
+
       <Container main dark>
         <MainHero />
+        {/* <h1>Main hero</h1> */}
       </Container>
       <Container small>
-        <div className="container mx-auto py-40 px-4">
+        <div className="container max-w-screen-2xl mx-auto py-40 px-4">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-20 items-end">
             <div className="md:col-span-3">
-              <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-                I help brands build
-                <br />
-                fast, scalable, and conversion-focused
-                <br />
-                Shopify stores
-                <br />
-                that stand out and sell more.
+              <h2 className="text-3xl md:text-6xl leading-tight mb-5">
+                I help brands build fast, scalable, and conversion-focused
+                e-commerce stores that stand out and sell more.
               </h2>
+              <div className="flex justify-start items-center gap-3">
+                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                  15+ Shopify sites launched
+                </div>
+                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                  2+ Years of e-commerce experience
+                </div>
+                <div className="rounded-md py-1 px-2 text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
+                  15+ Shopify sites launched
+                </div>
+              </div>
             </div>
             <div className="md:col-span-2">
-              <p className="text-base md:text-lg text-gray-600">
+              <p className="text-base md:text-xl">
                 As a developer and e-commerce specialist, I work with growing
                 businesses to design, develop, and optimize online stores that
                 not only look great—but also drive results.
