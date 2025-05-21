@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import Button from "./custom-button";
+import Button from "./customButton";
 import Link from "next/link";
 import { useCursorStore } from "../../store/cursorTooltipStore";
 
@@ -36,29 +36,40 @@ const CloseIcon = () => (
     className="size-6"
     aria-hidden="true"
   >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 18L18 6M6 6l12 12"
+    />
   </svg>
 );
 
-export default function ProjectDialogContent({ project, onClose }: ProjectDialogContentProps) {
-
-    const { setCursor, resetCursor } = useCursorStore();
+export default function ProjectDialogContent({
+  project,
+  onClose,
+}: ProjectDialogContentProps) {
+  const { setCursor, resetCursor } = useCursorStore();
 
   return (
     <div
       role="dialog"
       aria-modal="true"
+      aria-labelledby="project-dialog-title"
+      aria-describedby="project-dialog-description"
       className="fixed inset-0 bg-white backdrop-blur z-50 overflow-hidden rounded-lg m-5 sm:m-20"
     >
       <div className="relative w-full h-full">
-        <div className="absolute inset-0 overflow-y-auto"
-            onMouseEnter={() => setCursor("invisible")}
-            onMouseLeave={resetCursor}
+        <div
+          className="absolute inset-0 overflow-y-auto"
+          onMouseEnter={() => setCursor("invisible")}
+          onMouseLeave={resetCursor}
         >
-
           {/* Close Button */}
           <button
-            onClick={() => { resetCursor(); onClose(); }}
+            onClick={() => {
+              resetCursor();
+              onClose();
+            }}
             onMouseEnter={() => setCursor("label", "Close")}
             onMouseLeave={() => setCursor("invisible")}
             aria-label="Close project details"
@@ -70,7 +81,9 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
           {/* Intro Section */}
           <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
             <div className="col-span-2 flex flex-col items-start justify-center p-10">
-              <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">The Brief</h3>
+              <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">
+                The Brief
+              </h3>
               <p>{project.overview}</p>
             </div>
             <aside className="bg-neutral-100 flex flex-col items-start justify-center p-10">
@@ -101,7 +114,6 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               src={project.imageDesktop1}
               alt="Project desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
-              loading="lazy"
               sizes="100vw"
             />
           )}
@@ -110,19 +122,20 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               src={project.imageMobile1}
               alt="Project mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
-              loading="lazy"
               sizes="100vw"
             />
           )}
 
-          <ContentBlock heading={project.heading1} description={project.description1} />
+          <ContentBlock
+            heading={project.heading1}
+            description={project.description1}
+          />
 
           {project.imageDesktop2 && (
             <Image
               src={project.imageDesktop2}
               alt="Additional desktop screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
-              loading="lazy"
               sizes="100vw"
             />
           )}
@@ -131,12 +144,14 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               src={project.imageMobile2}
               alt="Additional mobile screenshot"
               className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
-              loading="lazy"
               sizes="100vw"
             />
           )}
 
-          <ContentBlock heading={project.heading2} description={project.description2} />
+          <ContentBlock
+            heading={project.heading2}
+            description={project.description2}
+          />
 
           {/* CTA Section */}
           <section className="m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-gray-100 rounded-3xl flex flex-col justify-center relative">
@@ -145,10 +160,21 @@ export default function ProjectDialogContent({ project, onClose }: ProjectDialog
               e-commerce.
             </h2>
             <Link href="/contact">
-              <Button className="btn-white btn-arrow mb-5" ariaLabel="Contact support">
+              <Button
+                className="btn-white btn-arrow mb-5"
+                ariaLabel="Contact support"
+              >
                 Book a Free Consult
-                <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5" stroke="currentColor" />
+                <svg
+                  width="13"
+                  height="12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
+                    stroke="currentColor"
+                  />
                 </svg>
               </Button>
             </Link>
@@ -169,11 +195,19 @@ function ProjectInfo({ label, value }: { label: string; value?: string }) {
   );
 }
 
-function ContentBlock({ heading, description }: { heading?: string; description?: string }) {
+function ContentBlock({
+  heading,
+  description,
+}: {
+  heading?: string;
+  description?: string;
+}) {
   if (!heading && !description) return null;
   return (
     <section className="w-full lg:w-3/4 m-auto text-center flex flex-col items-center justify-center mb-20 p-10">
-      {heading && <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">{heading}</h3>}
+      {heading && (
+        <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">{heading}</h3>
+      )}
       {description && <p className="text-gray-700">{description}</p>}
     </section>
   );

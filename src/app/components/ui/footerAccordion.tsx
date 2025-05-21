@@ -5,11 +5,18 @@ import Link from "next/link";
 interface FooterAccordionProps {
   title: string;
   items: { label: string; href: string }[];
+  index: number;
   isOpen: boolean;
-  onToggle: () => void;
+  onToggle: (index: number) => void;
 }
 
-export default function FooterAccordion({ title, items, isOpen, onToggle, }: FooterAccordionProps) {
+export default function FooterAccordion({
+  title,
+  items,
+  index,
+  isOpen,
+  onToggle,
+}: FooterAccordionProps) {
   return (
     <div
       className={`
@@ -20,10 +27,10 @@ export default function FooterAccordion({ title, items, isOpen, onToggle, }: Foo
     >
       <button
         className="flex flex-row justify-between items-center lg:cursor-default"
-        onClick={onToggle}
+        onClick={() => onToggle(index)}
       >
         <h4 className="text-xl lg:font-bold">{title}</h4>
-        <span className="lg:hidden">{isOpen ? '-' : '+'}</span>
+        <span className="lg:hidden">{isOpen ? "-" : "+"}</span>
       </button>
 
       <div
@@ -34,8 +41,8 @@ export default function FooterAccordion({ title, items, isOpen, onToggle, }: Foo
         `}
       >
         <ul className="flex flex-col gap-4 mb-2">
-          {items.map((item, index) => (
-            <li key={index}>
+          {items.map((item, i) => (
+            <li key={i}>
               <Link
                 href={item.href}
                 className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700"

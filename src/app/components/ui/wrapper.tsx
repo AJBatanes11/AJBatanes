@@ -12,7 +12,9 @@ export default function Wrapper({ children }: WrapperProps) {
   const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll("section[data-theme]")) as HTMLElement[];
+    const sections = Array.from(
+      document.querySelectorAll("section[data-theme]")
+    ) as HTMLElement[];
     let ticking = false;
 
     function onScroll() {
@@ -27,7 +29,8 @@ export default function Wrapper({ children }: WrapperProps) {
             const rect = section.getBoundingClientRect();
 
             if (rect.bottom > 0 && rect.top < viewportHeight) {
-              const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+              const visibleHeight =
+                Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
               if (visibleHeight > maxVisibleArea) {
                 maxVisibleArea = visibleHeight;
                 maxVisibleSection = section;
@@ -36,7 +39,8 @@ export default function Wrapper({ children }: WrapperProps) {
           });
 
           if (maxVisibleSection && (maxVisibleSection as HTMLElement).dataset) {
-            const isDark = (maxVisibleSection as HTMLElement).dataset.theme === "true";
+            const isDark =
+              (maxVisibleSection as HTMLElement).dataset.theme === "true";
             setDarkMode(isDark);
           } else {
             setDarkMode(false);
