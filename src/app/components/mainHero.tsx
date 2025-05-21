@@ -13,7 +13,7 @@ export default function MainHero() {
     <section className="relative w-full h-dvh cursor-pointer">
       {/* Background Autoplay Video (Muted) */}
       <video
-        preload="auto"
+        preload="metadata"
         autoPlay
         muted
         loop
