@@ -65,9 +65,9 @@ export default function Wrapper({ children }: WrapperProps) {
     if (darkMode === null) return;
 
     if (darkMode) {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
     } else {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
