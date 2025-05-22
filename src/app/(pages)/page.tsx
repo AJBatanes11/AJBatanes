@@ -1,4 +1,4 @@
-// import MainHero from "../components/mainHero";
+import MainHero from "../components/mainHero";
 import Container from "../components/ui/container";
 import Head from "next/head";
 import TrustedBrands from "../components/trustedBrands";
@@ -25,8 +25,8 @@ export default function Home() {
       </Head>
 
       <Container main dark>
-        {/* <MainHero /> */}
-        <h1>Main hero</h1>
+        <MainHero />
+        {/* <h1>Main hero</h1> */}
       </Container>
       <Container small>
         <IntroSection />
