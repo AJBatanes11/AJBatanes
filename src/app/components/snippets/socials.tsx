@@ -18,7 +18,7 @@ export default function Socials({
       <ul className="flex flex-row gap-4 items-center">
         <li>
           <Link
-            href="https://facebook.com/yourprofile"
+            href="https://www.facebook.com/AnthonyJamesBatanes/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -35,7 +35,7 @@ export default function Socials({
         </li>
         <li>
           <Link
-            href="https://instagram.com/yourprofile"
+            href="https://www.instagram.com/ajbatanes/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -52,7 +52,7 @@ export default function Socials({
         </li>
         <li>
           <Link
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/ajbatanes/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
