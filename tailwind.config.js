@@ -1,15 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Use 'class' strategy instead of 'media'
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // adjust based on your folders
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace'],
-      },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.5' }],
         'sm': ['0.875rem', { lineHeight: '1.5715' }],
@@ -23,76 +19,11 @@ module.exports = {
         '6xl': ['4rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
         '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
       },
-      keyframes: {
-        'code-1': {
-          '0%': { opacity: '0' },
-          '2.5%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        'code-2': {
-          '16.2%': { opacity: '0' },
-          '18.75%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        'code-3': {
-          '32.5%': { opacity: '0' },
-          '35%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        'code-4': {
-          '48.75%': { opacity: '0' },
-          '51.25%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        'code-5': {
-          '65%': { opacity: '0' },
-          '72.5%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        'code-6': {
-          '81.25%': { opacity: '0' },
-          '83.75%': { opacity: '1' },
-          '97.5%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        breath: {
-          '0%, 100%': { transform: 'scale(0.95)' },
-          '50%': { transform: 'scale(1.1)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5%)' },
-        },
-        line: {
-          '0%, 100%': { left: '0', opacity: '0' },
-          '50%': {
-            left: '100%',
-            transform: 'translateX(-100%)',
-          },
-          '10%, 40%, 60%, 90%': { opacity: '0' },
-          '25%, 75%': { opacity: '1' },
-        },
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
-        },
-      },
-      animation: {
-        'code-1': 'code-1 3s infinite',
-        'code-2': 'code-2 3s infinite',
-        'code-3': 'code-3 3s infinite',
-        'code-4': 'code-4 3s infinite',
-        'code-5': 'code-5 3s infinite',
-        'code-6': 'code-6 3s infinite',
-        breath: 'breath 4s ease-in-out infinite',
-        float: 'float 6s ease-in-out infinite',
-        line: 'line 3s ease-in-out infinite',
-        'infinite-scroll': 'infinite-scroll 10s linear infinite',
+      colors: {
+        'black-custom': '#252422ff',
+        'white-custom': '#f4f4f4ff',
+        'light-glass': 'rgba(170,170,170,0.8)',
+        'dark-glass': 'rgba(85,85,85,0.8)',
       },
     },
   },
