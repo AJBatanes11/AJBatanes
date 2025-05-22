@@ -16,7 +16,7 @@ export default function NotFound() {
           Lost in code.
         </h1>
         <p className="mt-6 text-lg font-medium text-pretty text-dark-glass dark:text-light-glass sm:text-xl/8">
-          Looks like you took a wrong turn.
+          Looks like this route doesn&apos;t exist.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link href="/">
