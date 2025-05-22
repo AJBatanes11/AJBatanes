@@ -24,7 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth">
+      <head></head>
       <body
         className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
       >

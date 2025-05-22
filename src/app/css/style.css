@@ -93,9 +93,16 @@ button {
   padding-right: 1.5rem;
   text-decoration: none;
   line-height: 1.2;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 9999px;
 }
+.btn,
+.btn-arrow svg {
+  will-change: opacity, transform, right;
+}
+
 @media screen and (min-width: 1024px) {
   .btn {
     padding-left: 1.5rem;
@@ -143,4 +150,62 @@ button {
 }
 .btn:hover {
   opacity: 0.8;
+}
+
+/* Project card */
+@layer components {
+  .project-card {
+    @apply relative;
+  }
+
+  /* Mobile/Medium layout: Even/Odd */
+  .project-card:nth-child(odd) {
+    @apply top-0;
+  }
+
+  .project-card:nth-child(even) {
+    @apply -top-[60px];
+  }
+
+  @media (min-width: 768px) {
+    .project-card:nth-child(even) {
+      @apply -top-[80px];
+    }
+  }
+
+  /* XL layout: index % 3 mapping */
+  @media (min-width: 1280px) {
+    /* index % 3 === 0 → 1st, 4th, 7th... */
+    .project-card:nth-child(3n + 1) {
+      @apply xl:top-[20px];
+    }
+
+    /* index % 3 === 1 → 2nd, 5th, 8th... */
+    .project-card:nth-child(3n + 2) {
+      @apply xl:-top-[120px];
+    }
+
+    /* index % 3 === 2 → 3rd, 6th, 9th... */
+    .project-card:nth-child(3n) {
+      @apply xl:-top-[400px];
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
 }

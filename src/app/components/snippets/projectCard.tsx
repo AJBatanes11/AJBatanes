@@ -3,20 +3,12 @@
 import Image, { StaticImageData } from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import dynamic from "next/dynamic";
 import { useCursorStore } from "../../store/cursorTooltipStore";
-
-const ProjectDialogContent = dynamic(() => import("./projectDialogContent"), {
-  ssr: false,
-  loading: () => (
-    <div className="fixed inset-0 flex items-center justify-center z-50 text-white">
-      Loading...
-    </div>
-  ),
-});
+import ProjectDialogContent from "./projectDialogContent";
 
 interface ProjectCardProps {
   className?: string;
+  style?: React.CSSProperties;
   project: {
     cardBanner?: string | StaticImageData;
     cardTitle?: string;
@@ -55,6 +47,7 @@ export default function ProjectCard({
     <>
       <div
         className={`
+          project-card
           relative rounded-[20px] overflow-hidden
           w-[45%] sm:w-[47%] xl:w-[30%]
           h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
@@ -78,7 +71,6 @@ export default function ProjectCard({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 47vw, 30vw"
             className="object-cover object-center"
-            priority={false} // lazy loads by default
           />
         )}
 
