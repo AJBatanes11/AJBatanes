@@ -18,7 +18,7 @@ export default function MainHero() {
     >
       {/* Background Autoplay Video (Muted) */}
       <video
-        preload="metadata"
+        preload="auto"
         autoPlay
         muted
         loop
