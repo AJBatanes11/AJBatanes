@@ -209,3 +209,11 @@ button {
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 }
+
+/* Add this somewhere in your global CSS */
+.group:hover .underline {
+  transform-origin: left;
+}
+.group:not(:hover) .underline {
+  transform-origin: right;
+}

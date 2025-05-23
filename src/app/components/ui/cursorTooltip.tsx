@@ -33,7 +33,7 @@ export default function CursorTooltip() {
   }, []);
 
   const variantStyles: Record<string, string> = {
-    default: "w-2 h-2 bg-black-custom dark:bg-white-custom",
+    default: "w-8 h-8 bg-transparent",
     invert: "w-2 h-2 bg-white-custom dark:bg-black-custom",
     label:
       "w-24 h-24 bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom",
@@ -45,7 +45,7 @@ export default function CursorTooltip() {
   return (
     <div
       ref={cursorRef}
-      className={`fixed pointer-events-none select-none z-[9999] rounded-full hidden lg:flex items-center justify-center text-sm font-semibold transition-all duration-150 ease-out ${
+      className={`fixed pointer-events-none select-none z-[9999] rounded-full hidden lg:flex items-center justify-center text-sm font-semibold transition-all duration-300 ease-out ${
         variantStyles[variant] ?? variantStyles.default
       }`}
       // Notice: no inline style for transform here, it's managed inside RAF loop

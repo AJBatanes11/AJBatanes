@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import Logo from "./logo";
 import Button from "../snippets/customButton";
 import headerNavigations from "../../data/headerNavigations";
-import CursorClientWrapper from "./cursorTooltipClientWrapper";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -46,70 +47,73 @@ export default function Header() {
       }`}
     >
       <header className="text-black-custom dark:text-white-custom bg-light-glass dark:bg-dark-glass backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
-        <CursorClientWrapper cursorVariant="invisible">
-          <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
-            <div className="flex item-center justify-start">
-              <Logo />
-            </div>
-            <nav role="navigation" className="justify-center hidden lg:flex">
-              <ul className="relative p-0 flex gap-4 items-center">
-                {headerNavigations.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="text-base text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="item-center justify-end hidden lg:flex">
-              <Link href="/contact">
-                <Button
-                  className="btn-white btn-arrow"
-                  ariaLabel="Contact support"
-                >
-                  Get In Touch
-                  <svg
-                    width="13"
-                    height="12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+        <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
+          <div className="flex item-center justify-start">
+            <Logo />
+          </div>
+          <nav role="navigation" className="justify-center hidden lg:flex">
+            <ul className="relative p-0 flex gap-4 items-center">
+              {headerNavigations.map(({ href, label }) => (
+                <li key={href} className="group">
+                  <Link
+                    href={href}
+                    className="relative text-base text-black-custom dark:text-white-custom transition-colors duration-200"
                   >
-                    <path
-                      d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
-                      stroke="currentColor"
-                    ></path>
-                  </svg>
-                </Button>
-              </Link>
-            </div>
-            {/* Mobile Burger */}
-            <div className="items-center justify-end flex lg:hidden">
-              <button
-                onClick={toggleMobileNav}
-                className="text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
+                    <span
+                      className={`absolute left-0 -bottom-1 h-[1px] bg-black-custom dark:bg-white-custom transition-all duration-300 ease-in-out ${
+                        pathname === href ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="item-center justify-end hidden lg:flex">
+            <Link href="/contact">
+              <Button
+                className="btn-white btn-arrow"
+                ariaLabel="Contact support"
               >
+                Get In Touch
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="12"
                   fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-8 h-8"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
+                    d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
+                    stroke="currentColor"
+                  ></path>
                 </svg>
-              </button>
-            </div>
+              </Button>
+            </Link>
           </div>
-        </CursorClientWrapper>
+          {/* Mobile Burger */}
+          <div className="items-center justify-end flex lg:hidden">
+            <button
+              onClick={toggleMobileNav}
+              className="text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-8 h-8"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
         {/* Mobile Navigation */}
         <nav
           className={`overflow-hidden transition-all duration-300 lg:hidden ${

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Resources | AJ Batanes",
+  description: "Web developer, Designer, and Creator",
+};
+
 export default function Resources() {
   return (
     <>
