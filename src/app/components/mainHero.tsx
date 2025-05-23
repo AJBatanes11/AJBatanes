@@ -13,7 +13,7 @@ export default function MainHero() {
 
   return (
     <section
-      className="relative w-full h-screen sm:h-dvh cursor-pointer"
+      className="relative w-full h-screen sm:h-dvh cursor-pointer lg:cursor-none"
       onClick={() => setShowPlayer(true)}
     >
       {/* Background Autoplay Video (Muted) */}

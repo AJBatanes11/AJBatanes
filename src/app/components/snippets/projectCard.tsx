@@ -3,30 +3,14 @@
 import Image, { StaticImageData } from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { useCursorStore } from "../../store/cursorTooltipStore";
 import ProjectDialogContent from "./projectDialogContent";
+import CursorClientWrapper from "../ui/cursorTooltipClientWrapper";
+import { Project } from "../../data/projects";
 
 interface ProjectCardProps {
   className?: string;
   style?: React.CSSProperties;
-  project: {
-    cardBanner?: string | StaticImageData;
-    cardTitle?: string;
-    cardDescription?: string;
-    overview?: string;
-    industry?: string;
-    service?: string;
-    technology?: string;
-    website?: string;
-    imageDesktop1?: string | StaticImageData;
-    imageMobile1?: string | StaticImageData;
-    heading1?: string;
-    description1?: string;
-    imageDesktop2?: string | StaticImageData;
-    imageMobile2?: string | StaticImageData;
-    heading2?: string;
-    description2?: string;
-  };
+  project: Project;
 }
 
 function getImageSrc(
@@ -40,12 +24,13 @@ export default function ProjectCard({
   project,
   className = "",
 }: ProjectCardProps) {
-  const { setCursor, resetCursor } = useCursorStore();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div
+      <CursorClientWrapper
+        cursorVariant="label"
+        cursorLabel="View project"
         className={`
           project-card
           relative rounded-[20px] overflow-hidden
@@ -57,11 +42,13 @@ export default function ProjectCard({
           transition-transform duration-500 ease-in-out
           text-black-custom dark:text-white-custom
           bg-dark-glass dark:bg-light-glass
+          cursor-pointer lg:cursor-none
           ${className}
         `}
-        onClick={() => setIsOpen(true)}
-        onMouseEnter={() => setCursor("label", "View Project")}
-        onMouseLeave={resetCursor}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(true);
+        }}
       >
         {/* Image as background */}
         {project.cardBanner && (
@@ -86,7 +73,7 @@ export default function ProjectCard({
             <span className="text-xs">{project.cardDescription}</span>
           )}
         </div>
-      </div>
+      </CursorClientWrapper>
 
       <Transition appear show={isOpen} as={Fragment}>
         <div

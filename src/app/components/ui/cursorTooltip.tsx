@@ -36,9 +36,9 @@ export default function CursorTooltip() {
     default: "w-2 h-2 bg-black-custom dark:bg-white-custom",
     invert: "w-2 h-2 bg-white-custom dark:bg-black-custom",
     label:
-      "w-24 h-24 bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom flex items-center justify-center",
+      "w-24 h-24 bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom",
     labelInvert:
-      "w-24 h-24 bg-white-custom dark:bg-black-custom text-black-custom dark:text-white-custom flex items-center justify-center",
+      "w-24 h-24 bg-white-custom dark:bg-black-custom text-black-custom dark:text-white-custom",
     invisible: "w-8 h-8 bg-transparent",
   };
 

@@ -14,7 +14,7 @@ export default function IntroSection() {
             </h2>
             <div className="flex flex-col md:flex-row justify-start items-start gap-3">
               <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
-                15+ Shopify sites launched
+                15+ sites launched
               </div>
               <div className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-light-glass dark:bg-dark-glass text-black-custom dark:text-white-custom">
                 2+ Years of e-commerce experience
