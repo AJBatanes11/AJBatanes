@@ -132,50 +132,48 @@ export default function CursorFollower({
       {children}
 
       {/* Follower circle */}
-      {active && (
-        <>
+      <>
+        <div
+          style={{
+            position: "absolute",
+            top: pos.y,
+            left: pos.x,
+            transform: "translate(-50%, -50%)",
+            width: followerSize,
+            height: followerSize,
+            borderRadius: "50%",
+            backgroundColor: followerColor,
+            color: "#000",
+            fontSize: "",
+            fontWeight: "500",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            pointerEvents: "none",
+            transition: returning ? "none" : "background-color 0.2s ease",
+          }}
+        >
+          {labelInside}
+        </div>
+
+        {/* Optional outside label */}
+        {labelOutside && (
           <div
             style={{
               position: "absolute",
-              top: pos.y,
+              top: pos.y + followerSize / 2 + 8,
               left: pos.x,
-              transform: "translate(-50%, -50%)",
-              width: followerSize,
-              height: followerSize,
-              borderRadius: "50%",
-              backgroundColor: followerColor,
-              color: "#000",
+              transform: "translateX(-50%)",
               fontSize: "",
               fontWeight: "500",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              color: "#fff",
               pointerEvents: "none",
-              transition: returning ? "none" : "background-color 0.2s ease",
             }}
           >
-            {labelInside}
+            {labelOutside}
           </div>
-
-          {/* Optional outside label */}
-          {labelOutside && (
-            <div
-              style={{
-                position: "absolute",
-                top: pos.y + followerSize / 2 + 8,
-                left: pos.x,
-                transform: "translateX(-50%)",
-                fontSize: "",
-                fontWeight: "500",
-                color: "#fff",
-                pointerEvents: "none",
-              }}
-            >
-              {labelOutside}
-            </div>
-          )}
-        </>
-      )}
+        )}
+      </>
     </div>
   );
 }
