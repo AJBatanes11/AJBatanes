@@ -1,44 +1,69 @@
-import penshoppeCard from '@/src/app/assets/images/projects/Penshoppe.jpg';
-import oxgnCard from '@/src/app/assets/images/projects/OXGN.jpg';
-import regattaCard from '@/src/app/assets/images/projects/Regatta.jpg';
-import forMeCard from '@/src/app/assets/images/projects/ForMe.jpg';
-import memoCard from '@/src/app/assets/images/projects/Memo.jpg';
-import bocuCard from '@/src/app/assets/images/projects/Bocu.jpg';
-import arianaSpicesCard from '@/src/app/assets/images/projects/ArianaSpices.jpg';
-import chakoLabCard from '@/src/app/assets/images/projects/ChakoLab.png';
-import henkanCollagenCard from '@/src/app/assets/images/projects/HenkanCollagen.jpg';
-import hillsideGardenCard from '@/src/app/assets/images/projects/HillsideGarden.jpg';
-import launchToProfitCard from '@/src/app/assets/images/projects/LaunchtoProfitMedia.jpg';
-import modAndNobleCard from '@/src/app/assets/images/projects/ModandNoble.jpg';
-import soulAesthetixCard from '@/src/app/assets/images/projects/SoulAesthetix.png';
-import theCutBuddyCard from '@/src/app/assets/images/projects/TheCutBuddy.jpg';
-import theHoopGangCard from '@/src/app/assets/images/projects/TheHoopGang.jpg';
-import tiwflixCard from '@/src/app/assets/images/projects/Tiwflix.png';
+import penshoppeCard from "@/src/app/assets/images/projects/Penshoppe.jpg";
+import oxgnCard from "@/src/app/assets/images/projects/OXGN.jpg";
+import regattaCard from "@/src/app/assets/images/projects/Regatta.jpg";
+import forMeCard from "@/src/app/assets/images/projects/ForMe.jpg";
+import memoCard from "@/src/app/assets/images/projects/Memo.jpg";
+import bocuCard from "@/src/app/assets/images/projects/Bocu.jpg";
+import arianaSpicesCard from "@/src/app/assets/images/projects/ArianaSpices.jpg";
+import chakoLabCard from "@/src/app/assets/images/projects/ChakoLab.png";
+import henkanCollagenCard from "@/src/app/assets/images/projects/HenkanCollagen.jpg";
+import hillsideGardenCard from "@/src/app/assets/images/projects/HillsideGarden.jpg";
+import launchToProfitCard from "@/src/app/assets/images/projects/LaunchtoProfitMedia.jpg";
+import modAndNobleCard from "@/src/app/assets/images/projects/ModandNoble.jpg";
+import soulAesthetixCard from "@/src/app/assets/images/projects/SoulAesthetix.png";
+import theCutBuddyCard from "@/src/app/assets/images/projects/TheCutBuddy.jpg";
+import theHoopGangCard from "@/src/app/assets/images/projects/TheHoopGang.jpg";
+import tiwflixCard from "@/src/app/assets/images/projects/Tiwflix.png";
+import { StaticImageData } from "next/image";
 
-const projects = [
+export interface Project {
+  cardBanner?: string | StaticImageData;
+  cardTitle?: string;
+  cardDescription?: string;
+  overview?: string;
+  industry?: string;
+  service?: string;
+  technology?: string;
+  website?: string;
+  imageDesktop1?: string | StaticImageData;
+  imageMobile1?: string | StaticImageData;
+  heading1?: string;
+  description1?: string;
+  imageDesktop2?: string | StaticImageData;
+  imageMobile2?: string | StaticImageData;
+  heading2?: string;
+  description2?: string;
+}
+
+const projects: Project[] = [
   {
     cardBanner: penshoppeCard,
     cardTitle: "Penshoppe",
     cardDescription: "Design & Development",
-    overview: "Built and maintained the Shopify site for Penshoppe, ensuring seamless product discovery, optimized performance, and conversion-driven UX for desktop and mobile users.",
+    overview:
+      "Penshoppe is one of the Philippines' leading fashion retail brands, setting the trend for stylish and affordable casual wear that appeals to both young individuals and the young-at-heart. Known for its innovative designs and inclusive approach, Penshoppe offers a wide range of products, including sleek tops, trendy bottoms, footwear, accessories, and fragrances, all crafted to help customers express their unique style with confidence. This distinguished brand has gained international recognition by collaborating with global celebrities such as Zayn Malik, Gigi Hadid, Kendall Jenner, BLACKPINK's Lisa, and the Filipino artists BINI and James Reid. With its dynamic presence and strong reputation, Penshoppe is more than a brand; it represents a lifestyle movement, inspiring millions to distinguish themselves and confidently embrace their personal style.",
     industry: "Fashion Retail",
-    service: "Shopify Development, UI Optimization, Maintenance",
-    technology: "Shopify, Liquid, JavaScript, HTML/CSS, metafields",
+    service:
+      "Shopify Development, UI/UX Design, Performance Optimization, Ongoing Support & Maintenance",
+    technology: "Shopify, Liquid, JavaScript, PHP",
     website: "https://www.penshoppe.com",
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading1: "Optimized Homepage & PDP",
-    description1: "Revamped the homepage layout and PDP sections to improve loading speed and highlight new arrivals, promos, and key categories.",
+    heading1: "Advanced Features & Seamless Performance",
+    description1:
+      "Implemented tailored features such as the convenient Buy Online, Pick Up In Store option to enhance customer flexibility. Focused on fast loading speeds and reliable performance to increase satisfaction and drive higher conversions.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-2.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-2.jpg",
-    heading2: "Custom Filters & Color Stitching",
-    description2: "Implemented advanced filtering with color stitching using metafields for a more intuitive browsing experience.",
+    heading2: "Responsive & Brand-Aligned Design",
+    description2:
+      "Delivered a visually stunning and user-friendly Shopify storefront that perfectly reflects Penshoppe's vibrant brand. Optimized for all devices to ensure customers enjoy a smooth, engaging shopping experience anytime, anywhere.",
   },
   {
     cardBanner: oxgnCard,
     cardTitle: "OXGN Fashion",
     cardDescription: "Design & Development",
-    overview: "Developed the online presence of OXGN with a performance-first approach. Built custom landing pages and streamlined collections for marketing campaigns.",
+    overview:
+      "Developed the online presence of OXGN with a performance-first approach. Built custom landing pages and streamlined collections for marketing campaigns.",
     industry: "Apparel & Streetwear",
     service: "Theme Development, Campaign Pages, Technical Support",
     technology: "Shopify, Liquid, Tailwind CSS, metafields",
@@ -46,17 +71,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Campaign Landing Pages",
-    description1: "Created high-conversion landing pages for seasonal drops and influencer collabs.",
+    description1:
+      "Created high-conversion landing pages for seasonal drops and influencer collabs.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Mobile UX Enhancements",
-    description2: "Improved mobile navigation and image optimization to reduce bounce rates and boost mobile sales.",
+    description2:
+      "Improved mobile navigation and image optimization to reduce bounce rates and boost mobile sales.",
   },
   {
     cardBanner: forMeCard,
     cardTitle: "ForMe Clothing",
     cardDescription: "Design & Development",
-    overview: "ForMe is a women’s fashion brand built around the idea that style should be effortless, inclusive, and wearable every day. Known for its curated mix of on-trend and essential pieces, ForMe serves the modern Filipina by offering fashion that adapts to both casual and occasion-driven lifestyles. The brand champions body inclusivity through thoughtful silhouettes and emphasizes style that empowers women to feel confident, comfortable, and expressive. With a growing presence both in physical stores and online, ForMe continues to shape everyday fashion with a strong sense of identity, versatility, and relevance in the local fashion landscape.",
+    overview:
+      "ForMe is a women’s fashion brand built around the idea that style should be effortless, inclusive, and wearable every day. Known for its curated mix of on-trend and essential pieces, ForMe serves the modern Filipina by offering fashion that adapts to both casual and occasion-driven lifestyles. The brand champions body inclusivity through thoughtful silhouettes and emphasizes style that empowers women to feel confident, comfortable, and expressive. With a growing presence both in physical stores and online, ForMe continues to shape everyday fashion with a strong sense of identity, versatility, and relevance in the local fashion landscape.",
     industry: "Fashion Retail",
     service: "Design, Website Development, Marketing Collateral",
     technology: "Shopify, Liquid, JavaScript",
@@ -64,17 +92,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Custom design built into a custom Shopify Plus Theme.",
-    description1: "Led a comprehensive redesign and development of ForMe’s Shopify storefront to reflect its refreshed brand identity — a shift toward modern, inclusive, and lifestyle-driven fashion. This involved rethinking layout structures, elevating the use of typography and color, and applying a consistent design system across the site. Key improvements included stronger visual hierarchy, simplified navigation, responsive enhancements, and intuitive user flows designed for everyday women.",
+    description1:
+      "Led a comprehensive redesign and development of ForMe’s Shopify storefront to reflect its refreshed brand identity — a shift toward modern, inclusive, and lifestyle-driven fashion. This involved rethinking layout structures, elevating the use of typography and color, and applying a consistent design system across the site. Key improvements included stronger visual hierarchy, simplified navigation, responsive enhancements, and intuitive user flows designed for everyday women.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Modular Sections for Engagement and Storytelling.",
-    description2: "Designed and developed versatile, purpose-built sections to empower ForMe’s marketing team to tell richer brand stories. These included modules for campaigns, CRM integration, events, editorial content, and social proof. Each section was crafted to be modular, easy to update, and aligned with the brand’s evolving creative direction — offering flexibility without compromising design consistency or performance.",
+    description2:
+      "Designed and developed versatile, purpose-built sections to empower ForMe’s marketing team to tell richer brand stories. These included modules for campaigns, CRM integration, events, editorial content, and social proof. Each section was crafted to be modular, easy to update, and aligned with the brand’s evolving creative direction — offering flexibility without compromising design consistency or performance.",
   },
   {
     cardBanner: regattaCard,
     cardTitle: "Regatta Lifestyle",
     cardDescription: "Design & Development",
-    overview: "Handled Regatta’s Shopify platform with a focus on simplifying navigation and enriching the product display experience.",
+    overview:
+      "Handled Regatta’s Shopify platform with a focus on simplifying navigation and enriching the product display experience.",
     industry: "Casual Fashion / Outdoor Lifestyle",
     service: "Store Optimization, Navigation & Filtering, Bug Fixing",
     technology: "Shopify, Liquid, Theme Customization",
@@ -82,17 +113,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Navigation Overhaul",
-    description1: "Simplified menu structures and implemented collections tailored to user behavior.",
+    description1:
+      "Simplified menu structures and implemented collections tailored to user behavior.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Responsive Fixes",
-    description2: "Addressed layout inconsistencies across devices to ensure full responsiveness.",
+    description2:
+      "Addressed layout inconsistencies across devices to ensure full responsiveness.",
   },
   {
     cardBanner: memoCard,
     cardTitle: "Memo Fashion",
     cardDescription: "Design & Development",
-    overview: "Spearheaded Memo’s Shopify performance improvements and implemented refined UI to match the brand's smart-casual image.",
+    overview:
+      "Spearheaded Memo’s Shopify performance improvements and implemented refined UI to match the brand's smart-casual image.",
     industry: "Workwear & Fashion",
     service: "Shopify Dev, UI Improvements, A/B Testing",
     technology: "Shopify, Liquid, JavaScript, Analytics",
@@ -100,17 +134,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Homepage Refresh",
-    description1: "Redesigned homepage components to better communicate Memo’s brand identity and current promotions.",
+    description1:
+      "Redesigned homepage components to better communicate Memo’s brand identity and current promotions.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Optimized Checkout Funnel",
-    description2: "Monitored and enhanced checkout flow for higher conversion rates via minor UX fixes and content clarity.",
+    description2:
+      "Monitored and enhanced checkout flow for higher conversion rates via minor UX fixes and content clarity.",
   },
   {
     cardBanner: bocuCard,
     cardTitle: "BOCU Lifestyle",
     cardDescription: "Design & Development",
-    overview: "Developed BOCU’s e-commerce storefront with attention to fast product load times and striking visuals that match the streetwear vibe.",
+    overview:
+      "Developed BOCU’s e-commerce storefront with attention to fast product load times and striking visuals that match the streetwear vibe.",
     industry: "Urban Fashion",
     service: "Custom Shopify Dev, Page Speed, Visual Polish",
     technology: "Shopify, Liquid, GSAP, Tailwind CSS",
@@ -118,17 +155,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Product Animation Concepts",
-    description1: "Explored scroll effects and micro-interactions to match BOCU’s energetic brand voice.",
+    description1:
+      "Explored scroll effects and micro-interactions to match BOCU’s energetic brand voice.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Performance Optimization",
-    description2: "Reduced image size and lazy-loaded assets to keep Core Web Vitals strong.",
+    description2:
+      "Reduced image size and lazy-loaded assets to keep Core Web Vitals strong.",
   },
   {
     cardBanner: chakoLabCard,
     cardTitle: "Chako Lab",
     cardDescription: "Design & Build",
-    overview: "Refreshed Chako Lab’s storefront to feel more aligned with their playful brand and natural product positioning.",
+    overview:
+      "Refreshed Chako Lab’s storefront to feel more aligned with their playful brand and natural product positioning.",
     industry: "Pet Health & Wellness",
     service: "Website Redesign, Custom Sections, Theming",
     technology: "Shopify, Liquid, CSS Animations",
@@ -136,17 +176,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Custom Product Pages",
-    description1: "Built interactive product sections with natural ingredient highlights.",
+    description1:
+      "Built interactive product sections with natural ingredient highlights.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "New Homepage Flow",
-    description2: "Improved homepage UX and integrated educational content blocks.",
+    description2:
+      "Improved homepage UX and integrated educational content blocks.",
   },
   {
     cardBanner: theCutBuddyCard,
     cardTitle: "The Cut Buddy",
     cardDescription: "Design & Development",
-    overview: "Modernized layout and improved page performance for a grooming brand featured on Shark Tank.",
+    overview:
+      "Modernized layout and improved page performance for a grooming brand featured on Shark Tank.",
     industry: "Grooming Tools",
     service: "Redesign, Custom Dev, Speed Optimization",
     technology: "Shopify, Liquid, Lazy Load",
@@ -154,7 +197,8 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Homepage Revamp",
-    description1: "Focused hero sections and animated elements to engage shoppers.",
+    description1:
+      "Focused hero sections and animated elements to engage shoppers.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Custom Cart & Promo Modules",
@@ -164,7 +208,8 @@ const projects = [
     cardBanner: theHoopGangCard,
     cardTitle: "The Hoop Gang",
     cardDescription: "Design & Development",
-    overview: "Redesigned The Hoop Gang’s Shopify store with a strong emphasis on identity and exclusive drops.",
+    overview:
+      "Redesigned The Hoop Gang’s Shopify store with a strong emphasis on identity and exclusive drops.",
     industry: "Streetwear & Lifestyle",
     service: "Visual Design, Shopify Dev, Custom Sections",
     technology: "Shopify, Liquid, JavaScript",
@@ -172,17 +217,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Custom Drop Pages",
-    description1: "Created limited-edition drop templates with countdown and hype-focused design.",
+    description1:
+      "Created limited-edition drop templates with countdown and hype-focused design.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Mobile Shop Redesign",
-    description2: "Optimized for mobile purchases with large visuals and quick-add features.",
+    description2:
+      "Optimized for mobile purchases with large visuals and quick-add features.",
   },
   {
     cardBanner: hillsideGardenCard,
     cardTitle: "Hillside Garden",
     cardDescription: "Design & Development",
-    overview: "Overhauled Hillside Garden’s website with nature-inspired aesthetics and structured collection browsing.",
+    overview:
+      "Overhauled Hillside Garden’s website with nature-inspired aesthetics and structured collection browsing.",
     industry: "Gardening & Landscaping",
     service: "Website Redesign, Dev, UX Enhancement",
     technology: "Shopify, Liquid, Custom Sections",
@@ -190,17 +238,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Peaceful Visual Identity",
-    description1: "Blended muted palettes and custom icons for a calming experience.",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Shop By Plant Type",
-    description2: "Created category filtering based on plant care and sunlight needs.",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
   },
   {
     cardBanner: henkanCollagenCard,
     cardTitle: "Henkan Collagen",
     cardDescription: "Design & Development",
-    overview: "Refreshed Henkan’s website to build trust and clarity around the product benefits and science.",
+    overview:
+      "Refreshed Henkan’s website to build trust and clarity around the product benefits and science.",
     industry: "Beauty & Wellness",
     service: "Redesign, Custom Dev, Brand Strategy",
     technology: "Shopify, Liquid, CSS",
@@ -208,7 +259,8 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Educational Homepage Sections",
-    description1: "Added ingredient info, benefits, and user reviews for credibility.",
+    description1:
+      "Added ingredient info, benefits, and user reviews for credibility.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Optimized Product Page",
@@ -218,7 +270,8 @@ const projects = [
     cardBanner: soulAesthetixCard,
     cardTitle: "Soul Aesthetix",
     cardDescription: "Design & Build",
-    overview: "Translated Soul Aesthetix's vibrant branding into an interactive and seamless Shopify experience.",
+    overview:
+      "Translated Soul Aesthetix's vibrant branding into an interactive and seamless Shopify experience.",
     industry: "Skincare & Beauty",
     service: "Shopify Dev, Brand Integration",
     technology: "Shopify, Liquid, Custom Sections",
@@ -226,7 +279,8 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Dynamic Product Grid",
-    description1: "Created custom product grid that responds to brand color scheme.",
+    description1:
+      "Created custom product grid that responds to brand color scheme.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Homepage Story Highlights",
@@ -236,7 +290,8 @@ const projects = [
     cardBanner: arianaSpicesCard,
     cardTitle: "Ariana Spices",
     cardDescription: "Design & Development",
-    overview: "Rebuilt Ariana Spices with a robust Shopify foundation and flavorful product presentation.",
+    overview:
+      "Rebuilt Ariana Spices with a robust Shopify foundation and flavorful product presentation.",
     industry: "Spices & Food Retail",
     service: "Redesign, Dev, UX Improvements",
     technology: "Shopify, Liquid, JavaScript",
@@ -254,7 +309,8 @@ const projects = [
     cardBanner: launchToProfitCard,
     cardTitle: "Launch to Profit Media",
     cardDescription: "Design & Development",
-    overview: "Developed the marketing agency’s main site with clear service flows and brand consistency.",
+    overview:
+      "Developed the marketing agency’s main site with clear service flows and brand consistency.",
     industry: "Digital Marketing & Media",
     service: "Design, Dev, Structure Optimization",
     technology: "Shopify, Liquid, Custom Sections",
@@ -262,7 +318,8 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Service Showcase",
-    description1: "Built a grid of services with CTA clarity and hover effects.",
+    description1:
+      "Built a grid of services with CTA clarity and hover effects.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Team & Culture",
@@ -272,7 +329,8 @@ const projects = [
     cardBanner: modAndNobleCard,
     cardTitle: "Mod & Noble",
     cardDescription: "Design & Build",
-    overview: "Handled end-to-end site creation with efficient code and process refinement.",
+    overview:
+      "Handled end-to-end site creation with efficient code and process refinement.",
     industry: "Lifestyle & Design",
     service: "Full Website Dev, Process Consulting",
     technology: "Shopify, Liquid, Tailwind CSS, Analytics",
@@ -280,17 +338,20 @@ const projects = [
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading1: "Minimal Aesthetic",
-    description1: "Used white space and large product photos to elevate perception.",
+    description1:
+      "Used white space and large product photos to elevate perception.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "SEO and Structure Cleanup",
-    description2: "Refined structure for clean crawlability and analytics readiness.",
+    description2:
+      "Refined structure for clean crawlability and analytics readiness.",
   },
   {
     cardBanner: tiwflixCard,
     cardTitle: "Tiwflix",
     cardDescription: "Design & Build",
-    overview: "Built a mini Netflix-style platform using React, external API, and responsive layout.",
+    overview:
+      "Built a mini Netflix-style platform using React, external API, and responsive layout.",
     industry: "Personal Project / Entertainment",
     service: "Design, Dev, API Integration",
     technology: "React JS, TMDB API, Tailwind CSS",

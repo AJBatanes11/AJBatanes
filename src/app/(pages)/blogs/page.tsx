@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "Contact | AJ Batanes",
+  title: "Blogs | AJ Batanes",
   description: "Web developer, Designer, and Creator",
 };
 
-export default function Contact() {
+export default function Blogs() {
   return (
     <>
-      <h1 className="text-4xl">Contact Page*</h1>
+      <h1 className="text-4xl">Blogs Page*</h1>
       {/* <CalendlyPopup /> */}
       Calendly and Form*
     </>

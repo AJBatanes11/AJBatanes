@@ -1,25 +1,9 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import { Project } from "../../data/projects";
 import Button from "./customButton";
 import Link from "next/link";
-import { useCursorStore } from "../../store/cursorTooltipStore";
-
-interface Project {
-  overview?: string;
-  industry?: string;
-  service?: string;
-  technology?: string;
-  website?: string;
-  imageDesktop1?: string | StaticImageData;
-  imageMobile1?: string | StaticImageData;
-  heading1?: string;
-  description1?: string;
-  imageDesktop2?: string | StaticImageData;
-  imageMobile2?: string | StaticImageData;
-  heading2?: string;
-  description2?: string;
-}
+import Image from "next/image";
 
 interface ProjectDialogContentProps {
   project: Project;
@@ -48,8 +32,6 @@ export default function ProjectDialogContent({
   project,
   onClose,
 }: ProjectDialogContentProps) {
-  const { setCursor, resetCursor } = useCursorStore();
-
   return (
     <div
       role="dialog"
@@ -59,33 +41,26 @@ export default function ProjectDialogContent({
       className="fixed inset-0 bg-white-custom text-black-custom z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
     >
       <div className="relative w-full h-full">
-        <div
-          className="absolute inset-0 overflow-y-auto"
-          onMouseEnter={() => setCursor("invert")}
-          onMouseLeave={resetCursor}
-        >
+        <div className="absolute inset-0 overflow-y-auto">
           {/* Intro Section */}
           <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
             {/* Close Button */}
             <button
               onClick={() => {
-                resetCursor();
                 onClose();
               }}
-              onMouseEnter={() => setCursor("label", "Close")}
-              onMouseLeave={() => setCursor("invisible")}
               aria-label="Close project details"
-              className="text-black-custom dark:text-white-custom fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
+              className="text-white-custom fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
             >
               <CloseIcon />
             </button>
-            <div className="col-span-2 flex flex-col items-start justify-center p-10">
+            <div className="col-span-2 flex flex-col items-center lg:items-start justify-center text-center lg:text-start p-10">
               <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">
                 The Brief
               </h3>
-              <p>{project.overview}</p>
+              <p className="text-sm lg:text-base">{project.overview}</p>
             </div>
-            <aside className="bg-neutral-100 flex flex-col items-start justify-center p-10">
+            <aside className="text-sm lg:text-base bg-black-custom text-white-custom flex flex-col items-center lg:items-start justify-center text-center lg:text-start p-10">
               <ProjectInfo label="Industry" value={project.industry} />
               <ProjectInfo label="Deliverable" value={project.service} />
               <ProjectInfo label="Technology" value={project.technology} />
@@ -94,11 +69,9 @@ export default function ProjectDialogContent({
                   <strong className="font-semibold">Website</strong>
                   <a
                     href={project.website}
-                    className="text-blue-900 underline break-all mb-4 sm:mb-8"
+                    className="text-light-glass underline break-all mb-4 sm:mb-8"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onMouseEnter={() => setCursor("labelInvert", "Go to Link")}
-                    onMouseLeave={() => setCursor("invisible")}
                   >
                     {project.website}
                   </a>
@@ -161,14 +134,21 @@ export default function ProjectDialogContent({
           />
 
           {/* CTA Section */}
-          <section className="m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-gray-100 rounded-3xl flex flex-col justify-center relative">
-            <h2 className="text-2xl font-semibold lg:text-5xl mb-5">
-              Let&apos;s talk <br />
-              e-commerce.
-            </h2>
+          <section className="relative m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-black-custom text-white-custom rounded-3xl flex flex-col justify-center">
+            <div className="mb-5 max-w-96">
+              <h2 className="text-xl font-semibold lg:text-5xl mb-3">
+                Let&apos;s talk <br />
+                e-commerce.
+              </h2>
+              <p className="text-sm lg:text-base">
+                I help brands design, develop, and grow fast, scalable online
+                stores that deliver real results. Whether you&apos;re launching
+                or expanding, I&apos;m here to help your business succeed.
+              </p>
+            </div>
             <Link href="/contact">
               <Button
-                className="btn-white btn-arrow mb-5"
+                className="btn-black btn-arrow"
                 ariaLabel="Contact support"
               >
                 Book a Free Consult
@@ -181,7 +161,7 @@ export default function ProjectDialogContent({
                   <path
                     d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
                     stroke="currentColor"
-                  />
+                  ></path>
                 </svg>
               </Button>
             </Link>
@@ -197,7 +177,7 @@ function ProjectInfo({ label, value }: { label: string; value?: string }) {
   return (
     <>
       <strong className="font-semibold">{label}</strong>
-      <p className="mb-4 sm:mb-8 text-gray-700">{value}</p>
+      <p className="mb-4 sm:mb-8 text-light-glass">{value}</p>
     </>
   );
 }
@@ -215,7 +195,7 @@ function ContentBlock({
       {heading && (
         <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">{heading}</h3>
       )}
-      {description && <p className="text-gray-700">{description}</p>}
+      {description && <p className="text-base lg:text-2xl">{description}</p>}
     </section>
   );
 }

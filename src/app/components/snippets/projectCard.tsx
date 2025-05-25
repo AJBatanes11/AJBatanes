@@ -3,38 +3,14 @@
 import Image, { StaticImageData } from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import dynamic from "next/dynamic";
-import { useCursorStore } from "../../store/cursorTooltipStore";
-
-const ProjectDialogContent = dynamic(() => import("./projectDialogContent"), {
-  ssr: false,
-  loading: () => (
-    <div className="fixed inset-0 flex items-center justify-center z-50 text-white">
-      Loading...
-    </div>
-  ),
-});
+import ProjectDialogContent from "./projectDialogContent";
+import CursorClientWrapper from "../ui/cursorTooltipClientWrapper";
+import { Project } from "../../data/projects";
 
 interface ProjectCardProps {
   className?: string;
-  project: {
-    cardBanner?: string | StaticImageData;
-    cardTitle?: string;
-    cardDescription?: string;
-    overview?: string;
-    industry?: string;
-    service?: string;
-    technology?: string;
-    website?: string;
-    imageDesktop1?: string | StaticImageData;
-    imageMobile1?: string | StaticImageData;
-    heading1?: string;
-    description1?: string;
-    imageDesktop2?: string | StaticImageData;
-    imageMobile2?: string | StaticImageData;
-    heading2?: string;
-    description2?: string;
-  };
+  style?: React.CSSProperties;
+  project: Project;
 }
 
 function getImageSrc(
@@ -48,13 +24,15 @@ export default function ProjectCard({
   project,
   className = "",
 }: ProjectCardProps) {
-  const { setCursor, resetCursor } = useCursorStore();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div
+      <CursorClientWrapper
+        cursorVariant="label"
+        cursorLabel="View project"
         className={`
+          project-card
           relative rounded-[20px] overflow-hidden
           w-[45%] sm:w-[47%] xl:w-[30%]
           h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
@@ -64,11 +42,13 @@ export default function ProjectCard({
           transition-transform duration-500 ease-in-out
           text-black-custom dark:text-white-custom
           bg-dark-glass dark:bg-light-glass
+          cursor-pointer lg:cursor-none
           ${className}
         `}
-        onClick={() => setIsOpen(true)}
-        onMouseEnter={() => setCursor("label", "View Project")}
-        onMouseLeave={resetCursor}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(true);
+        }}
       >
         {/* Image as background */}
         {project.cardBanner && (
@@ -78,7 +58,6 @@ export default function ProjectCard({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 47vw, 30vw"
             className="object-cover object-center"
-            priority={false} // lazy loads by default
           />
         )}
 
@@ -94,7 +73,7 @@ export default function ProjectCard({
             <span className="text-xs">{project.cardDescription}</span>
           )}
         </div>
-      </div>
+      </CursorClientWrapper>
 
       <Transition appear show={isOpen} as={Fragment}>
         <div

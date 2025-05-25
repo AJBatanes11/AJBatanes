@@ -4,14 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "./logo";
 import Button from "../snippets/customButton";
-import { useCursorStore } from "../../store/cursorTooltipStore";
 import headerNavigations from "../../data/headerNavigations";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const { setCursor, resetCursor } = useCursorStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +45,6 @@ export default function Header() {
       className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-transform duration-300 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
-      onMouseEnter={() => setCursor("invisible")}
-      onMouseLeave={resetCursor}
     >
       <header className="text-black-custom dark:text-white-custom bg-light-glass dark:bg-dark-glass backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
@@ -56,11 +54,16 @@ export default function Header() {
           <nav role="navigation" className="justify-center hidden lg:flex">
             <ul className="relative p-0 flex gap-4 items-center">
               {headerNavigations.map(({ href, label }) => (
-                <li key={href}>
+                <li key={href} className="group">
                   <Link
                     href={href}
-                    className="text-base text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
+                    className="relative text-base text-black-custom dark:text-white-custom transition-colors duration-200"
                   >
+                    <span
+                      className={`absolute left-0 -bottom-1 h-[1px] bg-black-custom dark:bg-white-custom transition-all duration-300 ease-in-out ${
+                        pathname === href ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
                     {label}
                   </Link>
                 </li>

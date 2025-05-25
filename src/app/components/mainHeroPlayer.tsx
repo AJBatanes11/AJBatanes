@@ -1,18 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useCursorStore } from "../store/cursorTooltipStore";
 
 export default function MainHeroPlayer() {
   const [isClicked, setIsClicked] = useState(false);
-  const [inView, setInView] = useState(true);
   const [isReady, setIsReady] = useState(false);
   const [buffered, setBuffered] = useState(0);
   const [playbackProgress, setPlaybackProgress] = useState(0);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const { setCursor, resetCursor } = useCursorStore();
 
   useEffect(() => {
     if (isClicked && videoRef.current && isReady) {
@@ -26,43 +23,20 @@ export default function MainHeroPlayer() {
     }
   }, [isClicked, isReady]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!inView) {
-      resetCursor();
-    } else {
-      if (isClicked && isReady) {
-        setCursor("invisible");
-      } else {
-        setCursor("label", "Watch reel");
-      }
-    }
-  }, [inView, isClicked, isReady, resetCursor, setCursor]);
-
   // Close player on ESC
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isClicked) {
         setIsClicked(false);
-        resetCursor();
       }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [isClicked, resetCursor]);
+  }, [isClicked]);
 
   const handleClick = () => {
     const willPlay = !isClicked;
     setIsClicked(willPlay);
-    setCursor(willPlay ? "invisible" : "label", "Watch reel");
   };
 
   return (
@@ -70,12 +44,6 @@ export default function MainHeroPlayer() {
       ref={sectionRef}
       className="absolute top-0 left-0 w-full h-full cursor-pointer z-10"
       onClick={handleClick}
-      onMouseEnter={() => {
-        if (!isClicked && inView) setCursor("label", "Watch reel");
-      }}
-      onMouseLeave={() => {
-        if (!isClicked) resetCursor();
-      }}
     >
       {/* Foreground Video with Sound - always mounted */}
       <video

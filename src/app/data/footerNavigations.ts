@@ -3,18 +3,18 @@ const footerNavigations = [
     category: "Services",
     links: [
       { label: "Development", href: "/services#development" },
-      { label: "UI/UX Design", href: "/services#ui-ux" },
-      { label: "Performance Optimization", href: "/services#performance" },
-      { label: "Consultation", href: "/services#consultation" },
+      { label: "UI/UX Design", href: "/services#design" },
+      { label: "Performance Optimization", href: "/services#optimization" },
+      { label: "Consultation", href: "/services#contultation" },
     ],
   },
   {
     category: "Resources",
     links: [
       { label: "My Work", href: "/work" },
-      { label: "Blog", href: "/blog" },
+      { label: "Blog", href: "/blogs" },
       { label: "Free Resources", href: "/resources" },
-      { label: "FAQs", href: "/faqs" },
+      { label: "FAQs", href: "/about#faqs" },
     ],
   },
   {

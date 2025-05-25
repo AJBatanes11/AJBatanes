@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useCursorStore } from "../../store/cursorTooltipStore";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,16 +18,12 @@ export default function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const { setCursor, resetCursor } = useCursorStore();
-
   return (
     <>
       <button
         onClick={scrollToTop}
         className="sticky bottom-4 w-full z-50"
         aria-label="Scroll to top"
-        onMouseEnter={() => setCursor("labelInvert", "Back to Top")}
-        onMouseLeave={resetCursor}
       >
         <div
           className={`mr-2 p-3 float-right text-dark-glass dark:text-light-glass transition-opacity duration-300 ${

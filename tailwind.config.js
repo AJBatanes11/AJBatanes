@@ -1,8 +1,11 @@
+import forms from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   darkMode: 'class',
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
@@ -28,6 +31,6 @@ module.exports = {
     },
   },
   plugins: [
-    ('@tailwindcss/forms'),
+    forms,
   ],
-}
+};
