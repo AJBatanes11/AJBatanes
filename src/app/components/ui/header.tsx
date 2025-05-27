@@ -42,11 +42,11 @@ export default function Header() {
 
   return (
     <div
-      className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-transform duration-300 ${
+      className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-all duration-300 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="text-base-dark bg-glass-light backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+      <header className="text-base-dark bg-glass-light backdrop-blur block mx-auto my-0 rounded-3xl overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
           <div className="flex item-center justify-start">
             <Logo />
@@ -57,10 +57,10 @@ export default function Header() {
                 <li key={href} className="group">
                   <Link
                     href={href}
-                    className="relative text-base text-base-dark transition-colors duration-200"
+                    className="relative text-base text-base-dark"
                   >
                     <span
-                      className={`absolute left-0 -bottom-1 h-[1px] bg-base-dark transition-all duration-300 ease-in-out ${
+                      className={`absolute left-0 -bottom-1 h-[1px] bg-base-dark transition-all ${
                         pathname === href ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     ></span>
@@ -113,7 +113,7 @@ export default function Header() {
         </div>
         {/* Mobile Navigation */}
         <nav
-          className={`overflow-hidden transition-all duration-300 lg:hidden ${
+          className={`overflow-hidden lg:hidden transition-all ${
             mobileNavOpen
               ? "max-h-screen translate-y-0"
               : "max-h-0 -translate-y-4"
@@ -125,7 +125,7 @@ export default function Header() {
                 <Link
                   href={href}
                   onClick={toggleMobileNav}
-                  className="text-3xl transition-colors duration-200 hover:text-glass-dark"
+                  className="text-3xl hover:text-glass-dark"
                 >
                   {label}
                 </Link>
@@ -134,7 +134,7 @@ export default function Header() {
           </ul>
 
           <div className="px-4 p-5 pb-10 h-auto flex items-start justify-center flex-col gap-2">
-            <p className="text-lg text-base-dark transition-colors duration-200 hover:text-glass-dark">
+            <p className="text-lg text-base-dark hover:text-glass-dark">
               I would love to hear from you!
             </p>
             <Link href="/contact">

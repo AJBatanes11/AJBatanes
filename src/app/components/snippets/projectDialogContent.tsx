@@ -1,9 +1,9 @@
 "use client";
 
 import { Project } from "../../data/projects";
-import Button from "./customButton";
-import Link from "next/link";
 import Image from "next/image";
+import Cta from "../cta";
+import Container from "../ui/container";
 
 interface ProjectDialogContentProps {
   project: Project;
@@ -134,38 +134,9 @@ export default function ProjectDialogContent({
           />
 
           {/* CTA Section */}
-          <section className="relative m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-static-baseDark text-static-baseLight rounded-3xl flex flex-col justify-center">
-            <div className="mb-5 max-w-96">
-              <h2 className="text-xl font-semibold lg:text-5xl mb-3">
-                Let&apos;s talk <br />
-                e-commerce.
-              </h2>
-              <p className="text-sm lg:text-base">
-                I help brands design, develop, and grow fast, scalable online
-                stores that deliver real results. Whether you&apos;re launching
-                or expanding, I&apos;m here to help your business succeed.
-              </p>
-            </div>
-            <Link href="/contact">
-              <Button
-                className="btn-static-baseDark btn-arrow"
-                ariaLabel="Contact support"
-              >
-                Book a Free Consult
-                <svg
-                  width="13"
-                  height="12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
-                    stroke="currentColor"
-                  ></path>
-                </svg>
-              </Button>
-            </Link>
-          </section>
+          <Container small disableTheming aria-label="Call to action">
+            <Cta darkMode />
+          </Container>
         </div>
       </div>
     </div>

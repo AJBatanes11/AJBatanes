@@ -3,6 +3,8 @@ type ContainerProps = {
   main?: boolean;
   dark?: boolean;
   small?: boolean;
+  disableTheming?: boolean;
+  ariaLabel?: string;
 };
 
 export default function Container({
@@ -10,10 +12,15 @@ export default function Container({
   main = false,
   dark = false,
   small = false,
+  disableTheming = false,
+  ariaLabel = "Container",
 }: ContainerProps) {
+  const themeAttr = !disableTheming ? { "data-theme": dark } : {};
+
   return (
     <section
-      data-theme={dark}
+      {...themeAttr}
+      aria-label={ariaLabel}
       className={`${small ? "" : "min-h-screen"} flex items-center justify-center ${main ? "" : "py-10"}`}
     >
       {children}
