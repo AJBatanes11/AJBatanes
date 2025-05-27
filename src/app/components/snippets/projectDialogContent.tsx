@@ -38,7 +38,7 @@ export default function ProjectDialogContent({
       aria-modal="true"
       aria-labelledby="project-dialog-title"
       aria-describedby="project-dialog-description"
-      className="fixed inset-0 bg-white-custom text-black-custom z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
+      className="fixed inset-0 bg-static-baseLight text-static-baseDark z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
     >
       <div className="relative w-full h-full">
         <div className="absolute inset-0 overflow-y-auto">
@@ -50,7 +50,7 @@ export default function ProjectDialogContent({
                 onClose();
               }}
               aria-label="Close project details"
-              className="text-white-custom fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
+              className="text-static-baseLight fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
             >
               <CloseIcon />
             </button>
@@ -60,7 +60,7 @@ export default function ProjectDialogContent({
               </h3>
               <p className="text-sm lg:text-base">{project.overview}</p>
             </div>
-            <aside className="text-sm lg:text-base bg-black-custom text-white-custom flex flex-col items-center lg:items-start justify-center text-center lg:text-start p-10">
+            <aside className="text-sm lg:text-base bg-static-baseDark text-static-baseLight flex flex-col items-center lg:items-start justify-center text-center lg:text-start p-10">
               <ProjectInfo label="Industry" value={project.industry} />
               <ProjectInfo label="Deliverable" value={project.service} />
               <ProjectInfo label="Technology" value={project.technology} />
@@ -134,7 +134,7 @@ export default function ProjectDialogContent({
           />
 
           {/* CTA Section */}
-          <section className="relative m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-black-custom text-white-custom rounded-3xl flex flex-col justify-center">
+          <section className="relative m-5 p-5 lg:m-20 lg:p-20 lg:pr-20 bg-static-baseDark text-static-baseLight rounded-3xl flex flex-col justify-center">
             <div className="mb-5 max-w-96">
               <h2 className="text-xl font-semibold lg:text-5xl mb-3">
                 Let&apos;s talk <br />
@@ -148,7 +148,7 @@ export default function ProjectDialogContent({
             </div>
             <Link href="/contact">
               <Button
-                className="btn-black btn-arrow"
+                className="btn-static-baseDark btn-arrow"
                 ariaLabel="Contact support"
               >
                 Book a Free Consult

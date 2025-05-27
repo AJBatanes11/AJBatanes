@@ -1,14 +1,14 @@
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "../snippets/logo";
 import Button from "../snippets/customButton";
 import Socials from "../snippets/socials";
 import GradientBackground from "./gradientBg";
 import footerNavigations from "../../data/footerNavigations";
-import FooterAccordionGroup from "./footerAccordionGroup";
+import FooterAccordionGroup from "../snippets/footerAccordionGroup";
 
 export default function Footer() {
   return (
-    <footer className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-black-custom dark:bg-white-custom text-white-custom dark:text-black-custom lg:-z-10">
+    <footer className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-base-dark text-base-light lg:-z-10">
       <GradientBackground />
       <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[700px] relative pt-16 pb-10 lg:pt-60">
         <div className="w-full flex flex-col justify-between my-0 mx-auto px-6 md:px-8 lg:px-10">
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700 after:content-['|'] after:ml-1 after:lg:ml-6"
+                  className="text-sm lg:text-base hover:text-glass-light after:content-['|'] after:ml-1 after:lg:ml-6"
                 >
                   Privacy Policy
                 </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-sm lg:text-base hover:text-gray-300 dark:hover:text-gray-700"
+                  className="text-sm lg:text-base hover:text-glass-light"
                 >
                   Terms
                 </Link>

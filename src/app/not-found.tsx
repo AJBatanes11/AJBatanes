@@ -12,10 +12,10 @@ export default function NotFound() {
     <Container dark>
       <div className="text-center mx-2">
         <p className="text-lg font-semibold">404</p>
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-black-custom dark:text-white-custom sm:text-7xl">
+        <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
           Lost in code.
         </h1>
-        <p className="mt-6 text-lg font-medium text-pretty text-dark-glass dark:text-light-glass sm:text-xl/8">
+        <p className="mt-6 text-lg font-medium text-pretty text-glass-dark sm:text-xl/8">
           Looks like this route doesn&apos;t exist.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">

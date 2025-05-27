@@ -2,7 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* your custom base layer */
+:root {
+  --white-custom: #f4f4f4;
+  --black-custom: #252422;
+  --light-glass: rgba(170, 170, 170, 0.8);
+  --dark-glass: rgba(85, 85, 85, 0.8);
+
+  --light-static: #f4f4f4;
+  --dark-static: #252422;
+  --light-static-glass: rgba(170, 170, 170, 0.8);
+  --dark-static-glass: rgba(85, 85, 85, 0.8);
+}
+
+.dark {
+  --white-custom: #252422;
+  --black-custom: #f4f4f4;
+  --light-glass: rgba(85, 85, 85, 0.8);
+  --dark-glass: rgba(170, 170, 170, 0.8);
+}
+
 @layer base {
   *,
   ::after,

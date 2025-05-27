@@ -1,6 +1,6 @@
 import ProjectCardList from "../../components/projectCardList";
 import Container from "../../components/ui/container";
-import CursorTooltip from "../../components/ui/cursorTooltip";
+import CursorTooltip from "../../components/snippets/cursorTooltip";
 
 export const metadata = {
   title: "Work | AJ Batanes",

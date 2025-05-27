@@ -10,18 +10,18 @@ export default function Home() {
       <Head>
         <link
           rel="preload"
-          href="https://cdn.sanity.io/files/8nn8fua5/production/c6fb986a862cbe643c40cbdd0318ebc495efb187.mp4"
+          href="/general/MainBanner.mp4"
           as="video"
           type="video/mp4"
           crossOrigin="anonymous"
         />
-        <link
+        {/* <link
           rel="preload"
           href="https://cdn.sanity.io/files/8nn8fua5/production/4c749533161fc77c899a376ec6cd6da38973772f.mp4"
           as="video"
           type="video/mp4"
           crossOrigin="anonymous"
-        />
+        /> */}
       </Head>
 
       <Container main dark>

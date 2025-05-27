@@ -3,7 +3,7 @@ import forms from '@tailwindcss/forms';
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  darkMode: 'class',
+  darkMode: ['class'],
   content: [
     "./src/app/**/*.{ts,tsx}",
   ],
@@ -23,11 +23,21 @@ export default {
         '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.037em' }],
       },
       colors: {
-        'black-custom': '#252422ff',
-        'white-custom': '#f4f4f4ff',
-        'light-glass': 'rgba(170,170,170,0.8)',
-        'dark-glass': 'rgba(85,85,85,0.8)',
-      },
+        base: {
+          light: 'var(--white-custom)',
+          dark: 'var(--black-custom)',
+        },
+        glass: {
+          light: 'var(--light-glass)',
+          dark: 'var(--dark-glass)',
+        },
+        static: {
+          baseLight: 'var(--light-static)',
+          baseDark: 'var(--dark-static)',
+          glassLight: 'var(--light-static-glass)',
+          glassDark: 'var(--dark-static-glass)',
+        },
+      }
     },
   },
   plugins: [

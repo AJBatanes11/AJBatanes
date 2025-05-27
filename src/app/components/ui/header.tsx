@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Logo from "./logo";
+import Logo from "../snippets/logo";
 import Button from "../snippets/customButton";
 import headerNavigations from "../../data/headerNavigations";
 import { usePathname } from "next/navigation";
@@ -46,7 +46,7 @@ export default function Header() {
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="text-black-custom dark:text-white-custom bg-light-glass dark:bg-dark-glass backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+      <header className="text-base-dark bg-glass-light backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
           <div className="flex item-center justify-start">
             <Logo />
@@ -57,10 +57,10 @@ export default function Header() {
                 <li key={href} className="group">
                   <Link
                     href={href}
-                    className="relative text-base text-black-custom dark:text-white-custom transition-colors duration-200"
+                    className="relative text-base text-base-dark transition-colors duration-200"
                   >
                     <span
-                      className={`absolute left-0 -bottom-1 h-[1px] bg-black-custom dark:bg-white-custom transition-all duration-300 ease-in-out ${
+                      className={`absolute left-0 -bottom-1 h-[1px] bg-base-dark transition-all duration-300 ease-in-out ${
                         pathname === href ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     ></span>
@@ -93,10 +93,7 @@ export default function Header() {
           </div>
           {/* Mobile Burger */}
           <div className="items-center justify-end flex lg:hidden">
-            <button
-              onClick={toggleMobileNav}
-              className="text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
-            >
+            <button onClick={toggleMobileNav} className="text-base-dark">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -128,7 +125,7 @@ export default function Header() {
                 <Link
                   href={href}
                   onClick={toggleMobileNav}
-                  className="text-3xl transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
+                  className="text-3xl transition-colors duration-200 hover:text-glass-dark"
                 >
                   {label}
                 </Link>
@@ -137,7 +134,7 @@ export default function Header() {
           </ul>
 
           <div className="px-4 p-5 pb-10 h-auto flex items-start justify-center flex-col gap-2">
-            <p className="text-lg text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass">
+            <p className="text-lg text-base-dark transition-colors duration-200 hover:text-glass-dark">
               I would love to hear from you!
             </p>
             <Link href="/contact">

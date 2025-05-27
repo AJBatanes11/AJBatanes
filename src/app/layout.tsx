@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
 import Wrapper from "./components/ui/wrapper";
-import ScrollToTop from "./components/ui/scrollToTop";
+import ScrollToTop from "./components/snippets/scrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
       >
         <div className="noise_bg"></div>
-        <div className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-white-custom dark:bg-black-custom text-black-custom dark:text-white-custom transition-colors duration-300">
+        <div className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
           <Header />
           <Wrapper>{children}</Wrapper>
           <ScrollToTop />

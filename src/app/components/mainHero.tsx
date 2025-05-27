@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import CursorFollower from "./snippets/cursorFollower";
 
 const MainHeroPlayer = dynamic(
-  () => import("@/src/app/components/mainHeroPlayer"),
+  () => import("@/src/app/components/snippets/mainHeroPlayer"),
   { ssr: false }
 );
 
@@ -43,10 +43,10 @@ export default function MainHero() {
           loop
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src="https://cdn.sanity.io/files/8nn8fua5/production/c6fb986a862cbe643c40cbdd0318ebc495efb187.mp4"
-        />
-
-        {/* Foreground Player */}
+        >
+          <source src="/general/MainBanner.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div
           className={`absolute inset-0 z-10 transition-opacity duration-500 ${
             showPlayer ? "opacity-100" : "opacity-0"
