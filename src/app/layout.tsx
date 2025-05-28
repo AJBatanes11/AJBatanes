@@ -1,6 +1,7 @@
 import "./css/style.css";
 
 import { Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
 import Wrapper from "./components/ui/wrapper";
@@ -31,7 +32,10 @@ export default function RootLayout({
         <div className="noise_bg"></div>
         <div className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
           <Header />
-          <Wrapper>{children}</Wrapper>
+          <Wrapper>
+            {children}
+            <SpeedInsights />
+          </Wrapper>
           <ScrollToTop />
           <Footer />
         </div>

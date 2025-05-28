@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import CursorFollower from "./snippets/cursorFollower";
 
@@ -11,19 +11,6 @@ const MainHeroPlayer = dynamic(
 
 export default function MainHero() {
   const [showPlayer, setShowPlayer] = useState(false);
-  const [originalPos, setOriginalPos] = useState<{
-    x: number;
-    y: number;
-  } | null>(null);
-
-  useEffect(() => {
-    setOriginalPos({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-  }, []);
-
-  if (!originalPos) {
-    // Render nothing or a loader until client size is known
-    return null;
-  }
 
   return (
     <section
