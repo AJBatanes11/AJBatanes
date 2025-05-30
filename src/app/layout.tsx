@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
       >
         <div className="noise_bg"></div>
-        <div className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
+        <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
           <Header />
           <Wrapper>
             {children}
@@ -38,7 +38,7 @@ export default function RootLayout({
           </Wrapper>
           <ScrollToTop />
           <Footer />
-        </div>
+        </main>
       </body>
     </html>
   );

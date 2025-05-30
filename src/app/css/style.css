@@ -35,6 +35,15 @@
   box-sizing: border-box;
 }
 
+html {
+  will-change: background-color, color;
+  scroll-behavior: smooth;
+}
+
+.main > section {
+  will-change: visibility, opacity, transform;
+}
+
 .noise_bg {
   position: fixed;
   top: 0;
