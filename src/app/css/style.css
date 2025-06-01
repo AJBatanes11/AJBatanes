@@ -120,14 +120,14 @@ button {
   padding-right: 1.5rem;
   text-decoration: none;
   line-height: 1.2;
-  transition:
-    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 9999px;
+  background: var(--black-custom);
+  color: var(--white-custom);
 }
 .btn,
 .btn-arrow svg {
-  will-change: opacity, transform, right;
+  will-change: color, opacity, transform, right;
 }
 
 @media screen and (min-width: 1024px) {
@@ -159,21 +159,13 @@ button {
 .btn-arrow:hover svg {
   right: 1.25rem;
 }
-.btn-white {
-  background: white;
-  color: black;
+.btn-static-white {
+  background: #f4f4f4;
+  color: #252422;
 }
-.btn-black {
-  background: black;
-  color: white;
-}
-.dark .btn-white {
-  background: black;
-  color: white;
-}
-.dark .btn-black {
-  background: white;
-  color: black;
+.btn-static-black {
+  background: #252422;
+  color: #f4f4f4;
 }
 .btn:hover {
   opacity: 0.8;

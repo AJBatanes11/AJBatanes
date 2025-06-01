@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "../snippets/logo";
-import Button from "../snippets/customButton";
 import headerNavigations from "../../data/headerNavigations";
 import { usePathname } from "next/navigation";
 
@@ -72,9 +71,9 @@ export default function Header() {
           </nav>
           <div className="item-center justify-end hidden lg:flex">
             <Link href="/contact">
-              <Button
-                className="btn-white btn-arrow"
-                ariaLabel="Contact support"
+              <button
+                className="btn btn-white btn-arrow"
+                aria-label="Contact support"
               >
                 Get In Touch
                 <svg
@@ -88,7 +87,7 @@ export default function Header() {
                     stroke="currentColor"
                   ></path>
                 </svg>
-              </Button>
+              </button>
             </Link>
           </div>
           {/* Mobile Burger */}
@@ -138,9 +137,9 @@ export default function Header() {
               I would love to hear from you!
             </p>
             <Link href="/contact">
-              <Button
-                className="btn-white btn-arrow"
-                ariaLabel="Contact support"
+              <button
+                className="btn btn-white btn-arrow"
+                aria-label="Contact support"
               >
                 Get In Touch
                 <svg
@@ -154,7 +153,7 @@ export default function Header() {
                     stroke="currentColor"
                   ></path>
                 </svg>
-              </Button>
+              </button>
             </Link>
           </div>
         </nav>

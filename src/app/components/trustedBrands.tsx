@@ -3,8 +3,8 @@ import React from "react";
 
 const logos = [
   { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/forme.svg", alt: "ForMe logo" },
   { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
   { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
   { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
@@ -30,7 +30,7 @@ type LogoItemProps = {
 
 // Memoized LogoItem component (named export)
 export const LogoItem: React.FC<LogoItemProps> = React.memo(({ src, alt }) => (
-  <div className="flex justify-center items-center p-2 text-center">
+  <div className="flex justify-center items-center p-2 text-center text-base-dark fill-base-dark">
     <Image src={src} alt={alt} width={150} height={150} loading="lazy" />
   </div>
 ));

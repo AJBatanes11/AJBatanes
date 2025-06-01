@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Button from "./snippets/customButton";
 
 interface CtaProps {
   darkMode?: boolean;
@@ -22,9 +21,9 @@ export default function Cta({ darkMode = false }: CtaProps) {
         </p>
       </div>
       <Link href="/contact">
-        <Button
-          className={`btn-arrow ${darkMode ? "btn-black" : "btn-white"}`}
-          ariaLabel="Contact support"
+        <button
+          className={`btn btn-arrow ${darkMode ? "btn-static-white" : ""}`}
+          aria-label="Contact support"
         >
           Contact Now
           <svg
@@ -38,7 +37,7 @@ export default function Cta({ darkMode = false }: CtaProps) {
               stroke="currentColor"
             ></path>
           </svg>
-        </Button>
+        </button>
       </Link>
     </div>
   );

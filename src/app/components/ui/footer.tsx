@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Logo from "../snippets/logo";
-import Button from "../snippets/customButton";
 import Socials from "../snippets/socials";
 import GradientBackground from "./gradientBg";
 import footerNavigations from "../../data/footerNavigations";
@@ -20,9 +19,9 @@ export default function Footer() {
                 e-commerce.
               </h2>
               <Link href="/contact">
-                <Button
-                  className="btn-white btn-arrow mb-5"
-                  ariaLabel="Contact support"
+                <button
+                  className="btn btn-white btn-arrow mb-5"
+                  aria-label="Contact support"
                 >
                   Book a Free Consult
                   <svg
@@ -36,7 +35,7 @@ export default function Footer() {
                       stroke="currentColor"
                     ></path>
                   </svg>
-                </Button>
+                </button>
               </Link>
               <Socials invertColor />
             </div>

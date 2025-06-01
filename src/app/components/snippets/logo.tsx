@@ -2,7 +2,11 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link href="/" className="inline-flex items-center" aria-label="AJ Batanes">
+    <Link
+      href="/"
+      className="inline-flex items-center"
+      aria-label="AJ Batanes Logo"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"

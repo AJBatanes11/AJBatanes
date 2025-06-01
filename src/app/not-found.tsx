@@ -4,7 +4,6 @@ export const metadata = {
 };
 
 import Link from "next/link";
-import Button from "./components/snippets/customButton";
 import Container from "./components/ui/container";
 
 export default function NotFound() {
@@ -20,7 +19,10 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link href="/">
-            <Button className="btn-black btn-arrow" ariaLabel="Go back home">
+            <button
+              className="btn btn-black btn-arrow"
+              aria-label="Go back home"
+            >
               Take Me Home
               <svg
                 width="10"
@@ -33,7 +35,7 @@ export default function NotFound() {
                   stroke="currentColor"
                 ></path>
               </svg>
-            </Button>
+            </button>
           </Link>
         </div>
       </div>

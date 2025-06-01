@@ -29,7 +29,7 @@ export default function Work() {
             </div>
           </div>
         </Container>
-        <Container dark small aria-label="Project list">
+        <Container dark small disableReveal aria-label="Project list">
           <div className="flex flex-wrap justify-center md:px-5 my-10 sm:my-20 w-11/12 md:w-4/5 max-w-7xl mx-auto">
             <ProjectCardList />
           </div>

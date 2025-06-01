@@ -9,6 +9,7 @@ type ContainerProps = {
   small?: boolean;
   disableTheming?: boolean;
   revealOnce?: boolean;
+  disableReveal?: boolean; // <- new prop
   ariaLabel?: string;
 };
 
@@ -19,13 +20,16 @@ export default function Container({
   small = false,
   disableTheming = false,
   revealOnce = false,
+  disableReveal = false, // <- new prop
   ariaLabel = "Container",
 }: ContainerProps) {
   const themeAttr = !disableTheming ? { "data-theme": dark } : {};
   const containerRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(disableReveal); // <- default to true if reveal disabled
 
   useEffect(() => {
+    if (disableReveal) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (revealOnce) {
@@ -43,7 +47,7 @@ export default function Container({
     if (containerRef.current) observer.observe(containerRef.current);
 
     return () => observer.disconnect();
-  }, [revealOnce]);
+  }, [revealOnce, disableReveal]);
 
   return (
     <section
