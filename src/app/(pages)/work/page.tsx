@@ -16,7 +16,7 @@ export default function Work() {
         <Container small aria-label="Introduction">
           <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-20 sm:pt-0 relative flex items-end">
             <div className="xl:absolute xl:-bottom-10 left-0 xl:max-w-[41rem] 2xl:max-w-[45rem]">
-              <h2 className="text-4xl mb-5 leading-tight">
+              <h2 className="text-4xl mb-5 leading-tight font-bold">
                 I&apos;ve worked with leading brands and ambitious start-ups to
                 deliver e-commerce websites that are built to perform.
               </h2>

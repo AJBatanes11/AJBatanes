@@ -4,6 +4,8 @@ import { Project } from "../../data/projects";
 import Image from "next/image";
 import Cta from "../cta";
 import Container from "../ui/container";
+import { useEffect } from "react";
+import { lenis } from "./lenisProvider";
 
 interface ProjectDialogContentProps {
   project: Project;
@@ -32,13 +34,28 @@ export default function ProjectDialogContent({
   project,
   onClose,
 }: ProjectDialogContentProps) {
+  useEffect(() => {
+    // On mount
+    lenis?.stop();
+    document.body.style.overflow = "hidden"; // optional fallback
+
+    return () => {
+      // On unmount
+      lenis?.start();
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div
+      onWheel={(e) => e.stopPropagation()}
+      onTouchStart={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
       role="dialog"
       aria-modal="true"
       aria-labelledby="project-dialog-title"
       aria-describedby="project-dialog-description"
-      className="fixed inset-0 bg-static-baseLight text-static-baseDark z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
+      className="dialog-scroll-container fixed inset-0 bg-static-baseLight text-static-baseDark z-50 overflow-hidden rounded-lg m-8 md:m-10 2xl:m-14"
     >
       <div className="relative w-full h-full">
         <div className="absolute inset-0 overflow-y-auto">

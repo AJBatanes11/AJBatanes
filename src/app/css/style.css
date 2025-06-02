@@ -219,3 +219,8 @@ button {
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 }
+
+.dialog-scroll-container {
+  -webkit-overflow-scrolling: touch; /* enables momentum scroll on iOS */
+  overflow-y: auto;
+}

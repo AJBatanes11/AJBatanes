@@ -65,7 +65,9 @@ export default function ProjectCard({
         {/* Content */}
         <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10">
           {project.cardTitle && (
-            <div className="text-base xl:text-4xl">{project.cardTitle}</div>
+            <div className="text-base xl:text-3xl font-semibold">
+              {project.cardTitle}
+            </div>
           )}
           {project.cardDescription && (
             <span className="text-xs">{project.cardDescription}</span>
