@@ -56,7 +56,7 @@ export default function Header() {
                 <li key={href} className="group">
                   <Link
                     href={href}
-                    className="relative text-base text-base-dark"
+                    className="relative text-base font-semibold text-base-dark"
                   >
                     <span
                       className={`absolute left-0 -bottom-1 h-[1px] bg-base-dark transition-all ${
@@ -124,7 +124,7 @@ export default function Header() {
                 <Link
                   href={href}
                   onClick={toggleMobileNav}
-                  className="text-3xl hover:text-glass-dark"
+                  className="text-5xl font-semibold"
                 >
                   {label}
                 </Link>
@@ -133,7 +133,7 @@ export default function Header() {
           </ul>
 
           <div className="px-4 p-5 pb-10 h-auto flex items-start justify-center flex-col gap-2">
-            <p className="text-lg text-base-dark hover:text-glass-dark">
+            <p className="text-lg text-base-dark">
               I would love to hear from you!
             </p>
             <Link href="/contact">

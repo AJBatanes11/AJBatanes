@@ -37,8 +37,7 @@ export default function Container({
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`
-        ${small ? "" : "min-h-screen"} 
-        flex items-center justify-center 
+        ${small ? "" : "min-h-screen"}
         ${main ? "" : "py-10"}
       `}
     >

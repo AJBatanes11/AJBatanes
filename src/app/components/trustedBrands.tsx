@@ -39,13 +39,12 @@ LogoItem.displayName = "LogoItem";
 // Default export for main component
 export default function TrustedBrands() {
   return (
-    <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12 relative">
-      <div className="clients__bg-one"></div>
-      <div className="clients__bg-two"></div>
-      <h2 className="text-4xl sm:text-6xl text-center font-semibold leading-tight mb-20">
-        Trusted by world-class e-commerce businesses.
+    <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12 relative">
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center mb-20">
+        Trusted by world-class <br />
+        e-commerce businesses.
       </h2>
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-12 lg:gap-x-24 justify-center items-center">
+      <div className="w-full grid grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-12 lg:gap-x-24 justify-center items-center">
         {logos.map((logo, i) => (
           <LogoItem key={i} src={logo.src} alt={logo.alt} />
         ))}
