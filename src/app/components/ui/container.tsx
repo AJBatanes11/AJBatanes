@@ -35,7 +35,7 @@ export default function Container({
         once: false, // important: animate in *and* out
         amount: 0.15, // like your 15% threshold
       }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className={`
         ${small ? "" : "min-h-screen"}
         ${main ? "" : "py-10"}
