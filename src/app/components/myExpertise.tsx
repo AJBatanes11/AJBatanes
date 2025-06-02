@@ -27,7 +27,7 @@ const services = [
 export default function MyExpertise() {
   return (
     <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-9 md:gap-20 items-end mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-10 md:mb-20">
         <div className="md:col-span-3">
           <h2 className="text-4xl sm:text-6xl font-semibold leading-tight mb-5">
             How I take your business
@@ -40,7 +40,7 @@ export default function MyExpertise() {
             I am a web developer with expertise, and on a mission to help you
             take the next step in your business.
           </p>
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <button
               className="btn btn-black btn-arrow mt-5"
               aria-label="Contact support"
@@ -58,12 +58,12 @@ export default function MyExpertise() {
                 />
               </svg>
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
 
       <div className="w-full flex flex-wrap justify-between">
-        <div className="px-2 h-auto flex w-full order-2 lg:order-1 lg:w-2/12">
+        <div className="h-auto flex w-full order-2 lg:order-1 lg:w-2/12">
           <div className="w-full sticky bottom-6 self-end left-0">
             <Link href="/contact">
               <button
@@ -87,7 +87,7 @@ export default function MyExpertise() {
           </div>
         </div>
 
-        <div className="px-2 w-full order-1 lg:order-2 lg:w-10/12">
+        <div className="w-full order-1 lg:order-2 lg:w-10/12">
           <div className="px-2 w-full order-1 lg:order-2 group">
             {services.map((service, index) => (
               <div
