@@ -3,6 +3,7 @@ import Container from "../components/ui/container";
 import Head from "next/head";
 import TrustedBrands from "../components/trustedBrands";
 import IntroSection from "../components/introSection";
+import MyExpertise from "../components/myExpertise";
 
 export default function Home() {
   return (
@@ -35,14 +36,7 @@ export default function Home() {
         <TrustedBrands />
       </Container>
       <Container small>
-        <div className="container mx-auto py-10 sm:py-40 px-4">
-          <h2 className="text-center mb-20 text-3xl md:text-5xl font-semibold leading-tight">
-            My Services
-          </h2>
-          <p className="text-center mb-40 text-lg md:text-2xl font-semibold leading-tight">
-            Stay tuned...
-          </p>
-        </div>
+        <MyExpertise />
       </Container>
     </>
   );

@@ -6,7 +6,7 @@ export default function IntroSection() {
       <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-9 md:gap-20 items-end">
           <div className="md:col-span-3">
-            <h2 className="text-4xl sm:text-6xl leading-tight mb-5">
+            <h2 className="text-4xl sm:text-6xl font-semibold leading-tight mb-10">
               I help brands build fast, scalable, and conversion-focused
               <br />
               e-commerce stores that stand out and sell.

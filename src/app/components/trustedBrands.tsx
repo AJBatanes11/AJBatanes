@@ -42,7 +42,7 @@ export default function TrustedBrands() {
     <div className="container max-w-screen-2xl mx-auto py-10 sm:py-40 px-4 md:px-8 lg:px-12 relative">
       <div className="clients__bg-one"></div>
       <div className="clients__bg-two"></div>
-      <h2 className="text-3xl sm:text-4xl text-center leading-tight mb-10 lg:mb-14">
+      <h2 className="text-4xl sm:text-6xl text-center font-semibold leading-tight mb-20">
         Trusted by world-class e-commerce businesses.
       </h2>
       <div className="grid grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-12 lg:gap-x-24 justify-center items-center">
