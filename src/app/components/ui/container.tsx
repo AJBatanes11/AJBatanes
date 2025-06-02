@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -8,8 +9,7 @@ type ContainerProps = {
   dark?: boolean;
   small?: boolean;
   disableTheming?: boolean;
-  revealOnce?: boolean;
-  disableReveal?: boolean; // <- new prop
+  disableReveal?: boolean;
   ariaLabel?: string;
 };
 
@@ -19,49 +19,30 @@ export default function Container({
   dark = false,
   small = false,
   disableTheming = false,
-  revealOnce = false,
-  disableReveal = false, // <- new prop
+  disableReveal = false,
   ariaLabel = "Container",
 }: ContainerProps) {
   const themeAttr = !disableTheming ? { "data-theme": dark } : {};
-  const containerRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(disableReveal); // <- default to true if reveal disabled
-
-  useEffect(() => {
-    if (disableReveal) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (revealOnce) {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          }
-        } else {
-          setIsVisible(entry.isIntersecting);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-
-    return () => observer.disconnect();
-  }, [revealOnce, disableReveal]);
 
   return (
-    <section
-      ref={containerRef}
+    <motion.section
       {...themeAttr}
       aria-label={ariaLabel}
+      initial={disableReveal ? false : { opacity: 0, y: 60 }}
+      whileInView={disableReveal ? undefined : { opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      viewport={{
+        once: false, // important: animate in *and* out
+        amount: 0.15, // like your 15% threshold
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`
         ${small ? "" : "min-h-screen"} 
         flex items-center justify-center 
         ${main ? "" : "py-10"}
-        ${isVisible ? "visible" : "invisible"}
       `}
     >
       {children}
-    </section>
+    </motion.section>
   );
 }

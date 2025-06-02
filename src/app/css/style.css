@@ -13,14 +13,12 @@
   --light-static-glass: rgba(170, 170, 170, 0.8);
   --dark-static-glass: rgba(85, 85, 85, 0.8);
 }
-
 .dark {
   --white-custom: #252422;
   --black-custom: #f4f4f4;
   --light-glass: rgba(85, 85, 85, 0.8);
   --dark-glass: rgba(170, 170, 170, 0.8);
 }
-
 @layer base {
   *,
   ::after,
@@ -28,22 +26,23 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+html,
+body {
+  overscroll-behavior: none;
+  scroll-behavior: auto !important; /* disable native scroll smoothing */
+}
 
 html {
   will-change: background-color, color;
-  scroll-behavior: smooth;
 }
-
 .main > section {
   will-change: visibility, opacity, transform;
 }
-
 .noise_bg {
   position: fixed;
   top: 0;
@@ -52,7 +51,6 @@ html {
   height: 100%;
   pointer-events: none;
 }
-
 .noise_bg:after {
   position: absolute;
   top: -10rem;
@@ -65,7 +63,6 @@ html {
   content: "";
   will-change: transform;
 }
-
 @keyframes noise_bg {
   0% {
     transform: translate3d(0, 9rem, 0);
@@ -101,7 +98,6 @@ html {
     transform: translate3d(-7rem, 0, 0);
   }
 }
-
 /* button */
 button {
   background: none;
@@ -129,7 +125,6 @@ button {
 .btn-arrow svg {
   will-change: color, opacity, transform, right;
 }
-
 @media screen and (min-width: 1024px) {
   .btn {
     padding-left: 1.5rem;
@@ -170,47 +165,41 @@ button {
 .btn:hover {
   opacity: 0.8;
 }
+.group:hover .underline {
+  transform-origin: left;
+}
+.group:not(:hover) .underline {
+  transform-origin: right;
+}
 
 /* Project card */
 @layer components {
   .project-card {
     @apply relative;
   }
-
-  /* Mobile/Medium layout: Even/Odd */
   .project-card:nth-child(odd) {
     @apply top-0;
   }
-
   .project-card:nth-child(even) {
     @apply -top-[60px];
   }
-
   @media (min-width: 768px) {
     .project-card:nth-child(even) {
       @apply -top-[80px];
     }
   }
-
-  /* XL layout: index % 3 mapping */
   @media (min-width: 1280px) {
-    /* index % 3 === 0 → 1st, 4th, 7th... */
     .project-card:nth-child(3n + 1) {
       @apply xl:top-[20px];
     }
-
-    /* index % 3 === 1 → 2nd, 5th, 8th... */
     .project-card:nth-child(3n + 2) {
       @apply xl:-top-[120px];
     }
-
-    /* index % 3 === 2 → 3rd, 6th, 9th... */
     .project-card:nth-child(3n) {
       @apply xl:-top-[400px];
     }
   }
 }
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -221,18 +210,9 @@ button {
     transform: translateY(0);
   }
 }
-
 .animate-fadeInUp {
   animation-name: fadeInUp;
   animation-duration: 0.6s;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
-}
-
-/* Add this somewhere in your global CSS */
-.group:hover .underline {
-  transform-origin: left;
-}
-.group:not(:hover) .underline {
-  transform-origin: right;
 }

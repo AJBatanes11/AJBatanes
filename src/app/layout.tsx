@@ -6,6 +6,7 @@ import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
 import Wrapper from "./components/ui/wrapper";
 import ScrollToTop from "./components/snippets/scrollToTop";
+import LenisProvider from "./components/snippets/lenisProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
       >
+        <LenisProvider />
         <div className="noise_bg"></div>
         <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
           <Header />
