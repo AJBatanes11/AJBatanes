@@ -4,22 +4,22 @@ import React from "react";
 const logos = [
   { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
   { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/forme.svg", alt: "ForMe logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Placeholder logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
+  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
+  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
 ];
 
 // Type for props
@@ -40,7 +40,7 @@ LogoItem.displayName = "LogoItem";
 export default function TrustedBrands() {
   return (
     <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12 relative">
-      <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center mb-20">
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none text-center mb-20">
         Trusted by world-class <br />
         e-commerce businesses.
       </h2>

@@ -13,7 +13,7 @@ const services = [
     banner: "/expertise-banners/placeholder.webp",
   },
   {
-    label: "Performance Optimization",
+    label: "Optimization",
     href: "/services#optimization",
     banner: "/expertise-banners/placeholder.webp",
   },
@@ -29,7 +29,7 @@ export default function MyExpertise() {
     <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-8 md:mb-14">
         <div className="md:col-span-3">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none mb-5">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-5">
             How I take your business to the next level
           </h2>
         </div>
@@ -99,7 +99,7 @@ export default function MyExpertise() {
               >
                 <Link
                   href={service.href}
-                  className="flex items-center relative w-full py-10 text-4xl sm:text-6xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold leading-tight"
+                  className="flex items-center relative w-full py-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight"
                 >
                   <div
                     className="

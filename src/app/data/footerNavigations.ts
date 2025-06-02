@@ -4,7 +4,7 @@ const footerNavigations = [
     links: [
       { label: "Development", href: "/services#development" },
       { label: "UI/UX Design", href: "/services#design" },
-      { label: "Performance Optimization", href: "/services#optimization" },
+      { label: "Optimization", href: "/services#optimization" },
       { label: "Consultation", href: "/services#contultation" },
     ],
   },

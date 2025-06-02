@@ -14,7 +14,7 @@ export default function Footer() {
           {/* footer main */}
           <div className="relative grid grid-cols-1 lg:grid-cols-7 gap-0 mb-14 lg:mb-0">
             <div className="flex flex-col col-span-3 mb-10 lg:mb-0 lg:pr-20">
-              <h2 className="text-5xl lg:text-6xl mb-5">
+              <h2 className="text-5xl lg:text-6xl mb-5 font-bold">
                 Let&apos;s talk <br />
                 e-commerce.
               </h2>

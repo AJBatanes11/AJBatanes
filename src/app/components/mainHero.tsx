@@ -23,8 +23,10 @@ export default function MainHero() {
         labelOutside="©AJ Batanes"
       > */}
       {/* Background Autoplay Video (Muted) */}
-      <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-base-dark text-4xl sm:text-6xl font-bold z-20">
-        Hello there, I'm AJ Batanes
+      <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-base-dark text-3xl sm:text-6xl font-bold z-20">
+        Hello there,
+        <br />
+        I&apos;m AJ Batanes
       </h2>
       {/* <video
         preload="auto"

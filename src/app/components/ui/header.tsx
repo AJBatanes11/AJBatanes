@@ -124,7 +124,7 @@ export default function Header() {
                 <Link
                   href={href}
                   onClick={toggleMobileNav}
-                  className="text-5xl font-semibold"
+                  className="text-4xl font-semibold"
                 >
                   {label}
                 </Link>
