@@ -9,11 +9,6 @@ export default function CardTestimony() {
         client or user.
       </p>
       <div className="flex items-center">
-        <img
-          src="/expertise-banners/placeholder.webp"
-          alt="User Avatar"
-          className="w-10 h-10 rounded-full mr-3"
-        />
         <span className="text-lg md:text-2xl">- John Doe</span>
       </div>
     </div>
