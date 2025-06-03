@@ -67,25 +67,9 @@ export default function MyExpertise() {
       <div className="w-full flex flex-wrap justify-between">
         <div className="h-auto py-14 flex w-full order-2 lg:order-1 lg:w-2/12">
           <div className="w-full sticky bottom-10 self-end left-0">
-            <Link href="/contact">
-              <button
-                className="btn btn-black btn-arrow mt-5"
-                aria-label="Contact support"
-              >
-                See all services
-                <svg
-                  width="13"
-                  height="12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
-                    stroke="currentColor"
-                  />
-                </svg>
-              </button>
-            </Link>
+            <div className="text-sm text-muted-foreground">
+              25+ successful launches <br /> across 3 industries.
+            </div>
           </div>
         </div>
 
