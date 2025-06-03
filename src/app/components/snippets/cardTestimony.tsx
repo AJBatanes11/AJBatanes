@@ -8,8 +8,12 @@ export default function CardTestimony() {
         This is a sample testimonial text that describes the experience of a
         client or user.
       </p>
-      <div className="flex items-center">
+
+      <div className="flex flex-col items-start md:items-end">
         <span className="text-lg md:text-2xl">- John Doe</span>
+        <span className="text-sm md:text-lg text-muted-foreground">
+          CEO at Acme Inc.
+        </span>
       </div>
     </div>
   );

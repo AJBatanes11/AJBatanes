@@ -21,8 +21,7 @@ export default function ScrollToTop() {
   return (
     <>
       <button
-        onClick={scrollToTop}
-        className="sticky bottom-4 w-full z-50"
+        className="sticky mt-20 bottom-4 w-full z-50"
         aria-label="Scroll to top"
       >
         <div
@@ -30,7 +29,10 @@ export default function ScrollToTop() {
             isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
-          <div className="flex flex-row gap-1 items-center justify-center rotate-90 origin-bottom-right mr-2">
+          <div
+            onClick={scrollToTop}
+            className="flex flex-row gap-1 items-center justify-center rotate-90 origin-bottom-right mr-2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

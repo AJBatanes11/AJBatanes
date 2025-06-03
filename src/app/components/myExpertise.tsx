@@ -67,7 +67,7 @@ export default function MyExpertise() {
       <div className="w-full flex flex-wrap justify-between">
         <div className="h-auto py-14 flex w-full order-2 lg:order-1 lg:w-2/12">
           <div className="w-full sticky bottom-10 self-end left-0">
-            <div className="text-sm text-muted-foreground">
+            <div className="text-xs sm:text-sm text-base-dark">
               25+ successful launches <br /> across 3 industries.
             </div>
           </div>

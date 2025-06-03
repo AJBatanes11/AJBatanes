@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 export default function CTAMarquee() {
   return (
     <>
-      <Marquee autoFill speed={50} className="w-full h-28 sm:h-48">
+      <Marquee autoFill speed={25} className="w-full h-28 sm:h-48">
         <div className="flex items-center justify-center gap-2 ml-2 lg:gap-4 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
           <h2>Lets work together.</h2>
           <svg
@@ -52,7 +52,7 @@ export default function CTAMarquee() {
       </Marquee>
       <Marquee
         autoFill
-        speed={50}
+        speed={25}
         direction="right"
         className="w-full mb-28 lg:mb-40 h-28 sm:h-48"
       >

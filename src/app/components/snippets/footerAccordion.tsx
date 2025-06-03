@@ -84,9 +84,8 @@ export default function FooterAccordion({
                 <li key={i}>
                   <Link
                     href={item.href}
-                    className={`link ${
-                      pathname === item.href ? "link--visible" : ""
-                    } text-sm lg:text-base`}
+                    onClick={() => onToggle(index)}
+                    className={`link ${pathname === item.href ? "link--visible" : ""} text-sm lg:text-base`}
                   >
                     {item.label}
                   </Link>
