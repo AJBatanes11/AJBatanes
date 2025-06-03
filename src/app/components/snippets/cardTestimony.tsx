@@ -1,7 +1,7 @@
 export default function CardTestimony() {
   return (
-    <div className="relative w-full p-20 m-20">
-      <h3 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none mb-10">
+    <div className="relative">
+      <h3 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-10">
         Testimonial Title
       </h3>
       <p className="text-lg md:text-2xl mb-4">

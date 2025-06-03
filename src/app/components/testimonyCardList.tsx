@@ -1,0 +1,125 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+
+import { EffectFade } from "swiper/modules";
+import { useRef } from "react";
+import type { Swiper as SwiperClass } from "swiper/types";
+
+const testimonials = [
+  {
+    name: "Jane Doe",
+    message:
+      "Working with AJ was a game-changer. He didn’t just meet expectations—he redefined them. His clarity, creativity, and execution were outstanding from start to finish.",
+  },
+  {
+    name: "John Smith",
+    message:
+      "AJ made the process seamless and refreshingly collaborative. I felt heard, supported, and challenged in the best way possible. The final result exceeded every expectation.",
+  },
+  {
+    name: "Emily Johnson",
+    message:
+      "I’ve worked with other designers before, but this was on another level. AJ brought strategic insight, clean design, and exceptional attention to detail. Highly recommended.",
+  },
+  {
+    name: "Michael Brown",
+    message:
+      "What stood out most was AJ’s ability to turn complex ideas into clear, compelling visuals. He’s incredibly thoughtful, fast, and easy to work with.",
+  },
+  {
+    name: "Sarah Davis",
+    message:
+      "From kickoff to final delivery, AJ worked with a level of craftsmanship and care that’s rare. Every decision felt intentional, and the results speak for themselves.",
+  },
+  {
+    name: "Chris Wilson",
+    message:
+      "I came in with a vague vision—AJ brought it to life better than I could’ve imagined. Bold, clean, and completely aligned with what I needed.",
+  },
+  {
+    name: "Laura Martin",
+    message:
+      "AJ took the time to really understand my goals and pushed the concept further than I expected. The outcome was not just beautiful, but effective.",
+  },
+  {
+    name: "Daniel Lee",
+    message:
+      "AJ communicated clearly, stayed on schedule, and delivered work that elevated my brand. I always knew where things stood and appreciated the transparency.",
+  },
+  {
+    name: "Sophia Kim",
+    message:
+      "Every part of the experience felt personal and well thought out. AJ handled everything—from concept to launch—with precision and professionalism.",
+  },
+  {
+    name: "David Garcia",
+    message:
+      "AJ didn’t just deliver great work—he delivered trust. The process was easy, the outcome was powerful, and I’m already planning the next project with him.",
+  },
+];
+export default function TestimonyCardList() {
+  const swiperRef = useRef<SwiperClass | null>(null);
+
+  return (
+    <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12">
+      <div className="w-full flex flex-wrap">
+        <div className="px-2 lg:px-3 xl:px-4 lg:py-20 inline-flex flex-row justify-between items-end w-full mb-10 md:pr-6 lg:pr-0 lg:mb-0 lg:w-1/4 lg:flex-col lg:justify-between lg:items-start">
+          <div className="w-full lg:sticky lg:top-10 text-center">
+            {/* <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none text-center"> */}
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-semibold leading-none mb-10">
+              What my clients say
+            </h2>
+            <div className="flex items-center justify-center lg:justify-evenly gap-2 text-lg md:text-2xl">
+              <button
+                onClick={() => swiperRef.current?.slidePrev()}
+                className=""
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => swiperRef.current?.slideNext()}
+                className=""
+              >
+                Forward
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-full lg:w-3/4">
+          <Swiper
+            modules={[EffectFade]}
+            pagination={{ clickable: true }}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            loop={true}
+            spaceBetween={0}
+            className="mySwiper w-full"
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide
+                className="px-2 rounded-lg lg:px-3 xl:px-4 flex h-auto"
+                key={index}
+              >
+                <div className="p-4 min-h-96 text-base-dark mx-auto">
+                  <h4 className="text-lg italitext-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight italic mb-20">
+                    &quot;{testimonial.message}&quot;
+                  </h4>
+                  <p className="text-lg md:text-2xl text-right">
+                    - {testimonial.name}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
+  );
+}
