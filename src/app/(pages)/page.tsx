@@ -44,9 +44,15 @@ export default function Home() {
         dark
         scrollLength={3000}
         sections={[
-          <h3 className="text-red-500 text-3xl">Section 1</h3>,
-          <h3 className="text-white text-3xl">Section 2</h3>,
-          <h3 className="text-white text-3xl">Section 3</h3>,
+          <h3 key="section-1" className="text-red-500 text-3xl">
+            Section 1
+          </h3>,
+          <h3 key="section-2" className="text-white text-3xl">
+            Section 2
+          </h3>,
+          <h3 key="section-3" className="text-white text-3xl">
+            Section 3
+          </h3>,
         ]}
       />
       <Container small disableTheming>
