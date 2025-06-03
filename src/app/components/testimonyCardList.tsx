@@ -108,7 +108,7 @@ export default function TestimonyCardList() {
                 className="px-2 rounded-lg lg:px-3 xl:px-4 flex h-auto"
                 key={index}
               >
-                <div className="p-4 min-h-96 text-base-dark mx-auto">
+                <div className="p-4 text-base-dark mx-auto">
                   <h4 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight italic mb-20">
                     &quot;{testimonial.message}&quot;
                   </h4>
