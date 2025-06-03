@@ -5,6 +5,7 @@ import TrustedBrands from "../components/trustedBrands";
 import IntroSection from "../components/introSection";
 import MyExpertise from "../components/myExpertise";
 import Marquee from "react-fast-marquee";
+import ScrollSection from "../components/scrollSection";
 
 export default function Home() {
   return (
@@ -39,7 +40,16 @@ export default function Home() {
       <Container small>
         <MyExpertise />
       </Container>
-      <Container dark small>
+      <ScrollSection
+        dark
+        scrollLength={3000}
+        sections={[
+          <h3 className="text-red-500 text-3xl">Section 1</h3>,
+          <h3 className="text-white text-3xl">Section 2</h3>,
+          <h3 className="text-white text-3xl">Section 3</h3>,
+        ]}
+      />
+      <Container small disableTheming>
         <Marquee autoFill speed={50} className="w-full h-28 sm:h-48">
           <div className="flex items-center justify-center gap-2 ml-2 lg:gap-4 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
             <h2>Lets work together.</h2>

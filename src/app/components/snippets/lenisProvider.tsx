@@ -1,10 +1,9 @@
-// components/LenisProvider.tsx
 "use client";
 
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Make it accessible in other components
 export let lenis: Lenis | null = null;
 
 export default function LenisProvider() {
@@ -20,6 +19,12 @@ export default function LenisProvider() {
     }
 
     requestAnimationFrame(raf);
+
+    // 🧩 Sync ScrollTrigger with Lenis
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Optional: refresh triggers on resize or route change
+    ScrollTrigger.defaults({ scroller: window });
 
     return () => {
       lenis?.destroy();
