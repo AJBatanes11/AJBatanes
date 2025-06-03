@@ -4,6 +4,7 @@ import Socials from "../snippets/socials";
 import GradientBackground from "./gradientBg";
 import footerNavigations from "../../data/footerNavigations";
 import FooterAccordionGroup from "../snippets/footerAccordionGroup";
+import TermsAndPrivacy from "../snippets/termsAndPrivacy";
 
 export default function Footer() {
   return (
@@ -20,10 +21,10 @@ export default function Footer() {
               </h2>
               <Link href="/contact">
                 <button
-                  className="btn btn-white btn-arrow mb-5"
+                  className="btn btn--invert btn-arrow mb-5"
                   aria-label="Contact support"
                 >
-                  Book a Free Consult
+                  Book a Free Consultation
                   <svg
                     width="13"
                     height="12"
@@ -57,24 +58,7 @@ export default function Footer() {
                 reserved.
               </p>
             </div>
-            <ul className="flex items-center justify-center gap-1 lg:gap-6">
-              <li>
-                <Link
-                  href="/"
-                  className="text-sm lg:text-base hover:text-glass-light after:content-['|'] after:ml-1 after:lg:ml-6"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/"
-                  className="text-sm lg:text-base hover:text-glass-light"
-                >
-                  Terms
-                </Link>
-              </li>
-            </ul>
+            <TermsAndPrivacy />
           </div>
         </div>
       </div>

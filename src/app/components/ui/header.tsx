@@ -56,13 +56,8 @@ export default function Header() {
                 <li key={href} className="group">
                   <Link
                     href={href}
-                    className="relative text-base font-semibold text-base-dark"
+                    className={`link ${pathname === href ? "link--visible" : ""} relative text-base font-semibold text-base-dark`}
                   >
-                    <span
-                      className={`absolute left-0 -bottom-1 h-[1px] bg-base-dark transition-all ${
-                        pathname === href ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    ></span>
                     {label}
                   </Link>
                 </li>
@@ -71,10 +66,7 @@ export default function Header() {
           </nav>
           <div className="item-center justify-end hidden lg:flex">
             <Link href="/contact">
-              <button
-                className="btn btn-white btn-arrow"
-                aria-label="Contact support"
-              >
+              <button className="btn btn-arrow" aria-label="Contact support">
                 Get In Touch
                 <svg
                   width="13"
@@ -137,10 +129,7 @@ export default function Header() {
               I would love to hear from you!
             </p>
             <Link href="/contact">
-              <button
-                className="btn btn-white btn-arrow"
-                aria-label="Contact support"
-              >
+              <button className="btn btn-arrow" aria-label="Contact support">
                 Get In Touch
                 <svg
                   width="13"

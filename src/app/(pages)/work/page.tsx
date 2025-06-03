@@ -14,9 +14,9 @@ export default function Work() {
       <CursorTooltip />
       <main>
         <Container small aria-label="Introduction">
-          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-20 sm:pt-0 relative flex items-end">
-            <div className="xl:absolute xl:-bottom-10 left-0 xl:max-w-[41rem] 2xl:max-w-[45rem]">
-              <h2 className="text-4xl mb-5 leading-tight font-bold">
+          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-24 lg:pt-0 lg:mt-20 relative flex items-end">
+            <div className="lg:absolute lg:-bottom-10 left-0 lg:max-w-[35rem] xl:max-w-[42rem] 2xl:max-w-[51rem]">
+              <h2 className="text-5xl mb-5 leading-tight font-bold">
                 I&apos;ve worked with leading brands and ambitious start-ups to
                 deliver e-commerce websites that are built to perform.
               </h2>
@@ -30,7 +30,7 @@ export default function Work() {
           </div>
         </Container>
         <Container dark small disableReveal aria-label="Project list">
-          <div className="flex flex-wrap justify-center md:px-5 my-10 sm:my-20 w-11/12 md:w-4/5 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center md:px-5 my-10 sm:my-20 w-11/12 lg:w-11/12 xl:w-4/5 max-w-7xl mx-auto">
             <ProjectCardList />
           </div>
         </Container>

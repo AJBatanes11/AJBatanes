@@ -43,6 +43,7 @@ html {
 .main > section {
   will-change: visibility, opacity, transform;
 }
+/* static/noise background */
 .noise_bg {
   position: fixed;
   top: 0;
@@ -98,7 +99,24 @@ html {
     transform: translate3d(-7rem, 0, 0);
   }
 }
-/* button */
+/* Container scroll animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+/* Button styles */
 button {
   background: none;
   appearance: none;
@@ -118,11 +136,14 @@ button {
   line-height: 1.2;
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 9999px;
-  background: var(--black-custom);
+  background-color: var(--black-custom);
   color: var(--white-custom);
+}
+.btn--invert {
+  background-color: var(--white-custom);
+  color: var(--black-custom);
 }
 .btn,
 .btn-arrow svg {
@@ -168,13 +189,6 @@ button {
 .btn:hover {
   opacity: 0.8;
 }
-.group:hover .underline {
-  transform-origin: left;
-}
-.group:not(:hover) .underline {
-  transform-origin: right;
-}
-
 /* Project card */
 @layer components {
   .project-card {
@@ -191,36 +205,73 @@ button {
       @apply -top-[80px];
     }
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     .project-card:nth-child(3n + 1) {
-      @apply xl:top-[20px];
+      @apply lg:top-[20px];
     }
     .project-card:nth-child(3n + 2) {
-      @apply xl:-top-[120px];
+      @apply lg:-top-[120px];
     }
     .project-card:nth-child(3n) {
-      @apply xl:-top-[400px];
+      @apply lg:-top-[400px];
     }
   }
 }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Dialog styles */
+.dialog-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
 }
-.animate-fadeInUp {
-  animation-name: fadeInUp;
-  animation-duration: 0.6s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-fill-mode: forwards;
+/* Link styles */
+.link {
+  display: inline-block;
+  position: relative;
 }
 
-.dialog-scroll-container {
-  -webkit-overflow-scrolling: touch; /* enables momentum scroll on iOS */
-  overflow-y: auto;
+.link:after,
+.link:before {
+  content: "";
+  background-color: currentColor;
+  display: block;
+  height: 1px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 0;
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.135, 0.9, 0.15, 1);
+  transition-duration: 0.9s;
+}
+
+.link:after {
+  display: none;
+}
+.link--visible:after,
+.link:active:before,
+.link:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.link--visible:after {
+  display: block;
+}
+
+.link--visible:before {
+  transition-delay: 0.2s;
+}
+
+.link--visible:hover:after {
+  right: 0;
+  left: auto;
+  width: 0;
+}
+
+.link--visible:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%;
 }

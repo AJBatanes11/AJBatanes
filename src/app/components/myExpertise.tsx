@@ -38,8 +38,8 @@ export default function MyExpertise() {
             I am a web developer with expertise, and on a mission to help you
             take the next step in your business.
           </p>
-          {/* <Link href="/contact">
-            <button
+          <Link href="/contact">
+            {/* <button
               className="btn btn-black btn-arrow mt-5"
               aria-label="Contact support"
             >
@@ -55,8 +55,12 @@ export default function MyExpertise() {
                   stroke="currentColor"
                 />
               </svg>
-            </button>
-          </Link> */}
+            </button> */}
+
+            <span className="link link--visible text-lg md:text-2xl mt-5">
+              Explore my services
+            </span>
+          </Link>
         </div>
       </div>
 

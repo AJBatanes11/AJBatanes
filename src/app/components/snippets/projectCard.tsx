@@ -34,9 +34,9 @@ export default function ProjectCard({
         className={`
           project-card
           relative rounded-[20px] overflow-hidden
-          w-[45%] sm:w-[47%] xl:w-[30%]
-          h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]
-          float-left mt-6 sm:mt-8 xl:mt-10 mx-[1.5%]
+          w-[45%] sm:w-[47%] lg:w-[30%]
+          h-[250px] sm:h-[450px] md:h-[500px] lg:h-[350px] xl:h-[550px]
+          float-left mt-6 sm:mt-8 lg:mt-10 mx-[1.5%]
           shadow-[0_0_10px_5px_rgba(128,128,128,0.4)]
           transition-transform duration-500 ease-in-out
           text-base-dark bg-base-dark
@@ -65,7 +65,7 @@ export default function ProjectCard({
         {/* Content */}
         <div className="absolute z-10 bottom-0 leading-tight text-balance pb-3 sm:pb-4 pl-3 sm:pl-5 pr-5 sm:pr-10">
           {project.cardTitle && (
-            <div className="text-base xl:text-3xl font-semibold">
+            <div className="text-base sm:text-xl lg:text-2xl xl:text-3xl font-semibold">
               {project.cardTitle}
             </div>
           )}
