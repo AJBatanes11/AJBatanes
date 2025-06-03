@@ -6,6 +6,7 @@ import IntroSection from "../components/introSection";
 import MyExpertise from "../components/myExpertise";
 import Marquee from "react-fast-marquee";
 import ScrollSection from "../components/scrollSection";
+import CardTestimony from "../components/snippets/cardTestimony";
 
 export default function Home() {
   return (
@@ -34,28 +35,27 @@ export default function Home() {
       <Container small>
         <IntroSection />
       </Container>
-      <Container dark small>
+      <Container small>
         <TrustedBrands />
       </Container>
-      <Container small>
+      <Container dark small>
         <MyExpertise />
       </Container>
       <ScrollSection
-        dark
-        scrollLength={3000}
+        scrollLength={9000}
         sections={[
-          <h3 key="section-1" className="text-red-500 text-3xl">
-            Section 1
-          </h3>,
-          <h3 key="section-2" className="text-white text-3xl">
-            Section 2
-          </h3>,
-          <h3 key="section-3" className="text-white text-3xl">
-            Section 3
-          </h3>,
+          <CardTestimony key="testimony1" />,
+          <CardTestimony key="testimony2" />,
+          <CardTestimony key="testimony3" />,
+          <CardTestimony key="testimony3" />,
+          <CardTestimony key="testimony4" />,
+          <CardTestimony key="testimony5" />,
+          <CardTestimony key="testimony6" />,
+          <CardTestimony key="testimony7" />,
+          <CardTestimony key="testimony8" />,
         ]}
       />
-      <Container small disableTheming>
+      <Container small dark>
         <Marquee autoFill speed={50} className="w-full h-28 sm:h-48">
           <div className="flex items-center justify-center gap-2 ml-2 lg:gap-4 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
             <h2>Lets work together.</h2>
