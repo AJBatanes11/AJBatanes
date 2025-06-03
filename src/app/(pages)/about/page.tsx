@@ -1,3 +1,5 @@
+import Container from "../../components/ui/container";
+
 export const metadata = {
   title: "About | AJ Batanes",
   description: "Web developer, Designer, and Creator",
@@ -6,8 +8,9 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      <h1 className="text-4xl">About Page*</h1>
-      <h1 className="text-4xl">More Section</h1>
+      <Container main dark>
+        <h1 className="text-4xl">About Page*</h1>
+      </Container>
     </>
   );
 }

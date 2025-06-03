@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Logo from "./logo";
-import Button from "../snippets/customButton";
+import Logo from "../snippets/logo";
 import headerNavigations from "../../data/headerNavigations";
 import { usePathname } from "next/navigation";
 
@@ -42,11 +41,11 @@ export default function Header() {
 
   return (
     <div
-      className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-transform duration-300 ${
+      className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-all duration-300 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="text-black-custom dark:text-white-custom bg-light-glass dark:bg-dark-glass backdrop-blur block mx-auto my-0 rounded-3xl transition-all overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+      <header className="text-base-dark bg-glass-light backdrop-blur block mx-auto my-0 rounded-3xl overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
           <div className="flex item-center justify-start">
             <Logo />
@@ -57,13 +56,8 @@ export default function Header() {
                 <li key={href} className="group">
                   <Link
                     href={href}
-                    className="relative text-base text-black-custom dark:text-white-custom transition-colors duration-200"
+                    className={`link ${pathname === href ? "link--visible" : ""} relative text-base font-semibold text-base-dark`}
                   >
-                    <span
-                      className={`absolute left-0 -bottom-1 h-[1px] bg-black-custom dark:bg-white-custom transition-all duration-300 ease-in-out ${
-                        pathname === href ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    ></span>
                     {label}
                   </Link>
                 </li>
@@ -72,10 +66,7 @@ export default function Header() {
           </nav>
           <div className="item-center justify-end hidden lg:flex">
             <Link href="/contact">
-              <Button
-                className="btn-white btn-arrow"
-                ariaLabel="Contact support"
-              >
+              <button className="btn btn-arrow" aria-label="Contact support">
                 Get In Touch
                 <svg
                   width="13"
@@ -88,15 +79,12 @@ export default function Header() {
                     stroke="currentColor"
                   ></path>
                 </svg>
-              </Button>
+              </button>
             </Link>
           </div>
           {/* Mobile Burger */}
           <div className="items-center justify-end flex lg:hidden">
-            <button
-              onClick={toggleMobileNav}
-              className="text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
-            >
+            <button onClick={toggleMobileNav} className="text-base-dark">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -116,7 +104,7 @@ export default function Header() {
         </div>
         {/* Mobile Navigation */}
         <nav
-          className={`overflow-hidden transition-all duration-300 lg:hidden ${
+          className={`overflow-hidden lg:hidden transition-all ${
             mobileNavOpen
               ? "max-h-screen translate-y-0"
               : "max-h-0 -translate-y-4"
@@ -128,7 +116,7 @@ export default function Header() {
                 <Link
                   href={href}
                   onClick={toggleMobileNav}
-                  className="text-3xl transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass"
+                  className="text-4xl font-semibold"
                 >
                   {label}
                 </Link>
@@ -137,14 +125,11 @@ export default function Header() {
           </ul>
 
           <div className="px-4 p-5 pb-10 h-auto flex items-start justify-center flex-col gap-2">
-            <p className="text-lg text-black-custom dark:text-white-custom transition-colors duration-200 hover:text-dark-glass dark:hover:text-light-glass">
+            <p className="text-lg text-base-dark">
               I would love to hear from you!
             </p>
             <Link href="/contact">
-              <Button
-                className="btn-white btn-arrow"
-                ariaLabel="Contact support"
-              >
+              <button className="btn btn-arrow" aria-label="Contact support">
                 Get In Touch
                 <svg
                   width="13"
@@ -157,7 +142,7 @@ export default function Header() {
                     stroke="currentColor"
                   ></path>
                 </svg>
-              </Button>
+              </button>
             </Link>
           </div>
         </nav>

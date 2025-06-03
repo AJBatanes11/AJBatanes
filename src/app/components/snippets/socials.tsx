@@ -10,8 +10,8 @@ export default function Socials({
   invertColor = false,
 }: SocialsProps) {
   const invertClass = invertColor
-    ? "text-white-custom fill-white-custom dark:text-black-custom dark:fill-black-custom"
-    : "text-black-custom fill-black-custom dark:text-white-custom dark:fill-white-custom";
+    ? "text-base-light fill-base-light"
+    : "text-base-dark fill-base-dark";
 
   return (
     <div className={`${className} ${invertClass}`}>

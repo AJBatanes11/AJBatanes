@@ -1,3 +1,5 @@
+import Container from "../../components/ui/container";
+
 export const metadata = {
   title: "Contact | AJ Batanes",
   description: "Web developer, Designer, and Creator",
@@ -6,9 +8,9 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
-      <h1 className="text-4xl">Contact Page*</h1>
-      {/* <CalendlyPopup /> */}
-      Calendly and Form*
+      <Container main dark>
+        <h1 className="text-4xl">Contact Page*</h1>
+      </Container>
     </>
   );
 }
