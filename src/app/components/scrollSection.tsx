@@ -56,7 +56,7 @@ export default function ScrollSection({
     >
       <div
         ref={sectionRef}
-        className="flex h-dvh w-[100vw] overflow-hidden"
+        className="flex h-screen w-[100vw] overflow-hidden"
         style={{ width: `${sections.length * 100}vw` }}
       >
         {sections.map((content, index) => (
