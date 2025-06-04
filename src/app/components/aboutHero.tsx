@@ -17,30 +17,26 @@ export default function AboutHero() {
         scrollTrigger: {
           trigger: aboutHero.current,
           start: "top top",
-          end: "+=1000", // adjust until it feels right
+          end: "bottom top",
           scrub: true,
           pin: true,
           anticipatePin: 1,
-          onUpdate: (self) => {
-            document.documentElement.classList.toggle(
-              "dark",
-              self.progress >= 0.95
-            );
-          },
         },
       });
 
+      // Zoom animation
       tl.fromTo(
         ".zoom-box",
-        {
-          width: "50%",
-          height: "300px",
-        },
-        {
-          width: "100%",
-          height: "100vh",
-          ease: "power1.inOut",
-        }
+        { width: "50%", height: "300px" },
+        { width: "100%", height: "100vh", ease: "power1.inOut" }
+      );
+
+      // Fade in text slightly after zoom starts
+      tl.fromTo(
+        ".zoom-text",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, ease: "power1.out", duration: 1 },
+        "-=0.5" // overlap a bit with zoom
       );
     },
     { scope: aboutHero }
@@ -59,6 +55,13 @@ export default function AboutHero() {
           className="object-cover w-full h-full"
           priority
         />
+
+        {/* Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="zoom-text text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center px-4">
+            Welcome to My World
+          </h1>
+        </div>
       </div>
     </section>
   );

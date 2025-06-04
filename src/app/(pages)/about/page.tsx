@@ -10,14 +10,8 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      <Container main>
-        <MainHero />
-      </Container>
       <AboutHero />
-      <Container main dark>
-        <MainHero />
-      </Container>
-      <Container main>
+      <Container small dark>
         <MainHero />
       </Container>
     </>
