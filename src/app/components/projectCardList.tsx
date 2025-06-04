@@ -13,7 +13,6 @@ const ProjectCard = dynamic(() => import("./snippets/projectCard"), {
           h-[250px] sm:h-[450px] md:h-[500px] lg:h-[550px]
           float-left mt-6 sm:mt-8 lg:mt-10 mx-[1.5%]
           transition-transform duration-500 ease-in-out
-          shadow-[0_0_10px_5px_rgba(128,128,128,0.4)]
           text-base-dark bg-base-dark
           opacity-10"
     >

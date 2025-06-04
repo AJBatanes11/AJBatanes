@@ -1,3 +1,5 @@
+import AboutHero from "../../components/aboutHero";
+import MainHero from "../../components/mainHero";
 import Container from "../../components/ui/container";
 
 export const metadata = {
@@ -8,8 +10,15 @@ export const metadata = {
 export default function About() {
   return (
     <>
+      <Container main>
+        <MainHero />
+      </Container>
+      <AboutHero />
       <Container main dark>
-        <h1 className="text-4xl">About Page*</h1>
+        <MainHero />
+      </Container>
+      <Container main>
+        <MainHero />
       </Container>
     </>
   );

@@ -1,10 +1,9 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-
-import { EffectFade } from "swiper/modules";
 import { useRef } from "react";
 import type { Swiper as SwiperClass } from "swiper/types";
 
@@ -127,7 +126,7 @@ export default function TestimonyCardList() {
                     <p className="text-lg md:text-2xl font-semibold">
                       - {testimonial.name}
                     </p>
-                    <p className="text-sm md:text-lg text-glass-dark">
+                    <p className="text-sm md:text-lg text-base-dark/70">
                       {testimonial.title}
                     </p>
                   </div>

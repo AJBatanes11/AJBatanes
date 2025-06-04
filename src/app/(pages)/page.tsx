@@ -23,8 +23,6 @@ export default function Home() {
       </Container>
       <Container dark small>
         <CTAMarquee />
-      </Container>
-      <Container dark small>
         <TestimonyCardList />
       </Container>
     </>

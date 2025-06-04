@@ -45,7 +45,7 @@ export default function Header() {
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <header className="text-base-dark bg-glass-light backdrop-blur block mx-auto my-0 rounded-3xl overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
+      <header className="text-base-dark bg-[rgba(244,240,235,0.85)] dark:bg-[rgba(37,36,34,0.85)] backdrop-blur-md block mx-auto my-0 rounded-3xl overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
         <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
           <div className="flex item-center justify-start">
             <Logo />
