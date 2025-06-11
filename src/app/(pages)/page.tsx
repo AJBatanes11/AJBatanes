@@ -5,14 +5,13 @@ import IntroSection from "../components/introSection";
 import MyExpertise from "../components/myExpertise";
 import CTAMarquee from "../components/ctaMarquee";
 import TestimonyCardList from "../components/testimonyCardList";
-import AboutHero from "../components/aboutHero";
+import MainHero from "../components/mainHero";
 
 export default function Home() {
   return (
     <>
       <Container main>
-        <AboutHero />
-        {/* <MainHero /> */}
+        <MainHero />
       </Container>
       <Container small>
         <IntroSection />

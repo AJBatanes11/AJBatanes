@@ -1,7 +1,9 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import Loader from "./loader";
 
 type WrapperProps = {
   children: ReactNode;
@@ -10,7 +12,28 @@ type WrapperProps = {
 export default function Wrapper({ children }: WrapperProps) {
   const pathname = usePathname();
   const lastTheme = useRef<boolean | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
+  // Loader logic
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Prevent scroll when loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
+  // Scroll-triggered theme toggle
   useEffect(() => {
     const sections = Array.from(
       document.querySelectorAll("section[data-theme]")
@@ -54,7 +77,7 @@ export default function Wrapper({ children }: WrapperProps) {
 
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onScroll);
-    onScroll(); // initial trigger
+    onScroll();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -62,5 +85,23 @@ export default function Wrapper({ children }: WrapperProps) {
     };
   }, [pathname]);
 
-  return <>{children}</>;
+  return (
+    <>
+      <AnimatePresence>{isLoading && <Loader key="loader" />}</AnimatePresence>
+
+      <motion.div
+        key="content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+          delay: isLoading ? 1.5 : 0,
+        }}
+        className={isLoading ? "pointer-events-none" : ""}
+      >
+        {children}
+      </motion.div>
+    </>
+  );
 }

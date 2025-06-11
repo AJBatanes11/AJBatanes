@@ -1,53 +1,26 @@
-"use client";
-
-// import { useState } from "react";
-// import dynamic from "next/dynamic";
-// import CursorFollower from "./snippets/cursorFollower";
-
-// const MainHeroPlayer = dynamic(
-//   () => import("@/src/app/components/snippets/mainHeroPlayer"),
-//   { ssr: false }
-// );
+import Image from "next/image";
 
 export default function MainHero() {
-  // const [showPlayer, setShowPlayer] = useState(false);
-
   return (
-    <section
-      className="relative w-full h-screen sm:h-dvh"
-      // onClick={() => setShowPlayer(true)}
-    >
-      {/* <CursorFollower
-        followerSize={120}
-        labelInside="Watch reel"
-        labelOutside="©AJ Batanes"
-      > */}
-      {/* Background Autoplay Video (Muted) */}
-      <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-base-dark text-3xl sm:text-6xl font-bold z-20">
-        Hello there,
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-10">
+      <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight max-w-5xl">
+        Design & Build
         <br />
-        I&apos;m AJ Batanes
-      </h2>
-      {/* <video
-        preload="auto"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        what others only imagine
+      </h1>
+
+      <div
+        className="relative w-full mt-10 overflow-hidden rounded-3xl
+          aspect-[3/4] sm:aspect-[3/4] md:aspect-[3/4] lg:aspect-[16/9] max-w-6xl"
       >
-        <source src="/general/MainBanner.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-      {/* <div
-        className={`absolute inset-0 z-10 transition-opacity duration-500 
-          ${showPlayer ? "opacity-100" : "opacity-0"}
-          `}
-      > */}
-      <div className="absolute inset-0 z-10 transition-opacity duration-500">
-        {/* <MainHeroPlayer /> */}
+        <Image
+          src="/general/landscape_placeholder.jpg"
+          alt="Main hero banner"
+          fill
+          priority
+          className="object-cover"
+        />
       </div>
-      {/* </CursorFollower> */}
     </section>
   );
 }
