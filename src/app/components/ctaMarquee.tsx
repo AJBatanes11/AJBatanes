@@ -5,7 +5,9 @@ export default function CTAMarquee() {
     <>
       <Marquee autoFill speed={25} className="select-none w-full h-28 sm:h-48">
         <div className="flex items-center justify-center gap-2 ml-2 lg:gap-4 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
-          <h2>Lets work together.</h2>
+          <strong aria-label="Let`s work together">
+            Let&apos;s work together.
+          </strong>
           <svg
             className=""
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +59,9 @@ export default function CTAMarquee() {
         className="select-none w-full mb-28 lg:mb-40 h-28 sm:h-48"
       >
         <div className="flex items-center justify-center gap-2 ml-2 lg:gap-4 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
-          <h2>Lets work together.</h2>
+          <strong aria-label="Let`s work together">
+            Let&apos;s work together.
+          </strong>
           <svg
             className=""
             xmlns="http://www.w3.org/2000/svg"

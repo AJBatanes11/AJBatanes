@@ -1,12 +1,11 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import ProjectDialogContent from "./projectDialogContent";
 import CursorClientWrapper from "./cursorTooltipClientWrapper";
 import { Project } from "../../data/projects";
-import Overlay from "./overlay";
+import DrawerModal from "./drawerModal";
 
 interface ProjectCardProps {
   className?: string;
@@ -38,7 +37,7 @@ export default function ProjectCard({
           w-[45%] sm:w-[47%] lg:w-[30%]
           h-[250px] sm:h-[450px] md:h-[500px] lg:h-[350px] xl:h-[550px]
           float-left mt-6 sm:mt-8 lg:mt-10 mx-[1.5%]
-          transition-transform duration-500 ease-in-out
+          transition-all duration-300 ease-in-out
           text-base-dark bg-base-dark
           cursor-pointer lg:cursor-none
           ${className}
@@ -74,20 +73,16 @@ export default function ProjectCard({
           )}
         </div>
       </CursorClientWrapper>
-
-      <Transition appear show={isOpen} as={Fragment}>
-        <Overlay isActive={isOpen} />
-        <Dialog
-          as="div"
-          className="relative z-50"
+      <DrawerModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        maxWidth="85vw"
+      >
+        <ProjectDialogContent
+          project={project}
           onClose={() => setIsOpen(false)}
-        >
-          <ProjectDialogContent
-            project={project}
-            onClose={() => setIsOpen(false)}
-          />
-        </Dialog>
-      </Transition>
+        />
+      </DrawerModal>
     </>
   );
 }

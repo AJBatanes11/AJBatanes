@@ -1,0 +1,58 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import services from "../data/services";
+import type { Services } from "../data/services";
+import DrawerModal from "./snippets/drawerModal";
+import ServiceDialogContent from "./snippets/serviceDialogContent";
+
+export default function AllServices() {
+  const [activeService, setActiveService] = useState<Services | null>(null);
+
+  return (
+    <div className="w-11/12 m-auto">
+      {services.map((service, index) => (
+        <div
+          key={index}
+          role="button"
+          tabIndex={index}
+          onClick={() => setActiveService(service)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") setActiveService(service);
+          }}
+          className={`w-full ${index === 0 ? "border-y" : "border-b"} border-glass-dark overflow-hidden cursor-pointer`}
+        >
+          <div className="flex flex-col lg:flex-row flex-nowrap gap-4 my-5 mx-2">
+            <div className="relative min-w-[200px] max-w-sm">
+              <Image
+                src={service.banner}
+                alt={`${service.label} banner`}
+                width={500}
+                height={300}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="flex flex-col justify-between w-full">
+              <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+                {service.label}
+              </p>
+              <p className="text-base text-muted-foreground mt-2">
+                {service.tag}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Modal Drawer */}
+      <DrawerModal
+        isOpen={!!activeService}
+        onClose={() => setActiveService(null)}
+        maxWidth="90vw"
+      >
+        {activeService && <ServiceDialogContent service={activeService} />}
+      </DrawerModal>
+    </div>
+  );
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { useRef } from "react";
@@ -102,9 +102,10 @@ export default function TestimonyCardList() {
 
         <div className="relative w-full lg:w-3/4">
           <Swiper
-            modules={[EffectFade]}
+            modules={[EffectFade, Autoplay]}
             pagination={{ clickable: true }}
             effect="fade"
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
             fadeEffect={{ crossFade: true }}
             loop={true}
             spaceBetween={0}
@@ -114,18 +115,15 @@ export default function TestimonyCardList() {
             }}
           >
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide
-                className="px-2 rounded-lg lg:px-3 xl:px-4 flex h-auto"
-                key={index}
-              >
+              <SwiperSlide className="px-2 lg:px-3 xl:px-4" key={index}>
                 <div className="select-none p-4 text-base-dark mx-auto">
-                  <h4 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight italic mb-20">
+                  <blockquote className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight italic mb-20">
                     &quot;{testimonial.message}&quot;
-                  </h4>
+                  </blockquote>
                   <div className="text-right">
-                    <p className="text-lg md:text-2xl font-semibold">
+                    <cite className="text-lg md:text-2xl font-semibold">
                       - {testimonial.name}
-                    </p>
+                    </cite>
                     <p className="text-sm md:text-lg text-base-dark/70">
                       {testimonial.title}
                     </p>
@@ -138,13 +136,13 @@ export default function TestimonyCardList() {
           <div className="flex lg:hidden items-center justify-center gap-6 mt-2 text-lg md:text-2xl">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
-              className="link link--visible"
+              className="link link--visible py-2 px-4"
             >
               Previous
             </button>
             <button
               onClick={() => swiperRef.current?.slideNext()}
-              className="link link--visible"
+              className="link link--visible py-2 px-4"
             >
               Forward
             </button>

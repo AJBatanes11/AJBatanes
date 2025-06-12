@@ -13,7 +13,7 @@ export default function Work() {
     <>
       <CursorTooltip />
       <main>
-        <Container small disableReveal aria-label="Introduction">
+        <Container small disableReveal aria-label="Work Introduction Section">
           <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-14 md:pt-24 lg:pt-0 relative flex items-end">
             <div className="lg:absolute lg:-bottom-10 left-0 lg:max-w-[35rem] xl:max-w-[42rem] 2xl:max-w-[51rem]">
               <h1 className="text-left lg:text-center text-5xl font-bold leading-none mb-5">
@@ -29,12 +29,17 @@ export default function Work() {
             </div>
           </div>
         </Container>
-        <Container dark small disableReveal aria-label="Project list">
+        <Container
+          dark
+          small
+          disableReveal
+          aria-label="Projects Showcase Section"
+        >
           <div className="flex flex-wrap justify-center md:px-5 my-10 sm:my-20 w-11/12 lg:w-11/12 xl:w-4/5 max-w-7xl mx-auto">
             <ProjectCardList />
           </div>
         </Container>
-        <Container small disableTheming aria-label="Call to action">
+        <Container small aria-label="Final Call to Action Section">
           <Cta />
         </Container>
       </main>

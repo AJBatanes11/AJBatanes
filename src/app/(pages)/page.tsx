@@ -10,22 +10,28 @@ import MainHero from "../components/mainHero";
 export default function Home() {
   return (
     <>
-      <Container main>
-        <MainHero />
-      </Container>
-      <Container small>
-        <IntroSection />
-      </Container>
-      <Container dark small>
-        <TrustedBrands />
-      </Container>
-      <Container small>
-        <MyExpertise />
-      </Container>
-      <Container dark small>
-        <CTAMarquee />
-        <TestimonyCardList />
-      </Container>
+      <>
+        <Container main disableReveal aria-label="Main Hero Section">
+          <MainHero />
+        </Container>
+        <Container small aria-label="Introduction Section">
+          <IntroSection />
+        </Container>
+        <Container dark small aria-label="Trusted Brands Section">
+          <TrustedBrands />
+        </Container>
+        <Container small aria-label="Expertise Section">
+          <MyExpertise />
+        </Container>
+        <Container
+          dark
+          small
+          aria-label="Call to Action and Testimonials Section"
+        >
+          <CTAMarquee />
+          <TestimonyCardList />
+        </Container>
+      </>
     </>
   );
 }
