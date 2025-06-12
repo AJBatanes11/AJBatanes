@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Services } from "../../data/services";
+import Marquee from "react-fast-marquee";
 
 export default function ServiceDialogContent({
   service,
@@ -9,16 +10,20 @@ export default function ServiceDialogContent({
   service: Services;
 }) {
   return (
-    <div className="p-10">
-      <h2 className="text-4xl font-bold mb-4">{service.label}</h2>
-      <p className="text-muted-foreground text-lg mb-6">{service.tag}</p>
-      <Image
-        src={service.banner}
-        alt={`${service.label} banner`}
-        width={1000}
-        height={600}
-        className="rounded-2xl object-cover w-full h-auto"
-      />
-    </div>
+    <>
+      <Marquee
+        autoFill
+        speed={25}
+        direction="right"
+        className="select-none w-full mb-4 h-28 sm:h-48"
+      >
+        <div className="ml-10 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
+          <strong aria-label="Development">{service.label}</strong>
+        </div>
+      </Marquee>
+      <div className="px-10">
+        <p className="text-muted-foreground text-lg mb-6">{service.tag}</p>
+      </div>
+    </>
   );
 }

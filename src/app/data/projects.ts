@@ -13,7 +13,7 @@ import modAndNobleCard from "@/src/app/assets/images/projects/ModandNoble.jpg";
 import soulAesthetixCard from "@/src/app/assets/images/projects/SoulAesthetix.png";
 import theCutBuddyCard from "@/src/app/assets/images/projects/TheCutBuddy.jpg";
 import theHoopGangCard from "@/src/app/assets/images/projects/TheHoopGang.jpg";
-import tiwflixCard from "@/src/app/assets/images/projects/Tiwflix.png";
+// import tiwflixCard from "@/src/app/assets/images/projects/Tiwflix.png";
 import { StaticImageData } from "next/image";
 
 export interface Project {
@@ -246,6 +246,72 @@ const projects: Project[] = [
     imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
+    // cardBanner: fundaySweetsCard,
+    cardTitle: "Funday Sweets",
+    cardDescription: "Build & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://www.fundaysweets.com/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
+    // cardBanner: skoneCosmeticsCard,
+    cardTitle: "Skone Cosmetics",
+    cardDescription: "Build & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://skonecosmetics.com/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
+    // cardBanner: maveroCard,
+    cardTitle: "Mavero",
+    cardDescription: "Design & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://mavero.store/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
     cardBanner: hillsideGardenCard,
     cardTitle: "Hillside Garden",
     cardDescription: "Design & Development",
@@ -378,27 +444,27 @@ const projects: Project[] = [
     imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
     imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
-  {
-    cardBanner: tiwflixCard,
-    cardTitle: "Tiwflix",
-    cardDescription: "Design & Build",
-    overview:
-      "Built a mini Netflix-style platform using React, external API, and responsive layout.",
-    industry: "Personal Project / Entertainment",
-    service: "Design, Dev, API Integration",
-    technology: "React JS, TMDB API, Tailwind CSS",
-    website: "https://ajbatanes11.github.io/tiwflix/",
-    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
-    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading1: "Card-Based Layout",
-    description1: "Grid system displaying shows from TMDB API.",
-    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
-    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading2: "Dark Mode + Mobile Friendly",
-    description2: "Responsive layout with focus on dark-mode visuals.",
-    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
-    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
-  },
+  // {
+  //   cardBanner: tiwflixCard,
+  //   cardTitle: "Tiwflix",
+  //   cardDescription: "Design & Build",
+  //   overview:
+  //     "Built a mini Netflix-style platform using React, external API, and responsive layout.",
+  //   industry: "Personal Project / Entertainment",
+  //   service: "Design, Dev, API Integration",
+  //   technology: "React JS, TMDB API, Tailwind CSS",
+  //   website: "https://ajbatanes11.github.io/tiwflix/",
+  //   imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+  //   imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+  //   heading1: "Card-Based Layout",
+  //   description1: "Grid system displaying shows from TMDB API.",
+  //   imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+  //   imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+  //   heading2: "Dark Mode + Mobile Friendly",
+  //   description2: "Responsive layout with focus on dark-mode visuals.",
+  //   imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+  //   imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  // },
 ];
 
 export default projects;
