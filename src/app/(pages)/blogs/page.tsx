@@ -10,7 +10,7 @@ export default function Blogs() {
   return (
     <>
       <Container disableReveal aria-label="Blogs Introduction Section">
-        <div className="container max-w-7xl mx-auto min-h-96 pt-14 md:pt-24 lg:pt-0 lg:mt-20 relative flex items-center justify-center">
+        <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-14 md:pt-24 lg:pt-0 lg:mt-20 relative flex items-center justify-center">
           <div className="lg:max-w-[35rem] xl:max-w-[42rem] 2xl:max-w-[51rem] text-left lg:text-center">
             <h1 className="text-left lg:text-center text-5xl font-bold leading-none mb-5">
               Ideas, insights, and everything in between.

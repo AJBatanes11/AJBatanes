@@ -17,12 +17,12 @@ export default function MainHero() {
       imageRef.current,
       { width: "50%" },
       {
-        width: "100vw",
+        width: "100%",
         borderRadius: "0",
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: "top+=100 top",
           end: "center top",
           scrub: true,
         },
@@ -33,12 +33,11 @@ export default function MainHero() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-dvh h-dvh flex flex-col items-center justify-center px-4 pt-28 pb-10"
+      className="min-h-dvh h-dvh flex flex-col items-start justify-center lg:items-center px-4 pt-28 pb-10"
     >
       <h1 className="text-left lg:text-center text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none max-w-5xl">
         Crafting e-commerce experiences that convert, perform, and inspire.
       </h1>
-
       <div
         ref={imageRef}
         className="relative w-full mt-10 overflow-hidden rounded-3xl

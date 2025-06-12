@@ -117,10 +117,10 @@ export default function TestimonyCardList() {
             {testimonials.map((testimonial, index) => (
               <SwiperSlide className="px-2 lg:px-3 xl:px-4" key={index}>
                 <div className="select-none p-4 text-base-dark mx-auto">
-                  <blockquote className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight italic mb-20">
+                  <blockquote className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight italic mb-10 lg:mb-20">
                     &quot;{testimonial.message}&quot;
                   </blockquote>
-                  <div className="text-right">
+                  <div className="text-left lg:text-right">
                     <cite className="text-lg md:text-2xl font-semibold">
                       - {testimonial.name}
                     </cite>
