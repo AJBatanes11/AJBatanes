@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Services } from "../../data/services";
 import Marquee from "react-fast-marquee";
 
