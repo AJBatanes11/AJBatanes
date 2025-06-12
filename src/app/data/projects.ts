@@ -43,22 +43,22 @@ const projects: Project[] = [
     cardTitle: "Penshoppe",
     cardDescription: "Design & Development",
     overview:
-      "Penshoppe is one of the Philippines' leading fashion retail brands, setting the trend for stylish and affordable casual wear that appeals to both young individuals and the young-at-heart. Known for its innovative designs and inclusive approach, Penshoppe offers a wide range of products, including sleek tops, trendy bottoms, footwear, accessories, and fragrances, all crafted to help customers express their unique style with confidence. This distinguished brand has gained international recognition by collaborating with global celebrities such as Zayn Malik, Gigi Hadid, Kendall Jenner, BLACKPINK's Lisa, and the Filipino artists BINI and James Reid. With its dynamic presence and strong reputation, Penshoppe is more than a brand; it represents a lifestyle movement, inspiring millions to distinguish themselves and confidently embrace their personal style.",
-    industry: "Fashion Retail",
+      "Penshoppe is a well-known Filipino fashion retail brand that offers trendy and affordable clothing and accessories for men and women. It has a strong presence both in physical stores and online platforms across Southeast Asia.",
+    industry: "Fashion Retail / E-commerce",
     service:
       "Shopify Development, UI/UX Design, Performance Optimization, Ongoing Support & Maintenance",
     technology: "Shopify, Liquid, JavaScript, PHP",
     website: "https://www.penshoppe.com",
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading1: "Advanced Features & Seamless Performance",
+    heading1: "Website Revamp for Enhanced UX",
     description1:
-      "Implemented tailored features such as the convenient Buy Online, Pick Up In Store option to enhance customer flexibility. Focused on fast loading speeds and reliable performance to increase satisfaction and drive higher conversions.",
+      "Executed a full front-end revamp of Penshoppe’s website to enhance the user journey—prioritizing clean design, mobile responsiveness, and performance optimization.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-2.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-2.jpg",
-    heading2: "Responsive & Brand-Aligned Design",
+    heading2: "Exclusive Launches Web Development",
     description2:
-      "Delivered a visually stunning and user-friendly Shopify storefront that perfectly reflects Penshoppe's vibrant brand. Optimized for all devices to ensure customers enjoy a smooth, engaging shopping experience anytime, anywhere.",
+      "Led the web development for Penshoppe’s exclusive online launches, ensuring smooth rollouts, optimized performance during high-traffic periods, and seamless shopping experiences for limited-edition drops.",
     imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
     imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
