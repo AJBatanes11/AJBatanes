@@ -36,7 +36,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.3 }}
-          className="sticky mt-20 bottom-4 w-full z-50"
+          className="sticky mt-20 bottom-4 w-full z-40"
         >
           <div className="mr-2 p-3 float-right">
             <motion.div
