@@ -150,6 +150,28 @@ export default function ProjectDialogContent({
             description={project.description2}
           />
 
+          {/* Visuals + Content Sections */}
+          {project.imageDesktop3 && (
+            <Image
+              src={project.imageDesktop3}
+              alt="Project desktop screenshot"
+              className="w-full rounded-3xl mb-10 sm:mb-20 hidden sm:block"
+              width={3582}
+              height={1853}
+              sizes="100vw"
+            />
+          )}
+          {project.imageMobile3 && (
+            <Image
+              src={project.imageMobile3}
+              alt="Project mobile screenshot"
+              className="w-full rounded-3xl mb-10 sm:mb-20 block sm:hidden"
+              width={1853}
+              height={1853}
+              sizes="100vw"
+            />
+          )}
+
           {/* CTA Section */}
           <Container small disableTheming aria-label="Call to action">
             <Cta darkMode />

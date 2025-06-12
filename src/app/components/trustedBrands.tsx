@@ -40,7 +40,7 @@ LogoItem.displayName = "LogoItem";
 export default function TrustedBrands() {
   return (
     <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12 relative">
-      <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none text-center mb-20">
+      <h2 className="text-left lg:text-center text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-20">
         Trusted by world-class <br />
         e-commerce businesses.
       </h2>

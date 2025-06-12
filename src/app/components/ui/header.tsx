@@ -43,6 +43,7 @@ export default function Header() {
   return (
     <>
       <Overlay
+        isHeader
         isActive={mobileNavOpen}
         onClick={() => setMobileNavOpen(false)}
       />

@@ -30,7 +30,7 @@ export default function MyExpertise() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-8 md:mb-14">
         <div className="md:col-span-3">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-5">
-            How I take your business to the next level
+            How I take your business to the next level.
           </h2>
         </div>
         <div className="md:col-span-2">

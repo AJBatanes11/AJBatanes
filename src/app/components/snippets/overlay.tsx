@@ -8,12 +8,14 @@ type OverlayProps = {
   isActive: boolean;
   onClick?: () => void;
   className?: string;
+  isHeader?: boolean;
 };
 
 export default function Overlay({
   isActive,
   onClick,
   className,
+  isHeader = false,
 }: OverlayProps) {
   useEffect(() => {
     document.body.style.overflow = isActive ? "hidden" : "";
@@ -31,7 +33,7 @@ export default function Overlay({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`fixed inset-0 z-30 bg-black/50 backdrop-blur-sm ${className ?? ""}`}
+              className={`fixed inset-0 ${isHeader ? "z-30" : "z-40"} bg-black/50 backdrop-blur-sm ${className ?? ""}`}
             />
           )}
         </AnimatePresence>,

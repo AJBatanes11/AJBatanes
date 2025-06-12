@@ -45,7 +45,7 @@ export default function AboutHero() {
   return (
     <section
       ref={aboutHero}
-      className="banner flex justify-center items-center w-full h-full"
+      className="relative flex justify-center items-center w-full min-h-screen overflow-hidden"
     >
       <div className="zoom-box relative overflow-hidden">
         <Image

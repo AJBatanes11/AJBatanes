@@ -13,13 +13,13 @@ export default function Work() {
     <>
       <CursorTooltip />
       <main>
-        <Container small aria-label="Introduction">
-          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-24 lg:pt-0 lg:mt-20 relative flex items-end">
+        <Container small disableReveal aria-label="Introduction">
+          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto min-h-96 pt-14 md:pt-24 lg:pt-0 relative flex items-end">
             <div className="lg:absolute lg:-bottom-10 left-0 lg:max-w-[35rem] xl:max-w-[42rem] 2xl:max-w-[51rem]">
-              <h2 className="text-5xl mb-5 leading-tight font-bold">
+              <h1 className="text-left lg:text-center text-5xl font-bold leading-none mb-5">
                 I&apos;ve worked with leading brands and ambitious start-ups to
                 deliver e-commerce websites that are built to perform.
-              </h2>
+              </h1>
               <p className="leading-relaxed">
                 As an e-commerce web designer and developer, I combine my
                 technical and creative skills to create websites that engage

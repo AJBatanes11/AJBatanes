@@ -6,6 +6,7 @@ import { Fragment, useState } from "react";
 import ProjectDialogContent from "./projectDialogContent";
 import CursorClientWrapper from "./cursorTooltipClientWrapper";
 import { Project } from "../../data/projects";
+import Overlay from "./overlay";
 
 interface ProjectCardProps {
   className?: string;
@@ -75,10 +76,7 @@ export default function ProjectCard({
       </CursorClientWrapper>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <div
-          className="fixed inset-0 bg-base-dark/30 backdrop-blur-sm z-40"
-          aria-hidden="true"
-        />
+        <Overlay isActive={isOpen} />
         <Dialog
           as="div"
           className="relative z-50"

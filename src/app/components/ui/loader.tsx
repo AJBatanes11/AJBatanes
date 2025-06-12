@@ -6,10 +6,15 @@ export default function Loader() {
   return (
     <motion.div
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-base-light dark:bg-base-dark"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut", delay: 1.2 }}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={{
+        exit: {
+          x: "-100%",
+          transition: { duration: 0.3, ease: "easeInOut" },
+        },
+      }}
       style={{ pointerEvents: "none" }}
     >
       <svg
@@ -20,7 +25,7 @@ export default function Loader() {
         viewBox="0 0 100 100"
         role="img"
         aria-hidden="true"
-        className="text-base-dark dark:text-base-light"
+        className="text-base-dark dark:text-base-light overflow-visible"
       >
         <title>AJ CB Logo</title>
 
