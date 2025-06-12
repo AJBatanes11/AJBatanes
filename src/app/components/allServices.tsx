@@ -12,9 +12,16 @@ export default function AllServices() {
   const activeService =
     typeof activeIndex === "number" ? services[activeIndex] : null;
 
-  const handleNextService = () => {
+  const handleService = (direction: "next" | "prev") => {
     if (activeIndex === null) return;
-    const nextIndex = (activeIndex + 1) % services.length;
+
+    const total = services.length;
+
+    const nextIndex =
+      direction === "next"
+        ? (activeIndex + 1) % total
+        : (activeIndex - 1 + total) % total;
+
     setActiveIndex(nextIndex);
   };
 
@@ -69,7 +76,8 @@ export default function AllServices() {
         {activeService && (
           <ServiceDialogContent
             service={activeService}
-            onNext={handleNextService}
+            onNext={() => handleService("next")}
+            onPrev={() => handleService("prev")}
           />
         )}
       </DrawerModal>

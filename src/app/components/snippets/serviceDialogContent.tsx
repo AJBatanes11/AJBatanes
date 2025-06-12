@@ -6,9 +6,11 @@ import Marquee from "react-fast-marquee";
 export default function ServiceDialogContent({
   service,
   onNext,
+  onPrev,
 }: {
   service: Services;
   onNext: () => void;
+  onPrev: () => void;
 }) {
   return (
     <>
@@ -26,11 +28,11 @@ export default function ServiceDialogContent({
       <div className="px-10">
         <p className="text-muted-foreground text-lg mb-6">{service.tag}</p>
 
-        <div className="mt-12 flex justify-end">
-          <button
-            onClick={onNext}
-            className="text-sm font-semibold text-primary hover:underline"
-          >
+        <div className="mt-12 flex justify-between">
+          <button onClick={onPrev} className="link link--visible">
+            ← Previous Service
+          </button>
+          <button onClick={onNext} className="link link--visible">
             See Next Service →
           </button>
         </div>

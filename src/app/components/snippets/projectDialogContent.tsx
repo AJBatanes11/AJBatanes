@@ -4,12 +4,14 @@ import { Project } from "../../data/projects";
 import Image from "next/image";
 import Cta from "../cta";
 import Container from "../ui/container";
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { lenis } from "./lenisProvider";
 
 interface ProjectDialogContentProps {
   project: Project;
   onClose: () => void;
+  onNext?: () => void;
+  onPrev?: () => void;
 }
 
 const CloseIcon = () => (
@@ -33,7 +35,11 @@ const CloseIcon = () => (
 export default function ProjectDialogContent({
   project,
   onClose,
+  onNext,
+  onPrev,
 }: ProjectDialogContentProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     lenis?.stop();
     document.body.style.overflow = "hidden"; // optional fallback
@@ -45,7 +51,7 @@ export default function ProjectDialogContent({
 
   return (
     <div className="relative w-full h-full">
-      <div className="absolute inset-0 overflow-y-auto">
+      <div ref={scrollRef} className="absolute inset-0 overflow-y-auto">
         <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
           <button
             onClick={() => {
@@ -149,6 +155,34 @@ export default function ProjectDialogContent({
             sizes="100vw"
           />
         )}
+
+        {(onPrev || onNext) && (
+          <div className="px-10 mt-12 flex justify-between">
+            {onPrev && (
+              <button
+                onClick={() => {
+                  scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+                  onPrev();
+                }}
+                className="link link--visible"
+              >
+                ← Previous Project
+              </button>
+            )}
+            {onNext && (
+              <button
+                onClick={() => {
+                  scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+                  onNext();
+                }}
+                className="link link--visible"
+              >
+                See Next Project →
+              </button>
+            )}
+          </div>
+        )}
+
         <Container small disableTheming aria-label="Call to action">
           <Cta darkMode />
         </Container>
