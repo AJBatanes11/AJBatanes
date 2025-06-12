@@ -13,8 +13,26 @@ interface DrawerModalProps {
 
 const drawerVariants = {
   hidden: { x: "100%" },
-  visible: { x: 0, transition: { type: "tween", duration: 0.4 } },
-  exit: { x: "100%", transition: { type: "tween", duration: 0.3 } },
+  visible: {
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 0.3,
+      ease: "easeInOut",
+      stiffness: 500,
+      damping: 40,
+    },
+  },
+  exit: {
+    x: "100%",
+    transition: {
+      type: "spring",
+      duration: 0.3,
+      ease: "easeInOut",
+      stiffness: 500,
+      damping: 40,
+    },
+  },
 };
 
 export default function DrawerModal({

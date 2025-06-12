@@ -41,7 +41,13 @@ export default function ScrollToTop() {
           <div className="mr-2 p-3 float-right">
             <motion.div
               animate={{ rotate: isAtBottom ? 0 : 90 }}
-              transition={{ type: "spring", stiffness: 500, damping: 40 }}
+              transition={{
+                type: "spring",
+                duration: 0.3,
+                ease: "easeInOut",
+                stiffness: 500,
+                damping: 40,
+              }}
               className="flex flex-row gap-1 items-center justify-center origin-bottom-right mr-2"
             >
               <motion.svg
@@ -52,7 +58,13 @@ export default function ScrollToTop() {
                 stroke="currentColor"
                 className="size-5 m-auto"
                 animate={{ rotate: isAtBottom ? 90 : 0 }}
-                transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                transition={{
+                  type: "spring",
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  stiffness: 500,
+                  damping: 40,
+                }}
               >
                 <path
                   strokeLinecap="round"

@@ -1,4 +1,3 @@
-// import MainHero from "../components/mainHero";
 import Container from "../components/ui/container";
 import TrustedBrands from "../components/trustedBrands";
 import IntroSection from "../components/introSection";

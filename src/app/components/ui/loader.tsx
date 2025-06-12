@@ -12,7 +12,13 @@ export default function Loader() {
       variants={{
         exit: {
           x: "-100%",
-          transition: { duration: 0.3, ease: "easeInOut" },
+          transition: {
+            type: "spring",
+            duration: 0.3,
+            ease: "easeInOut",
+            stiffness: 500,
+            damping: 40,
+          },
         },
       }}
       style={{ pointerEvents: "none" }}
@@ -35,7 +41,7 @@ export default function Loader() {
           transform="rotate(0, 50, 50)"
           transition={{
             repeat: Infinity,
-            duration: 2,
+            duration: 4,
             ease: "linear",
           }}
         >
