@@ -1,39 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import brands from "../data/brands";
 
-const logos = [
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-  { src: "/brand-logos/penshoppe.png", alt: "Penshoppe logo" },
-  { src: "/brand-logos/oxgn.png", alt: "OXGN logo" },
-];
-
-type LogoItemProps = {
-  src: string;
-  alt: string;
-};
-
-export const LogoItem: React.FC<LogoItemProps> = React.memo(({ src, alt }) => (
+export const BrandItem = React.memo(({ src, alt }: (typeof brands)[number]) => (
   <div
     className="flex justify-center items-center p-2 text-center text-base-dark fill-base-dark"
     aria-hidden="true"
@@ -41,7 +10,7 @@ export const LogoItem: React.FC<LogoItemProps> = React.memo(({ src, alt }) => (
     <Image src={src} alt={alt} width={150} height={150} loading="lazy" />
   </div>
 ));
-LogoItem.displayName = "LogoItem";
+BrandItem.displayName = "BrandItem";
 
 export default function TrustedBrands() {
   return (
@@ -51,9 +20,9 @@ export default function TrustedBrands() {
         e-commerce businesses.
       </h2>
       <ul className="w-full grid grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-12 lg:gap-x-24 justify-center items-center">
-        {logos.map((logo, i) => (
+        {brands.map((brand, i) => (
           <li key={i}>
-            <LogoItem src={logo.src} alt={logo.alt} />
+            <BrandItem {...brand} />
           </li>
         ))}
       </ul>
