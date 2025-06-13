@@ -24,6 +24,16 @@ export default function Overlay({
     };
   }, [isActive]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isActive && onClick) {
+        onClick();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isActive, onClick]);
+
   return typeof window !== "undefined"
     ? createPortal(
         <AnimatePresence>

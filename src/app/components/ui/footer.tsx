@@ -8,7 +8,10 @@ import TermsAndPrivacy from "../snippets/termsAndPrivacy";
 
 export default function Footer() {
   return (
-    <footer className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-base-dark text-base-light lg:-z-10">
+    <footer
+      role="contentinfo"
+      className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-base-dark text-base-light lg:-z-10"
+    >
       <GradientBackground />
       <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[700px] relative pt-16 pb-10 lg:pt-60">
         <div className="w-full flex flex-col justify-between my-0 mx-auto px-6 md:px-8 lg:px-10">
@@ -22,7 +25,7 @@ export default function Footer() {
               <Link href="/contact">
                 <button
                   className="btn btn--invert btn-arrow mb-5"
-                  aria-label="Contact support"
+                  aria-label="Book a free e-commerce consultation"
                 >
                   Book a Free Consultation
                   <svg
@@ -53,10 +56,10 @@ export default function Footer() {
           <div className="flex flex-col justify-between gap-5 lg:gap-0 sm:flex-row">
             <div className="flex items-center justify-between gap-2 lg:gap-5">
               <Logo />
-              <p className="text-sm lg:text-base text-center">
+              <small className="text-sm lg:text-base text-center">
                 &copy; {new Date().getFullYear()} AJ Batanes. All rights
                 reserved.
-              </p>
+              </small>
             </div>
             <TermsAndPrivacy />
           </div>

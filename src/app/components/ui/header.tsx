@@ -37,7 +37,6 @@ export default function Header() {
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen);
-    console.log(mobileNavOpen);
   };
 
   return (
@@ -55,7 +54,13 @@ export default function Header() {
         <header className="text-base-dark bg-[rgba(244,240,235,0.85)] dark:bg-[rgba(37,36,34,0.85)] backdrop-blur-md block mx-auto my-0 rounded-3xl overflow-hidden lg:px-5 lg:py-3 lg:rounded-full lg:overflow-visible">
           <div className="flex items-center justify-between relative px-4 py-3 lg:p-0 lg:grid lg:grid-cols-[200px_auto_200px]">
             <div className="flex item-center justify-start">
-              <Logo />
+              <Link
+                href="/"
+                className="inline-flex items-center"
+                aria-label="AJ Batanes Portfolio Logo"
+              >
+                <Logo />
+              </Link>
             </div>
             <nav role="navigation" className="justify-center hidden lg:flex">
               <ul className="relative p-0 flex gap-4 items-center">
@@ -64,6 +69,7 @@ export default function Header() {
                     <Link
                       href={href}
                       className={`link ${pathname === href ? "link--visible" : ""} relative text-base font-semibold text-base-dark`}
+                      aria-current={pathname === href ? "page" : undefined}
                     >
                       {label}
                     </Link>
@@ -72,8 +78,12 @@ export default function Header() {
               </ul>
             </nav>
             <div className="item-center justify-end hidden lg:flex">
-              <Link href="/contact">
-                <button className="btn btn-arrow" aria-label="Contact support">
+              <Link href="/contact" prefetch>
+                <button
+                  type="button"
+                  className="btn btn-arrow"
+                  aria-label="Contact support"
+                >
                   Get In Touch
                   <svg
                     width="13"
@@ -91,7 +101,12 @@ export default function Header() {
             </div>
             {/* Mobile Burger */}
             <div className="items-center justify-end flex lg:hidden">
-              <button onClick={toggleMobileNav} className="text-base-dark">
+              <button
+                onClick={toggleMobileNav}
+                type="button"
+                aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
+                className="text-base-dark"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -124,6 +139,7 @@ export default function Header() {
                     href={href}
                     onClick={toggleMobileNav}
                     className="text-4xl font-semibold"
+                    aria-current={pathname === href ? "page" : undefined}
                   >
                     {label}
                   </Link>
@@ -135,8 +151,12 @@ export default function Header() {
               <p className="text-lg text-base-dark">
                 I would love to hear from you!
               </p>
-              <Link href="/contact">
-                <button className="btn btn-arrow" aria-label="Contact support">
+              <Link href="/contact" prefetch>
+                <button
+                  type="button"
+                  className="btn btn-arrow"
+                  aria-label="Contact support"
+                >
                   Get In Touch
                   <svg
                     width="13"

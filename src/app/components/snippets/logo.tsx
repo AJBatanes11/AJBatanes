@@ -1,12 +1,6 @@
-import Link from "next/link";
-
 export default function Logo() {
   return (
-    <Link
-      href="/"
-      className="inline-flex items-center"
-      aria-label="AJ Batanes Logo"
-    >
+    <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -49,9 +43,6 @@ export default function Logo() {
         </text>
       </svg>
       <span className="sr-only">AJ Batanes</span>
-      {/* <span className="inline-block lg:hidden ml-2 font-semibold">
-        AJ Batanes
-      </span> */}
-    </Link>
+    </>
   );
 }
