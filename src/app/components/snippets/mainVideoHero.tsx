@@ -10,8 +10,8 @@ export default function MainHeroVideo() {
       preload="auto"
       className="object-cover w-full h-full"
     >
-      {/* <source src="/general/MainBanner.webm" type="video/webm" /> */}
-      <source src="/general/MainBanner.mp4" type="video/mp4" />
+      <source src="/general/MainBanner_FIXED.webm" type="video/webm" />
+      <source src="/general/MainBanner_FIXED.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );
