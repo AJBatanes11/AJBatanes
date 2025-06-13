@@ -140,19 +140,24 @@ button {
   text-decoration: none;
   line-height: 1.2;
   transition:
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 9999px;
   background-color: var(--black-custom);
   color: var(--white-custom);
+}
+.btn:focus-visible {
+  outline: 2px dashed var(--white-custom);
+  outline-offset: 2px;
 }
 .btn--invert {
   background-color: var(--white-custom);
   color: var(--black-custom);
 }
-.btn,
 .btn-arrow svg {
-  will-change: color, opacity, transform, right;
+  will-change: opacity, transform, right;
 }
 @media screen and (min-width: 1024px) {
   .btn {
@@ -173,7 +178,9 @@ button {
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 1024px) {
   .btn-arrow svg {

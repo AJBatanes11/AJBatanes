@@ -26,13 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head></head>
       <body
-        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] will-change-auto overflow-x-hidden`}
+        className={`${inter.variable} tracking-tight antialiased lg:mb-[600px] overflow-x-hidden`}
       >
         <LenisProvider />
         <div className="noise_bg"></div>
-        <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300">
+        <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300 [will-change:background-color,color]">
           <Header />
           <Wrapper>
             {children}
