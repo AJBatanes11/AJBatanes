@@ -15,15 +15,17 @@ export default function MainHero() {
   useGSAP(() => {
     gsap.fromTo(
       imageRef.current,
-      { width: "50%" },
+      { width: "50%", marginLeft: "0.5rem", marginRight: "0.5rem" },
       {
         width: "100%",
+        marginLeft: "0",
+        marginRight: "0",
         borderRadius: "0",
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top+=100 top",
-          end: "bottom top",
+          end: "bottom top+=100",
           scrub: true,
         },
       }
