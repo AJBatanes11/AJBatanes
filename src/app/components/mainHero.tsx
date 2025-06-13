@@ -1,53 +1,56 @@
 "use client";
 
-// import { useState } from "react";
-// import dynamic from "next/dynamic";
-// import CursorFollower from "./snippets/cursorFollower";
+import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// const MainHeroPlayer = dynamic(
-//   () => import("@/src/app/components/snippets/mainHeroPlayer"),
-//   { ssr: false }
-// );
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MainHero() {
-  // const [showPlayer, setShowPlayer] = useState(false);
+  const imageRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { width: "50%" },
+      {
+        width: "100%",
+        borderRadius: "0",
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top+=100 top",
+          end: "center top",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
   return (
     <section
-      className="relative w-full h-screen sm:h-dvh"
-      // onClick={() => setShowPlayer(true)}
+      ref={sectionRef}
+      className="min-h-dvh h-dvh flex flex-col items-start justify-center lg:items-center px-4 pt-28 pb-10"
     >
-      {/* <CursorFollower
-        followerSize={120}
-        labelInside="Watch reel"
-        labelOutside="©AJ Batanes"
-      > */}
-      {/* Background Autoplay Video (Muted) */}
-      <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-base-dark text-3xl sm:text-6xl font-bold z-20">
-        Hello there,
-        <br />
-        I&apos;m AJ Batanes
-      </h2>
-      {/* <video
-        preload="auto"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      <h1 className="text-left lg:text-center text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none max-w-5xl">
+        Crafting e-commerce experiences that convert, perform, and inspire.
+      </h1>
+      <div
+        ref={imageRef}
+        className="relative w-full mt-10 overflow-hidden rounded-3xl
+          aspect-[3/4] sm:aspect-[3/4] md:aspect-[3/4] lg:aspect-[16/9] will-change-transform"
       >
-        <source src="/general/MainBanner.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-      {/* <div
-        className={`absolute inset-0 z-10 transition-opacity duration-500 
-          ${showPlayer ? "opacity-100" : "opacity-0"}
-          `}
-      > */}
-      <div className="absolute inset-0 z-10 transition-opacity duration-500">
-        {/* <MainHeroPlayer /> */}
+        <Image
+          src="/general/landscape_placeholder.jpg"
+          alt="Main hero banner"
+          fill
+          priority
+          className="object-cover"
+        />
       </div>
-      {/* </CursorFollower> */}
     </section>
   );
 }

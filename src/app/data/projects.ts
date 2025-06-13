@@ -13,7 +13,7 @@ import modAndNobleCard from "@/src/app/assets/images/projects/ModandNoble.jpg";
 import soulAesthetixCard from "@/src/app/assets/images/projects/SoulAesthetix.png";
 import theCutBuddyCard from "@/src/app/assets/images/projects/TheCutBuddy.jpg";
 import theHoopGangCard from "@/src/app/assets/images/projects/TheHoopGang.jpg";
-import tiwflixCard from "@/src/app/assets/images/projects/Tiwflix.png";
+// import tiwflixCard from "@/src/app/assets/images/projects/Tiwflix.png";
 import { StaticImageData } from "next/image";
 
 export interface Project {
@@ -33,6 +33,8 @@ export interface Project {
   imageMobile2?: string | StaticImageData;
   heading2?: string;
   description2?: string;
+  imageDesktop3?: string | StaticImageData;
+  imageMobile3?: string | StaticImageData;
 }
 
 const projects: Project[] = [
@@ -41,22 +43,24 @@ const projects: Project[] = [
     cardTitle: "Penshoppe",
     cardDescription: "Design & Development",
     overview:
-      "Penshoppe is one of the Philippines' leading fashion retail brands, setting the trend for stylish and affordable casual wear that appeals to both young individuals and the young-at-heart. Known for its innovative designs and inclusive approach, Penshoppe offers a wide range of products, including sleek tops, trendy bottoms, footwear, accessories, and fragrances, all crafted to help customers express their unique style with confidence. This distinguished brand has gained international recognition by collaborating with global celebrities such as Zayn Malik, Gigi Hadid, Kendall Jenner, BLACKPINK's Lisa, and the Filipino artists BINI and James Reid. With its dynamic presence and strong reputation, Penshoppe is more than a brand; it represents a lifestyle movement, inspiring millions to distinguish themselves and confidently embrace their personal style.",
-    industry: "Fashion Retail",
+      "Penshoppe is a well-known Filipino fashion retail brand that offers trendy and affordable clothing and accessories for men and women. It has a strong presence both in physical stores and online platforms across Southeast Asia.",
+    industry: "Fashion Retail / E-commerce",
     service:
       "Shopify Development, UI/UX Design, Performance Optimization, Ongoing Support & Maintenance",
     technology: "Shopify, Liquid, JavaScript, PHP",
     website: "https://www.penshoppe.com",
     imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
     imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading1: "Advanced Features & Seamless Performance",
+    heading1: "Website Revamp for Enhanced UX",
     description1:
-      "Implemented tailored features such as the convenient Buy Online, Pick Up In Store option to enhance customer flexibility. Focused on fast loading speeds and reliable performance to increase satisfaction and drive higher conversions.",
+      "Executed a full front-end revamp of Penshoppe’s website to enhance the user journey—prioritizing clean design, mobile responsiveness, and performance optimization.",
     imageDesktop2: "/project-images/project-dialog-placeholder-desktop-2.jpg",
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-2.jpg",
-    heading2: "Responsive & Brand-Aligned Design",
+    heading2: "Exclusive Launches Web Development",
     description2:
-      "Delivered a visually stunning and user-friendly Shopify storefront that perfectly reflects Penshoppe's vibrant brand. Optimized for all devices to ensure customers enjoy a smooth, engaging shopping experience anytime, anywhere.",
+      "Led the web development for Penshoppe’s exclusive online launches, ensuring smooth rollouts, optimized performance during high-traffic periods, and seamless shopping experiences for limited-edition drops.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: oxgnCard,
@@ -78,6 +82,8 @@ const projects: Project[] = [
     heading2: "Mobile UX Enhancements",
     description2:
       "Improved mobile navigation and image optimization to reduce bounce rates and boost mobile sales.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: forMeCard,
@@ -99,6 +105,8 @@ const projects: Project[] = [
     heading2: "Modular Sections for Engagement and Storytelling.",
     description2:
       "Designed and developed versatile, purpose-built sections to empower ForMe’s marketing team to tell richer brand stories. These included modules for campaigns, CRM integration, events, editorial content, and social proof. Each section was crafted to be modular, easy to update, and aligned with the brand’s evolving creative direction — offering flexibility without compromising design consistency or performance.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: regattaCard,
@@ -120,6 +128,8 @@ const projects: Project[] = [
     heading2: "Responsive Fixes",
     description2:
       "Addressed layout inconsistencies across devices to ensure full responsiveness.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: memoCard,
@@ -141,6 +151,8 @@ const projects: Project[] = [
     heading2: "Optimized Checkout Funnel",
     description2:
       "Monitored and enhanced checkout flow for higher conversion rates via minor UX fixes and content clarity.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: bocuCard,
@@ -162,6 +174,8 @@ const projects: Project[] = [
     heading2: "Performance Optimization",
     description2:
       "Reduced image size and lazy-loaded assets to keep Core Web Vitals strong.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: chakoLabCard,
@@ -183,6 +197,8 @@ const projects: Project[] = [
     heading2: "New Homepage Flow",
     description2:
       "Improved homepage UX and integrated educational content blocks.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: theCutBuddyCard,
@@ -203,6 +219,8 @@ const projects: Project[] = [
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Custom Cart & Promo Modules",
     description2: "Built custom cart modules for BOGO and discount logic.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: theHoopGangCard,
@@ -224,6 +242,74 @@ const projects: Project[] = [
     heading2: "Mobile Shop Redesign",
     description2:
       "Optimized for mobile purchases with large visuals and quick-add features.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
+    // cardBanner: fundaySweetsCard,
+    cardTitle: "Funday Sweets",
+    cardDescription: "Build & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://www.fundaysweets.com/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
+    // cardBanner: skoneCosmeticsCard,
+    cardTitle: "Skone Cosmetics",
+    cardDescription: "Build & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://skonecosmetics.com/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  },
+  {
+    // cardBanner: maveroCard,
+    cardTitle: "Mavero",
+    cardDescription: "Design & Development",
+    overview: "",
+    industry: "",
+    service: "Features, Responsiveness",
+    technology: "Shopify, Liquid, Custom Sections",
+    website: "https://mavero.store/",
+    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading1: "Peaceful Visual Identity",
+    description1:
+      "Blended muted palettes and custom icons for a calming experience.",
+    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+    heading2: "Shop By Plant Type",
+    description2:
+      "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: hillsideGardenCard,
@@ -245,6 +331,8 @@ const projects: Project[] = [
     heading2: "Shop By Plant Type",
     description2:
       "Created category filtering based on plant care and sunlight needs.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: henkanCollagenCard,
@@ -265,6 +353,8 @@ const projects: Project[] = [
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Optimized Product Page",
     description2: "Focused on product photography and key selling points.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: soulAesthetixCard,
@@ -285,6 +375,8 @@ const projects: Project[] = [
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Homepage Story Highlights",
     description2: "Introduced banners and blurbs to highlight brand story.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: arianaSpicesCard,
@@ -304,6 +396,8 @@ const projects: Project[] = [
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Clean Mobile Layout",
     description2: "Streamlined mobile experience for quick spice browsing.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: launchToProfitCard,
@@ -324,6 +418,8 @@ const projects: Project[] = [
     imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
     heading2: "Team & Culture",
     description2: "Created about/team pages with light interactions.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
   {
     cardBanner: modAndNobleCard,
@@ -345,26 +441,30 @@ const projects: Project[] = [
     heading2: "SEO and Structure Cleanup",
     description2:
       "Refined structure for clean crawlability and analytics readiness.",
+    imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+    imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
   },
-  {
-    cardBanner: tiwflixCard,
-    cardTitle: "Tiwflix",
-    cardDescription: "Design & Build",
-    overview:
-      "Built a mini Netflix-style platform using React, external API, and responsive layout.",
-    industry: "Personal Project / Entertainment",
-    service: "Design, Dev, API Integration",
-    technology: "React JS, TMDB API, Tailwind CSS",
-    website: "https://ajbatanes11.github.io/tiwflix/",
-    imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
-    imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading1: "Card-Based Layout",
-    description1: "Grid system displaying shows from TMDB API.",
-    imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
-    imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
-    heading2: "Dark Mode + Mobile Friendly",
-    description2: "Responsive layout with focus on dark-mode visuals.",
-  },
+  // {
+  //   cardBanner: tiwflixCard,
+  //   cardTitle: "Tiwflix",
+  //   cardDescription: "Design & Build",
+  //   overview:
+  //     "Built a mini Netflix-style platform using React, external API, and responsive layout.",
+  //   industry: "Personal Project / Entertainment",
+  //   service: "Design, Dev, API Integration",
+  //   technology: "React JS, TMDB API, Tailwind CSS",
+  //   website: "https://ajbatanes11.github.io/tiwflix/",
+  //   imageDesktop1: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+  //   imageMobile1: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+  //   heading1: "Card-Based Layout",
+  //   description1: "Grid system displaying shows from TMDB API.",
+  //   imageDesktop2: "/project-images/project-dialog-placeholder-desktop-1.jpg",
+  //   imageMobile2: "/project-images/project-dialog-placeholder-mobile-1.jpg",
+  //   heading2: "Dark Mode + Mobile Friendly",
+  //   description2: "Responsive layout with focus on dark-mode visuals.",
+  //   imageDesktop3: "/project-images/project-dialog-placeholder-desktop-2.jpg",
+  //   imageMobile3: "/project-images/project-dialog-placeholder-mobile-2.jpg",
+  // },
 ];
 
 export default projects;

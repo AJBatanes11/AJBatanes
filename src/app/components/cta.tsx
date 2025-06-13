@@ -7,7 +7,7 @@ interface CtaProps {
 export default function Cta({ darkMode = false }: CtaProps) {
   return (
     <div
-      className={`relative ${darkMode ? "bg-static-baseDark text-static-baseLight" : "bg-static-baseLight text-static-baseDark"} rounded-3xl p-8 md:p-20 my-10 sm:my-20 w-11/12 mx-auto`}
+      className={`relative ${darkMode ? "bg-static-baseDark text-static-baseLight" : "bg-base-dark text-base-light"} rounded-3xl p-8 md:p-20 my-10 sm:my-20 w-11/12 mx-auto`}
     >
       <div className="mb-5 w-11/12 sm:w-3/4 xl:w-1/2">
         <h2 className="text-xl font-semibold md:text-5xl mb-3">
@@ -22,7 +22,7 @@ export default function Cta({ darkMode = false }: CtaProps) {
       </div>
       <Link href="/contact">
         <button
-          className={`btn btn-arrow ${darkMode ? "btn-static-white" : ""}`}
+          className={`btn btn-arrow ${darkMode ? "btn-static-white" : "btn--invert"}`}
           aria-label="Contact support"
         >
           Contact Now

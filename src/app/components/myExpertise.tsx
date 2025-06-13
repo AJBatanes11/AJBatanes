@@ -1,28 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const services = [
-  {
-    label: "Development",
-    href: "/services#development",
-    banner: "/expertise-banners/placeholder.webp",
-  },
-  {
-    label: "UI/UX Design",
-    href: "/services#design",
-    banner: "/expertise-banners/placeholder.webp",
-  },
-  {
-    label: "Optimization",
-    href: "/services#optimization",
-    banner: "/expertise-banners/placeholder.webp",
-  },
-  {
-    label: "Consultation",
-    href: "/services#contultation",
-    banner: "/expertise-banners/placeholder.webp",
-  },
-];
+import services from "../data/services";
 
 export default function MyExpertise() {
   return (
@@ -30,7 +8,7 @@ export default function MyExpertise() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-8 md:mb-14">
         <div className="md:col-span-3">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-5">
-            How I take your business to the next level
+            How I take your business to the next level.
           </h2>
         </div>
         <div className="md:col-span-2">
@@ -38,25 +16,7 @@ export default function MyExpertise() {
             I am a web developer with expertise, and on a mission to help you
             take the next step in your business.
           </p>
-          <Link href="/contact">
-            {/* <button
-              className="btn btn-black btn-arrow mt-5"
-              aria-label="Contact support"
-            >
-              See all services
-              <svg
-                width="13"
-                height="12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 6h12m0 0L6.5.5M12 6l-5.5 5.5"
-                  stroke="currentColor"
-                />
-              </svg>
-            </button> */}
-
+          <Link href="/services">
             <span className="link link--visible text-lg md:text-2xl mt-5">
               Explore my services
             </span>
@@ -79,11 +39,11 @@ export default function MyExpertise() {
               <div
                 key={index}
                 className="
-        w-full border-b border-glass-light cursor-pointer
-        group/item overflow-hidden
-        transition-opacity duration-300
-        lg:group-hover:opacity-50 lg:hover:!opacity-100
-      "
+                  w-full border-b border-glass-light cursor-pointer
+                  group/item overflow-hidden
+                  transition-opacity duration-300
+                  lg:group-hover:opacity-50 lg:hover:!opacity-100
+                "
               >
                 <Link
                   href={service.href}
@@ -91,14 +51,14 @@ export default function MyExpertise() {
                 >
                   <div
                     className="
-            h-20 sm:h-24 md:h-36
-            w-20 sm:w-32 md:w-36
-            flex-none flex-shrink-0 mr-4 rounded-xl overflow-hidden
-            lg:mr-0 lg:w-0 lg:opacity-0 lg:-translate-x-4
-            lg:transition-all lg:duration-300
-            lg:group-hover/item:w-36 lg:group-hover/item:mr-6
-            lg:group-hover/item:opacity-100 lg:group-hover/item:translate-x-0
-          "
+                      h-20 sm:h-24 md:h-36
+                      w-20 sm:w-32 md:w-36
+                      flex-none flex-shrink-0 mr-4 rounded-xl overflow-hidden
+                      lg:mr-0 lg:w-0 lg:opacity-0 lg:-translate-x-4
+                      lg:transition-all lg:duration-300
+                      lg:group-hover/item:w-36 lg:group-hover/item:mr-6
+                      lg:group-hover/item:opacity-100 lg:group-hover/item:translate-x-0
+                    "
                   >
                     <Image
                       src={service.banner}

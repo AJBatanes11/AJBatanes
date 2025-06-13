@@ -9,8 +9,8 @@ export default function TermsAndPrivacy() {
     <ul className="flex items-center justify-center gap-1 lg:gap-6">
       <li>
         <Link
-          href="/"
-          className={`link ${pathname === "/" ? "link--visible" : ""} text-sm lg:text-base`}
+          href="/privacy"
+          className={`link ${pathname === "/privacy" ? "link--visible" : ""} text-sm lg:text-base`}
         >
           Privacy Policy
         </Link>
@@ -18,8 +18,8 @@ export default function TermsAndPrivacy() {
       <li>|</li>
       <li>
         <Link
-          href="/"
-          className={`link ${pathname === "/" ? "link--visible" : ""} text-sm lg:text-base`}
+          href="/terms"
+          className={`link ${pathname === "/terms" ? "link--visible" : ""} text-sm lg:text-base`}
         >
           Terms
         </Link>
