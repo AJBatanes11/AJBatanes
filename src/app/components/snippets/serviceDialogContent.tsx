@@ -21,7 +21,7 @@ export default function ServiceDialogContent({
         className="select-none w-full mb-4 h-28 sm:h-48"
       >
         <div className="ml-10 text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold leading-none text-center">
-          <strong aria-label={service.label}>{service.label}</strong>
+          <strong aria-label={service.label}>{service.label}•</strong>
         </div>
       </Marquee>
 
