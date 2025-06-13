@@ -64,7 +64,7 @@ video {
   width: calc(100% + 20rem);
   height: calc(100% + 20rem);
   animation: noise_bg 1s steps(2) infinite;
-  background-image: url(/noise.png);
+  background-image: url(/noise.webp);
   background-position: 50%;
   content: "";
   will-change: transform;
