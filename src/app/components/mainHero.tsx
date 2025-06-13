@@ -22,7 +22,7 @@ export default function MainHero() {
         borderRadius: "0",
         ease: "none",
         scrollTrigger: {
-          markers: true,
+          // markers: true,
           trigger: sectionRef.current,
           start: "top 80vh",
           end: "top top",
