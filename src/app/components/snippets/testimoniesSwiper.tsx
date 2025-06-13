@@ -39,11 +39,40 @@ export default function TestimoniesSwiper() {
         </div>
 
         <div className="relative w-full lg:w-3/4">
+          <div
+            className="absolute top-4 right-4 w-4 h-4 sm:w-8 sm:h-8 pointer-events-none autoplay-progress z-10 text-base-dark"
+            style={{ "--progress": 1 } as React.CSSProperties}
+          >
+            <svg className="rotate-[-90deg]" viewBox="0 0 48 48">
+              <circle
+                cx="24"
+                cy="24"
+                r="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="6"
+                strokeDasharray="125.6"
+                style={{
+                  strokeDashoffset: "calc(125.6 * var(--progress))",
+                  transition: "stroke-dashoffset 0.3s ease-out",
+                  willChange: "stroke-dashoffset",
+                }}
+              />
+            </svg>
+          </div>
           <Swiper
             modules={[EffectFade, Autoplay]}
             pagination={{ clickable: true }}
             effect="fade"
             autoplay={{ delay: 5000, disableOnInteraction: false }}
+            onAutoplayTimeLeft={(swiper, time, progress) => {
+              const circle = document.querySelector(
+                ".autoplay-progress circle"
+              ) as SVGCircleElement | null;
+              if (circle) {
+                circle.style.setProperty("--progress", String(1 - progress));
+              }
+            }}
             fadeEffect={{ crossFade: true }}
             loop={true}
             spaceBetween={0}
@@ -73,13 +102,13 @@ export default function TestimoniesSwiper() {
           <div className="flex lg:hidden items-center justify-center gap-6 mt-2 text-lg md:text-2xl">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
-              className="link link--visible py-2 px-4"
+              className="link link--visible"
             >
               Previous
             </button>
             <button
               onClick={() => swiperRef.current?.slideNext()}
-              className="link link--visible py-2 px-4"
+              className="link link--visible"
             >
               Forward
             </button>
