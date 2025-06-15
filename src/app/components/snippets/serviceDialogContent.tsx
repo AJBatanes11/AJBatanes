@@ -25,10 +25,10 @@ export default function ServiceDialogContent({
         </div>
       </Marquee>
 
-      <div className="px-10">
+      <div className="px-4 lg:px-10">
         <p className="text-muted-foreground text-lg mb-6">{service.tag}</p>
 
-        <div className="mt-12 flex justify-between">
+        <div className="mt-12 flex justify-between gap-2">
           <button onClick={onPrev} className="link link--visible">
             ← Previous Service
           </button>

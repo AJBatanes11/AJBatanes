@@ -40,26 +40,26 @@ export default function AllServices() {
             index === 0 ? "border-y" : "border-b"
           } border-glass-dark overflow-hidden cursor-pointer group/item transition-opacity duration-300 lg:group-hover:opacity-50 lg:hover:!opacity-100`}
         >
-          <div className="flex flex-col lg:flex-row flex-nowrap gap-4 my-5 mx-2">
-            <div className="relative min-w-[200px] max-w-sm rounded-lg overflow-hidden">
+          <div className="flex flex-col sm:flex-row flex-nowrap gap-4 my-5 lg:my-10 mx-2">
+            <div className="relative min-w-[250px] rounded-lg overflow-hidden">
               <Image
                 src={service.banner}
                 alt={`${service.label} banner`}
-                width={500}
-                height={300}
+                width={1000}
+                height={600}
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="flex flex-col justify-between w-full">
               <div className="">
-                <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+                <p className="font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {service.label}
                 </p>
                 <p className="text-base text-muted-foreground mt-2">
                   {service.tag}
                 </p>
               </div>
-              <span className="link link--visible text-sm md:text-base mt-5 w-fit">
+              <span className="link link--visible text-sm mt-5 w-fit">
                 View more details
               </span>
             </div>

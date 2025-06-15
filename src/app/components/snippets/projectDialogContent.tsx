@@ -14,27 +14,8 @@ interface ProjectDialogContentProps {
   onPrev?: () => void;
 }
 
-const CloseIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth="1.5"
-    stroke="currentColor"
-    className="size-6"
-    aria-hidden="true"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-);
-
 export default function ProjectDialogContent({
   project,
-  onClose,
   onNext,
   onPrev,
 }: ProjectDialogContentProps) {
@@ -53,15 +34,6 @@ export default function ProjectDialogContent({
     <div className="relative w-full h-full">
       <div ref={scrollRef} className="absolute inset-0 overflow-y-auto">
         <section className="w-full relative grid grid-cols-1 lg:grid-cols-3">
-          <button
-            onClick={() => {
-              onClose();
-            }}
-            aria-label="Close project details"
-            className="text-static-baseLight fixed top-0 right-0 z-20 mt-2 mr-2 sm:mr-5 flex justify-center items-center"
-          >
-            <CloseIcon />
-          </button>
           <div className="col-span-2 flex flex-col items-center lg:items-start justify-center text-center lg:text-start p-10">
             <h3 className="text-2xl lg:text-5xl mb-6 font-semibold">
               The Brief
@@ -157,7 +129,7 @@ export default function ProjectDialogContent({
         )}
 
         {(onPrev || onNext) && (
-          <div className="px-10 mt-12 flex justify-between">
+          <div className="px-4 lg:px-10 mt-12 flex justify-between gap-2">
             {onPrev && (
               <button
                 onClick={() => {
@@ -166,7 +138,7 @@ export default function ProjectDialogContent({
                 }}
                 className="link link--visible"
               >
-                ← Previous Project
+                ← Previous project
               </button>
             )}
             {onNext && (
@@ -177,7 +149,7 @@ export default function ProjectDialogContent({
                 }}
                 className="link link--visible"
               >
-                See Next Project →
+                Next project →
               </button>
             )}
           </div>

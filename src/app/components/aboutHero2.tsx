@@ -21,22 +21,33 @@ export default function AboutHero() {
           scrub: true,
           pin: true,
           anticipatePin: 1,
+          onLeave: () => {
+            document.documentElement.classList.add("dark");
+          },
+          onEnterBack: () => {
+            document.documentElement.classList.remove("dark");
+          },
         },
       });
-
-      // Zoom animation
       tl.fromTo(
         ".zoom-box",
         { width: "50%", height: "300px" },
-        { width: "100%", height: "100vh", ease: "power1.inOut" }
+        { width: "100%", height: "100vh", ease: "none" }
       );
-
-      // Fade in text slightly after zoom starts
       tl.fromTo(
         ".zoom-text",
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, ease: "power1.out", duration: 1 },
         "-=0.5" // overlap a bit with zoom
+      );
+      tl.fromTo(
+        ".scroll-down",
+        { opacity: 1, color: "#000000" },
+        {
+          opacity: 0,
+          color: "#FFFFFF",
+          duration: 1,
+        }
       );
     },
     { scope: aboutHero }
@@ -45,11 +56,12 @@ export default function AboutHero() {
   return (
     <section
       ref={aboutHero}
+      data-theme="false"
       className="relative flex justify-center items-center w-full min-h-screen overflow-hidden"
     >
       <div className="zoom-box relative overflow-hidden">
         <Image
-          src="/general/landscape_placeholder.jpg"
+          src="/general/laptop.webp"
           alt="Hero Zoom"
           fill
           className="object-cover w-full h-full"
@@ -58,10 +70,13 @@ export default function AboutHero() {
 
         {/* Text Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="zoom-text text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center px-4">
-            Welcome to My World
+          <h1 className="zoom-text text-white mix-blend-difference text-4xl sm:text-5xl md:text-6xl font-bold text-center px-4">
+            About AJ Batanes
           </h1>
         </div>
+      </div>
+      <div className="scroll-down absolute bottom-5 text-black text-sm font-medium">
+        Scroll down
       </div>
     </section>
   );

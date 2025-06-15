@@ -26,7 +26,7 @@ const drawerVariants = {
   exit: {
     x: "100%",
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeInOut",
     },
   },
@@ -89,6 +89,26 @@ export default function DrawerModal({
               onTouchStart={(e) => e.stopPropagation()}
               onTouchMove={(e) => e.stopPropagation()}
             >
+              <div
+                className="absolute top-2 right-2 lg:top-4 lg:right-8 z-40 cursor-pointer text-white mix-blend-difference"
+                onClick={onClose}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
               {children}
             </motion.div>
           </>

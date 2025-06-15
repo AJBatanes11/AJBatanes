@@ -7,10 +7,10 @@ interface CtaProps {
 export default function Cta({ darkMode = false }: CtaProps) {
   return (
     <div
-      className={`relative ${darkMode ? "bg-static-baseDark text-static-baseLight" : "bg-base-dark text-base-light"} rounded-xl p-8 md:p-20 my-10 sm:my-20 w-11/12 mx-auto`}
+      className={`relative rounded-xl p-8 md:p-10 lg:p-12 my-10 sm:my-16 w-11/12 mx-auto ${darkMode ? "bg-static-baseDark text-static-baseLight" : "bg-base-dark text-base-light"}`}
     >
       <div className="mb-5 w-11/12 sm:w-3/4 xl:w-1/2">
-        <h2 className="text-xl font-semibold md:text-5xl mb-3">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-semibold mb-3">
           Looking for a partner <br />
           to help you grow your e-commerce business?
         </h2>
