@@ -7,7 +7,7 @@ export default function IntroSection() {
       <div className="w-full mx-auto py-10 sm:py-14 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-9 md:gap-10 items-end">
           <div className="md:col-span-3">
-            <Heading className="mb-10">
+            <Heading className="mb-10 w-4/5 lg:w-full">
               I help brands build fast, scalable, and conversion-focused
               e-commerce stores that stand out and sell.
             </Heading>

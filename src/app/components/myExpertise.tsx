@@ -8,8 +8,8 @@ export default function MyExpertise() {
     <div className="w-full mx-auto py-10 sm:py-14 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-8 md:mb-14">
         <div className="md:col-span-3">
-          <Heading className="mb-5">
-            How I take your business to the next level.
+          <Heading className="mb-5 w-4/5 lg:w-full">
+            How I Design and Build Digital Experiences That Sell.
           </Heading>
         </div>
         <div className="md:col-span-2">
