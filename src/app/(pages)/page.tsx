@@ -13,9 +13,7 @@ export default function Home() {
         <Container main disableReveal aria-label="Main Hero Section">
           <MainHero />
         </Container>
-        <Container small aria-label="Introduction Section">
-          <IntroSection />
-        </Container>
+        <IntroSection />
         <Container dark small aria-label="Trusted Brands Section">
           <TrustedBrands />
         </Container>

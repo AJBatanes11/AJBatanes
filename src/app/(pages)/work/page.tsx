@@ -14,7 +14,8 @@ export default function Work() {
       <CursorTooltip />
       <main>
         <Container small disableReveal aria-label="Work Introduction Section">
-          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto lg:min-h-96 pt-24 lg:pt-0 relative flex items-end">
+          <div className="p-0 xl:p-8"></div>
+          <div className="container w-11/12 md:w-4/5 max-w-7xl mx-auto lg:min-h-96 pt-24 relative flex items-end">
             <div className="text-left lg:absolute lg:-bottom-10 left-0 lg:max-w-[35rem] xl:max-w-[42rem] 2xl:max-w-[51rem]">
               <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-none mb-5">
                 I&apos;ve worked with leading brands and ambitious start-ups to

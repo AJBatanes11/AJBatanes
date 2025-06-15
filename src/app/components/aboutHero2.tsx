@@ -11,43 +11,39 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutHero() {
   const aboutHero = useRef(null);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: aboutHero.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          onLeave: () => {
-            document.documentElement.classList.add("dark");
-          },
-          onEnterBack: () => {
-            document.documentElement.classList.remove("dark");
-          },
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutHero.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 0.5,
+        pin: true,
+        anticipatePin: 1,
+        onLeave: () => {
+          document.documentElement.classList.add("dark");
         },
-      });
-      tl.fromTo(
-        ".zoom-box",
-        { width: "50%", height: "300px" },
-        { width: "100%", height: "100vh", ease: "none" }
-      );
-      tl.fromTo(
-        ".zoom-text",
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, ease: "power1.out", duration: 1 },
-        "-=0.5" // overlap a bit with zoom
-      );
-    },
-    { scope: aboutHero }
-  );
+        onEnterBack: () => {
+          document.documentElement.classList.remove("dark");
+        },
+      },
+    });
+    tl.fromTo(
+      ".zoom-box",
+      { width: "50%", height: "300px" },
+      { width: "100%", height: "100vh", ease: "none" }
+    );
+    tl.fromTo(
+      ".zoom-text",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, ease: "power1.out", duration: 1 },
+      "-=0.5" // overlap a bit with zoom
+    );
+  }, []);
 
   return (
-    <section
+    <div
       ref={aboutHero}
-      data-theme="false"
       className="relative flex justify-center items-center w-full min-h-screen overflow-hidden"
     >
       <div className="zoom-box relative overflow-hidden">
@@ -69,6 +65,6 @@ export default function AboutHero() {
       <div className="animate-bounce scroll-down absolute bottom-5 text-black text-sm font-medium">
         Scroll down
       </div>
-    </section>
+    </div>
   );
 }

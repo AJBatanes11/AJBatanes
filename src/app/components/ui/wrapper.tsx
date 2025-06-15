@@ -77,11 +77,14 @@ export default function Wrapper({ children }: WrapperProps) {
 
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onScroll);
-    onScroll();
+
+    // Delay to wait for new page content to mount
+    const timeout = setTimeout(() => onScroll(), 100);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      clearTimeout(timeout);
     };
   }, [pathname]);
 
