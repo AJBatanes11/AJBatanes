@@ -40,15 +40,6 @@ export default function AboutHero() {
         { opacity: 1, y: 0, ease: "power1.out", duration: 1 },
         "-=0.5" // overlap a bit with zoom
       );
-      tl.fromTo(
-        ".scroll-down",
-        { opacity: 1, color: "#000000" },
-        {
-          opacity: 0,
-          color: "#FFFFFF",
-          duration: 1,
-        }
-      );
     },
     { scope: aboutHero }
   );
@@ -75,7 +66,7 @@ export default function AboutHero() {
           </h1>
         </div>
       </div>
-      <div className="scroll-down absolute bottom-5 text-black text-sm font-medium">
+      <div className="animate-bounce scroll-down absolute bottom-5 text-black text-sm font-medium">
         Scroll down
       </div>
     </section>
