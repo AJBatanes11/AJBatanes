@@ -11,13 +11,10 @@ export default function Loader() {
       exit="exit"
       variants={{
         exit: {
-          x: "-100%",
+          x: "+100%",
           transition: {
-            type: "spring",
-            duration: 0.3,
+            duration: 0.6,
             ease: "easeInOut",
-            stiffness: 500,
-            damping: 40,
           },
         },
       }}

@@ -17,20 +17,17 @@ const drawerVariants = {
     x: 0,
     transition: {
       type: "spring",
-      duration: 0.3,
+      duration: 0.6,
       ease: "easeInOut",
-      stiffness: 500,
-      damping: 40,
+      stiffness: 200,
+      damping: 25,
     },
   },
   exit: {
     x: "100%",
     transition: {
-      type: "spring",
-      duration: 0.3,
+      duration: 0.6,
       ease: "easeInOut",
-      stiffness: 500,
-      damping: 40,
     },
   },
 };

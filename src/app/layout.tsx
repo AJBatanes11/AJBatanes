@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <LenisProvider />
         <div className="noise_bg"></div>
-        <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-3xl bg-base-light text-base-dark transition-colors duration-300 [will-change:background-color,color]">
+        <main className="min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip lg:rounded-b-lg bg-base-light text-base-dark transition-colors duration-500 [will-change:background-color,color]">
           <Header />
           <Wrapper>
             {children}

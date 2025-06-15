@@ -41,7 +41,7 @@ export default function AllServices() {
           } border-glass-dark overflow-hidden cursor-pointer group/item transition-opacity duration-300 lg:group-hover:opacity-50 lg:hover:!opacity-100`}
         >
           <div className="flex flex-col lg:flex-row flex-nowrap gap-4 my-5 mx-2">
-            <div className="relative min-w-[200px] max-w-sm">
+            <div className="relative min-w-[200px] max-w-sm rounded-lg overflow-hidden">
               <Image
                 src={service.banner}
                 alt={`${service.label} banner`}
@@ -59,7 +59,7 @@ export default function AllServices() {
                   {service.tag}
                 </p>
               </div>
-              <span className="link link--visible text-lg md:text-2xl mt-5 w-fit">
+              <span className="link link--visible text-sm md:text-base mt-5 w-fit">
                 View more details
               </span>
             </div>

@@ -36,10 +36,9 @@ export default function Container({
         amount: 0.15, // like your 15% threshold
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`
-        ${small ? "" : "min-h-screen"}
-        ${main ? "" : "py-10"}
-      `}
+      className={`${
+        small ? "" : "min-h-screen"
+      } ${main ? "" : "py-4 lg:py-8"}`.trim()}
     >
       {children}
     </motion.section>

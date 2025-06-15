@@ -13,7 +13,7 @@ const TestimoniesSwiper = dynamic(
 
 export default function TestimonyCardList() {
   return (
-    <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12">
+    <div className="w-full mx-auto py-10 sm:py-14 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12">
       <TestimoniesSwiper />
     </div>
   );

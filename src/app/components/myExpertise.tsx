@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import services from "../data/services";
+import Heading from "./snippets/heading";
 
 export default function MyExpertise() {
   return (
-    <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12">
+    <div className="w-full mx-auto py-10 sm:py-14 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-2 md:gap-y-9 md:gap-20 items-end mb-8 md:mb-14">
         <div className="md:col-span-3">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-5">
+          <Heading className="mb-5">
             How I take your business to the next level.
-          </h2>
+          </Heading>
         </div>
         <div className="md:col-span-2">
           <p className="text-lg md:text-2xl">
@@ -41,21 +42,21 @@ export default function MyExpertise() {
                 className="
                   w-full border-b border-glass-light cursor-pointer
                   group/item overflow-hidden
-                  transition-opacity duration-300
+                  transition-opacity duration-500
                   lg:group-hover:opacity-50 lg:hover:!opacity-100
                 "
               >
                 <Link
                   href={service.href}
-                  className="flex items-center relative w-full py-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight"
+                  className="flex items-center relative w-full py-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
                 >
                   <div
                     className="
-                      h-20 sm:h-24 md:h-36
-                      w-20 sm:w-32 md:w-36
-                      flex-none flex-shrink-0 mr-4 rounded-xl overflow-hidden
+                      h-20 sm:h-24 md:h-32
+                      w-24 sm:w-32 md:w-36
+                      flex-none flex-shrink-0 mr-4 rounded-lg overflow-hidden
                       lg:mr-0 lg:w-0 lg:opacity-0 lg:-translate-x-4
-                      lg:transition-all lg:duration-300
+                      lg:transition-all lg:duration-500
                       lg:group-hover/item:w-36 lg:group-hover/item:mr-6
                       lg:group-hover/item:opacity-100 lg:group-hover/item:translate-x-0
                     "

@@ -1,15 +1,16 @@
 import Link from "next/link";
+import Heading from "./snippets/heading";
 
 export default function IntroSection() {
   return (
     <>
-      <div className="w-full mx-auto py-10 sm:py-32 px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-9 md:gap-20 items-end">
+      <div className="w-full mx-auto py-10 sm:py-14 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-9 md:gap-10 items-end">
           <div className="md:col-span-3">
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-10">
+            <Heading className="mb-10">
               I help brands build fast, scalable, and conversion-focused
               e-commerce stores that stand out and sell.
-            </h2>
+            </Heading>
             <div className="flex flex-col md:flex-row justify-start items-start gap-3">
               <p className="rounded-md py-2 px-3 text-center text-xs sm:text-sm bg-glass-light">
                 15+ sites launched

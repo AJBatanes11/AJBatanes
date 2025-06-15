@@ -7,6 +7,7 @@ import "swiper/css/effect-fade";
 import { useRef } from "react";
 import type { Swiper as SwiperClass } from "swiper/types";
 import testimonies from "../../data/testimonials";
+import Heading from "./heading";
 
 export default function TestimoniesSwiper() {
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -14,12 +15,9 @@ export default function TestimoniesSwiper() {
   return (
     <>
       <div className="w-full flex flex-wrap">
-        <div className="px-2 lg:px-3 xl:px-4 lg:pt-10 lg:pb-28 inline-flex flex-row justify-between items-end w-full md:pr-6 lg:pr-0 lg:mb-0 lg:w-1/4 lg:flex-col lg:justify-between lg:items-start">
+        <div className="px-2 lg:px-3 xl:px-4 xl:pt-10 lg:pb-28 inline-flex flex-row justify-between items-end w-full md:pr-6 lg:pr-0 lg:mb-0 lg:w-1/4 lg:flex-col lg:justify-between lg:items-start">
           <div className="w-full lg:sticky lg:top-0 text-left lg:text-center">
-            {/* <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none text-center"> */}
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-none mb-10">
-              Words from my clients
-            </h2>
+            <Heading className="mb-4 lg:mb-10">Words from my clients</Heading>
             {/* Buttons: visible only on desktop */}
             <div className="hidden lg:flex items-center justify-evenly gap-2 text-lg md:text-2xl">
               <button
@@ -40,7 +38,7 @@ export default function TestimoniesSwiper() {
 
         <div className="relative w-full lg:w-3/4">
           <div
-            className="absolute top-4 right-4 w-4 h-4 sm:w-8 sm:h-8 pointer-events-none autoplay-progress z-10 text-base-dark"
+            className="absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 pointer-events-none autoplay-progress z-10 text-base-dark"
             style={{ "--progress": 1 } as React.CSSProperties}
           >
             <svg className="rotate-[-90deg]" viewBox="0 0 48 48">
@@ -84,7 +82,7 @@ export default function TestimoniesSwiper() {
             {testimonies.map((testimony, index) => (
               <SwiperSlide className="px-2 lg:px-3 xl:px-4" key={index}>
                 <div className="select-none p-4 text-base-dark mx-auto">
-                  <blockquote className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight italic mb-10 lg:mb-20">
+                  <blockquote className="text-2xl sm:text-3xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-snug italic mb-10 lg:mb-20 mr-4">
                     &quot;{testimony.message}&quot;
                   </blockquote>
                   <div className="text-left lg:text-right">

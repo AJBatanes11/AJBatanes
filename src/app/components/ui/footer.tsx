@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-3xl bg-base-dark text-base-light lg:-z-10"
+      className="relative lg:fixed overflow-hidden bottom-0 w-full rounded-t-xl bg-base-dark text-base-light lg:-z-10"
     >
       <GradientBackground />
       <div className="flex justify-center align-bottom w-full max-w-screen-2xl mx-auto lg:h-[700px] relative pt-16 pb-10 lg:pt-60">

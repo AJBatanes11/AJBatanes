@@ -47,7 +47,7 @@ export default function Header() {
         onClick={() => setMobileNavOpen(false)}
       />
       <div
-        className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-all duration-300 ${
+        className={`w-full max-w-7xl max-h-screen mx-auto fixed top-0 left-0 right-0 z-40 px-4 py-3 transition-all duration-500 ${
           showHeader ? "translate-y-0" : "-translate-y-full"
         }`}
       >

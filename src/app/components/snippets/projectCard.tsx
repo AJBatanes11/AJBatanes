@@ -33,7 +33,7 @@ export default function ProjectCard({
         w-[45%] sm:w-[47%] lg:w-[30%]
         h-[250px] sm:h-[450px] md:h-[500px] lg:h-[350px] xl:h-[550px]
         float-left mt-6 sm:mt-8 lg:mt-10 mx-[1.5%]
-        transition-all duration-300 ease-in-out
+        transition-all duration-500 ease-in-out
         text-base-dark bg-base-dark
         cursor-pointer lg:cursor-none
         ${className}
